@@ -1,4 +1,4 @@
-# Design...
+# Design
 
 * 'See more products' clicks are under 1% 
 => pagination/infinite scrolling is obsolete

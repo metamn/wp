@@ -7,7 +7,7 @@
 		</h1>
 	</header>
 	<div class="entry">
-	  <?php if (is_single()) { ?>
+	  <?php if (is_single() || is_page()) { ?>
 	    <?php include 'article-single.php'; ?>
 	  <?php } else { ?>	  
 	    <div class="featured-image">

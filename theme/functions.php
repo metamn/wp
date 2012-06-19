@@ -1,6 +1,18 @@
 <?php
 
 
+// Get the responsive image
+function responsive_image($post_id) {
+  $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'large');
+  $medium_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'medium');
+  
+  $ret = "<noscript data-large='$large_image_url[0]' data-small='$medium_image_url[0]' data-alt='Koala'>";
+  $ret .= "<img src='Koala.jpg' alt='Koala' />";
+  $ret .= "</noscript>";
+  
+  return $ret;
+}
+
 // Determine what kind of content is displayed
 // - like search, archive etc ...
 // - if necessary the title is displayed, else will stay hidden
@@ -30,6 +42,9 @@ function get_content_title() {
   return "<h3 $hidden>$title</h3";
 }
 
+
+// Adding featured image support for post
+add_theme_support( 'post-thumbnails' ); 
 
 
 ?>

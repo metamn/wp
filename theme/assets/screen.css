@@ -110,12 +110,12 @@ h4 {
   font-variant: small-caps;
 }
 
-/* line 6, header.scss */
-html body .container header nav h3 {
+/* line 4, mixins.scss */
+.hidden {
   display: none;
 }
 
-/* line 6, content.scss */
-html body .container #content header h3 {
+/* line 6, header.scss */
+html body .container header nav h3 {
   display: none;
 }

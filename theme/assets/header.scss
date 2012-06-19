@@ -1,6 +1,11 @@
 html {
   body {
     .container {
+      width: 90%;
+      margin: 0 auto;
+      @include respond-to(mobile) { width: 98%; }
+      @include respond-to(smartphone) { width: 96%; }
+      
       header {
         nav {
           h3 {

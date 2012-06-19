@@ -2,6 +2,7 @@
 
 * 'See more products' clicks are under 1% 
 => pagination/infinite scrolling is obsolete
+* Responsive is done via Sass
 
 
 
@@ -24,6 +25,7 @@
 
 # Links
 
+* Responsive Sass: http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
 * HTML5 structure: http://www.456bereastreet.com/archive/201104/html5_document_outline_revisited/
 * Optimize WP: http://wp.tutsplus.com/tutorials/the-ultimate-quickstart-guide-to-speeding-up-your-wordpress-site/
 

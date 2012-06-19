@@ -1,0 +1,42 @@
+/* Typography
+*/
+/* Traditional, em from http://lamb.cc/typograph/ */
+/* line 5, typography.scss */
+body {
+  font-size: 100%;
+  line-height: 1.25;
+}
+
+/* line 6, typography.scss */
+h1, h2, h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 7, typography.scss */
+h1 {
+  font-size: 1.5em;
+  padding: 1.45833em 0;
+}
+
+/* line 8, typography.scss */
+h2 {
+  font-size: 1.33333em;
+  padding: 1.25em 0;
+}
+
+/* line 9, typography.scss */
+h3 {
+  font-size: 1.16667em;
+  padding: 1.51785em 0;
+}
+
+/* line 11, typography.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+/* line 14, typography.scss */
+h4 {
+  font-variant: small-caps;
+}

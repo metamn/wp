@@ -19,5 +19,8 @@
 		    <?php the_excerpt(); ?>					
 		  </div>
 		<?php } ?>
+		  <div class="shopping">
+		    <?php print_r(get_eshop_product($post->ID)); ?>
+		  </div>
 	</div>
 </article>

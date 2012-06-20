@@ -21,6 +21,8 @@
 
 * W3 Total Cache: cache, minify, expires header
 * WP-DBManager: table optimisation, backups
+* eShop
+  * hard to activate (show two panels in wp-admin, create new admin user, empty browser cache)
 
 
 

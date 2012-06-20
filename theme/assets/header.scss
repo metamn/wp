@@ -11,7 +11,7 @@ html {
         
         #logo {
           height: $pad2 * 7;
-          width: $pad2 * 19 + $pad4 / 2; /* an extra space must be add */
+          width: $pad2 * 24 - $pad4; /* an extra space must be add */
           .cell {
             width: $pad2;
             height: $pad2;

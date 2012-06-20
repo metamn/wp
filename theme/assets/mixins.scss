@@ -33,6 +33,15 @@
 }
 
 
+/* make a column 
+*/
+@mixin col($width, $margin_left, $margin_right) {
+  width: $width;
+  margin: 0 $margin_right 0 $margin_left;
+  float: left;
+}
+
+
 /* hide an element 
 */
 @mixin hidden {
@@ -40,4 +49,12 @@
 }
 .hidden {
   display: none;
+}
+
+
+/* block element -- full size
+*/
+@mixin block {
+  width: 100%;
+  float: left;
 }

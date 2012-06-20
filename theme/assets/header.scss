@@ -9,28 +9,40 @@ html {
       header {
         position: static;
         
-        #logo {
-          height: $pad2 * 7;
-          width: $pad2 * 24 - $pad4; /* an extra space must be add */
-          .cell {
-            width: $pad2;
-            height: $pad2;
-            float: left;
+        hgroup {
+          @include col(30%, 0, 0);
+          
+          h1 {
+            @include hidden;
           }
-          .small {
-            width: $pad2 / 2;
+          h2 {
+            @include hidden;
           }
-          .set {
-            background: black;
+          #logo {
+            height: $pad2 * 7;
+            width: $pad2 * 24 - $pad4; /* an extra space must be add */
+            .cell {
+              width: $pad2;
+              height: $pad2;
+              float: left;
+            }
+            .small {
+              width: $pad2 / 2;
+            }
+            .set {
+              background: black;
+            }
           }
-        }
-        
+        }        
         nav {
+          @include col(40%, 0, 10%);
+          
           h3 {
             display: none;
           }
         }
         aside {
+          @include col(20%, 0, 0);
           @include z-index(1, 10em);
           
           ul {            

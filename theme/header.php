@@ -50,17 +50,19 @@
       <header>
         <hgroup>
           <h1>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+            <?php bloginfo( 'name' ); ?>
           </h1>
           <h2>
             <?php bloginfo( 'description' ); ?>
           </h2> 
-          <div id="logo">
-          </div>       
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+            <div id="logo"></div>       
+          </a>
         </hgroup>
       
         <nav> 
-          <h3>Main Navigation</h3>       
+          <h3>Main Navigation</h3>    
+          &nbsp;   
         </nav>
         
         <aside>

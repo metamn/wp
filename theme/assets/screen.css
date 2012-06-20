@@ -126,13 +126,17 @@ h4 {
   cursor: pointer;
 }
 
+/* make a column 
+*/
 /* hide an element 
 */
-/* line 41, mixins.scss */
+/* line 50, mixins.scss */
 .hidden {
   display: none;
 }
 
+/* block element -- full size
+*/
 /* line 3, header.scss */
 html body .container {
   width: 90%;
@@ -155,46 +159,69 @@ html body .container header {
   position: static;
 }
 /* line 12, header.scss */
-html body .container header #logo {
+html body .container header hgroup {
+  width: 30%;
+  margin: 0 0 0 0;
+  float: left;
+}
+/* line 15, header.scss */
+html body .container header hgroup h1 {
+  display: none;
+}
+/* line 18, header.scss */
+html body .container header hgroup h2 {
+  display: none;
+}
+/* line 21, header.scss */
+html body .container header hgroup #logo {
   height: 4.375em;
   width: 14.688em;
   /* an extra space must be add */
 }
-/* line 15, header.scss */
-html body .container header #logo .cell {
+/* line 24, header.scss */
+html body .container header hgroup #logo .cell {
   width: 0.625em;
   height: 0.625em;
   float: left;
 }
-/* line 20, header.scss */
-html body .container header #logo .small {
+/* line 29, header.scss */
+html body .container header hgroup #logo .small {
   width: 0.313em;
 }
-/* line 23, header.scss */
-html body .container header #logo .set {
+/* line 32, header.scss */
+html body .container header hgroup #logo .set {
   background: black;
 }
-/* line 29, header.scss */
+/* line 37, header.scss */
+html body .container header nav {
+  width: 40%;
+  margin: 0 10% 0 0;
+  float: left;
+}
+/* line 40, header.scss */
 html body .container header nav h3 {
   display: none;
 }
-/* line 33, header.scss */
+/* line 44, header.scss */
 html body .container header aside {
+  width: 20%;
+  margin: 0 0 0 0;
+  float: left;
   position: relative;
   z-index: 1;
   height: 10em;
 }
-/* line 38, header.scss */
+/* line 50, header.scss */
 html body .container header aside ul li .title {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
 }
-/* line 41, header.scss */
+/* line 53, header.scss */
 html body .container header aside ul li ul {
   display: none;
 }
-/* line 43, header.scss */
+/* line 55, header.scss */
 html body .container header aside ul li ul li {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;

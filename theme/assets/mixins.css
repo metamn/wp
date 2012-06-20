@@ -14,9 +14,14 @@
   cursor: pointer;
 }
 
+/* make a column 
+*/
 /* hide an element 
 */
-/* line 41, mixins.scss */
+/* line 50, mixins.scss */
 .hidden {
   display: none;
 }
+
+/* block element -- full size
+*/

@@ -75,6 +75,10 @@ html {
           @include col(20%, 0, 0);
           @include z-index(1, 10em);
           
+          h3 {
+            display: none;
+          }
+          
           ul {            
             li {
               .title {

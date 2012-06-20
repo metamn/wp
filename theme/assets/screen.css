@@ -270,17 +270,21 @@ html body .container header aside {
   z-index: 1;
   height: 10em;
 }
-/* line 80, header.scss */
+/* line 78, header.scss */
+html body .container header aside h3 {
+  display: none;
+}
+/* line 84, header.scss */
 html body .container header aside ul li .title {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
 }
-/* line 83, header.scss */
+/* line 87, header.scss */
 html body .container header aside ul li ul {
   display: none;
 }
-/* line 85, header.scss */
+/* line 89, header.scss */
 html body .container header aside ul li ul li {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;

@@ -61,7 +61,7 @@
         </hgroup>
       
         <nav> 
-          <h3>Main Navigation</h3>    
+          <h3>Navigare principala si cautare</h3>    
           <div id="search">
             <?php include '_search-form.php' ?>            
           </div>
@@ -73,6 +73,7 @@
         </nav>
         
         <aside>
+          <h3>Cos cumparaturi si informatii</h3>
           <ul>
             <li>
               <div class="title j-toggle">Cos cumparaturi</div>

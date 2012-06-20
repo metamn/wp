@@ -60,6 +60,37 @@
         <nav> 
           <h3>Main Navigation</h3>       
         </nav>
+        
+        <aside>
+          <ul>
+            <li>
+              <div class="title j-toggle">Cos cumparaturi</div>
+              <ul>
+                <li><?php echo do_shortcode ('[eshop_cart_items showwhat="items"]');?></li>
+                <li>Wishlist</li>
+              </ul>
+            </li>
+            <li>
+              <div class="title j-toggle">Contul meu</div>
+              <ul>
+                <li>Istoric comenzi</li>
+                <li>Personalizare cadouri</li>
+                <li>Planificare cadouri</li>
+              </ul>
+            </li>
+            <li>
+              <div class="title j-toggle">0740-456-127</div>
+              <ul>
+                <li>Politica de preturi</li>
+                <li>Cum cumpar?</li>
+                <li>Business si Media</li>
+                <li>Despre noi</li>
+                <li>Protectia consumatorilor</li>
+                <li>Ajutor</li>
+              </ul>
+            </li>
+          </ul>
+        </aside>       
       </header>
     
     

@@ -1,3 +1,40 @@
+
+/* Set z-index
+
+- parent must have set 'position'
+- this element must have set weight
+- http://www.tjkdesign.com/articles/z-index/teach_yourself_how_elements_stack.asp
+
+*/
+@mixin z-index($level, $height) {
+  position: relative;
+  z-index: $level;
+  height: $height;
+}
+
+
+
+/* underline a text with padding and margin
+*/
+@mixin text-underlined {
+  margin-bottom: $pad2;
+  padding-bottom: $pad2;
+  border-bottom: 1px solid;
+}
+
+
+/* make cursor to be pointer
+*/
+@mixin pointer {
+  cursor: pointer;
+}
+.j-toggle {
+  cursor: pointer;
+}
+
+
+/* hide an element 
+*/
 @mixin hidden {
   display: none;
 }

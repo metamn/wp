@@ -1,4 +1,22 @@
-/* line 4, mixins.scss */
+/* Set z-index
+
+- parent must have set 'position'
+- this element must have set weight
+- http://www.tjkdesign.com/articles/z-index/teach_yourself_how_elements_stack.asp
+
+*/
+/* underline a text with padding and margin
+*/
+/* make cursor to be pointer
+*/
+/* line 31, mixins.scss */
+.j-toggle {
+  cursor: pointer;
+}
+
+/* hide an element 
+*/
+/* line 41, mixins.scss */
 .hidden {
   display: none;
 }

@@ -110,7 +110,25 @@ h4 {
   font-variant: small-caps;
 }
 
-/* line 4, mixins.scss */
+/* Set z-index
+
+- parent must have set 'position'
+- this element must have set weight
+- http://www.tjkdesign.com/articles/z-index/teach_yourself_how_elements_stack.asp
+
+*/
+/* underline a text with padding and margin
+*/
+/* make cursor to be pointer
+*/
+/* line 31, mixins.scss */
+.j-toggle {
+  cursor: pointer;
+}
+
+/* hide an element 
+*/
+/* line 41, mixins.scss */
 .hidden {
   display: none;
 }
@@ -129,10 +147,41 @@ html body .container {
 @media only screen and (min-width: 320px) and (max-width: 640px) {
   /* line 3, header.scss */
   html body .container {
-    width: 98%;
+    width: 96%;
   }
 }
-/* line 11, header.scss */
+/* line 9, header.scss */
+html body .container header {
+  position: static;
+}
+/* line 13, header.scss */
 html body .container header nav h3 {
   display: none;
+}
+/* line 17, header.scss */
+html body .container header aside {
+  position: relative;
+  z-index: 1;
+  height: 10em;
+}
+/* line 22, header.scss */
+html body .container header aside ul li .title {
+  margin-bottom: 0.625em;
+  padding-bottom: 0.625em;
+  border-bottom: 1px solid;
+}
+/* line 25, header.scss */
+html body .container header aside ul li ul {
+  display: none;
+}
+/* line 27, header.scss */
+html body .container header aside ul li ul li {
+  margin-bottom: 0.625em;
+  padding-bottom: 0.625em;
+  border-bottom: 1px solid;
+}
+
+/* line 4, content.scss */
+html body .container #content {
+  position: static;
 }

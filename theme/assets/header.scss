@@ -7,9 +7,28 @@ html {
       @include respond-to(smartphone) { width: 96%; }
       
       header {
+        position: static;
+        
         nav {
           h3 {
             display: none;
+          }
+        }
+        aside {
+          @include z-index(1, 10em);
+          
+          ul {            
+            li {
+              .title {
+                @include text-underlined;
+              }              
+              ul {
+                @include hidden;
+                li {
+                  @include text-underlined;                
+                }                
+              }
+            }
           }
         }
       }

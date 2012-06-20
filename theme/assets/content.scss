@@ -3,6 +3,8 @@ html {
     .container {
       #content {
         position: static;
+        @include block;
+        
         header {
           
         }

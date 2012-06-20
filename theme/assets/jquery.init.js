@@ -1,12 +1,9 @@
 jQuery(document).ready(function(){
 
-  
-  // Display the responsive image
-  jQuery('noscript[data-large][data-small]').each(function(){
-    var src = screen.width >= 500 ? jQuery(this).data('large') : jQuery(this).data('small');
-    jQuery('<img src="' + src + '" alt="' + $(this).data('alt') + '" />').insertAfter($(this));
+  // Show price search in header
+  jQuery("header #search #s").click(function() {
+    jQuery(this).next().next().slideDown();
   });
-  
   
   // Draw the logo
   function logo() {
@@ -123,6 +120,13 @@ jQuery(document).ready(function(){
   
   // General functions
   //
+  
+   // Display the responsive image
+  jQuery('noscript[data-large][data-small]').each(function(){
+    var src = screen.width >= 500 ? jQuery(this).data('large') : jQuery(this).data('small');
+    jQuery('<img src="' + src + '" alt="' + $(this).data('alt') + '" />').insertAfter($(this));
+  });
+  
   
   // Toggle the next element
   jQuery(".j-toggle").click(function() {

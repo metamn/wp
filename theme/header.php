@@ -62,7 +62,14 @@
       
         <nav> 
           <h3>Main Navigation</h3>    
-          &nbsp;   
+          <div id="search">
+            <?php include '_search-form.php' ?>            
+          </div>
+          <ul id="categories">
+            <li><h4>Cadouri <span>></span></h4></li>
+            <li><h4>Evenimente <span>></span></h4></li>
+            <li class="last"><h4>Sarbatori <span>></span></h4></li>
+          </ul>   
         </nav>
         
         <aside>

@@ -117,20 +117,24 @@ h4 {
 - http://www.tjkdesign.com/articles/z-index/teach_yourself_how_elements_stack.asp
 
 */
+/* Rotate
+*/
 /* underline a text with padding and margin
 */
 /* make cursor to be pointer
 */
-/* line 31, mixins.scss */
+/* line 41, mixins.scss */
 .j-toggle {
   cursor: pointer;
 }
 
+/* List, inline 
+*/
 /* make a column 
 */
 /* hide an element 
 */
-/* line 50, mixins.scss */
+/* line 73, mixins.scss */
 .hidden {
   display: none;
 }
@@ -154,55 +158,110 @@ html body .container {
     width: 96%;
   }
 }
-/* line 9, header.scss */
+@media only screen and (min-width: 641px) and (max-width: 1024px) {
+  /* line 3, header.scss */
+  html body .container {
+    width: 96%;
+  }
+}
+/* line 10, header.scss */
 html body .container header {
   position: static;
+  width: 100%;
+  float: left;
 }
-/* line 12, header.scss */
+/* line 14, header.scss */
 html body .container header hgroup {
-  width: 30%;
+  width: 20%;
   margin: 0 0 0 0;
   float: left;
 }
-/* line 15, header.scss */
+/* line 17, header.scss */
 html body .container header hgroup h1 {
   display: none;
 }
-/* line 18, header.scss */
+/* line 20, header.scss */
 html body .container header hgroup h2 {
   display: none;
 }
-/* line 21, header.scss */
+/* line 23, header.scss */
 html body .container header hgroup #logo {
   height: 4.375em;
   width: 14.688em;
   /* an extra space must be add */
 }
-/* line 24, header.scss */
+/* line 26, header.scss */
 html body .container header hgroup #logo .cell {
   width: 0.625em;
   height: 0.625em;
   float: left;
 }
-/* line 29, header.scss */
+/* line 31, header.scss */
 html body .container header hgroup #logo .small {
   width: 0.313em;
 }
-/* line 32, header.scss */
+/* line 34, header.scss */
 html body .container header hgroup #logo .set {
   background: black;
 }
-/* line 37, header.scss */
+/* line 39, header.scss */
 html body .container header nav {
   width: 40%;
-  margin: 0 10% 0 0;
+  margin: 0 10% 0 10%;
   float: left;
 }
-/* line 40, header.scss */
+/* line 42, header.scss */
 html body .container header nav h3 {
   display: none;
 }
-/* line 44, header.scss */
+/* line 46, header.scss */
+html body .container header nav #search {
+  margin-bottom: 3.125em;
+}
+/* line 50, header.scss */
+html body .container header nav #search form input[type="text"] {
+  width: 21.6em;
+}
+@media only screen and (min-width: 641px) and (max-width: 1024px) {
+  /* line 50, header.scss */
+  html body .container header nav #search form input[type="text"] {
+    width: 15.4em;
+  }
+}
+/* line 55, header.scss */
+html body .container header nav #search form ul {
+  display: none;
+  margin: 1.25em 0;
+}
+/* line 61, header.scss */
+html body .container header nav ul#categories {
+  display: block;
+  margin: 0;
+}
+/* line 52, mixins.scss */
+html body .container header nav ul#categories li {
+  display: inline-block;
+  list-style-type: none;
+  margin-left: 0;
+}
+/* line 63, header.scss */
+html body .container header nav ul#categories li {
+  margin-right: 5%;
+}
+/* line 65, header.scss */
+html body .container header nav ul#categories li span {
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$value);
+  display: inline-block;
+}
+/* line 69, header.scss */
+html body .container header nav ul#categories li.last {
+  margin-right: none;
+}
+/* line 74, header.scss */
 html body .container header aside {
   width: 20%;
   margin: 0 0 0 0;
@@ -211,17 +270,17 @@ html body .container header aside {
   z-index: 1;
   height: 10em;
 }
-/* line 50, header.scss */
+/* line 80, header.scss */
 html body .container header aside ul li .title {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
 }
-/* line 53, header.scss */
+/* line 83, header.scss */
 html body .container header aside ul li ul {
   display: none;
 }
-/* line 55, header.scss */
+/* line 85, header.scss */
 html body .container header aside ul li ul li {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
@@ -231,4 +290,6 @@ html body .container header aside ul li ul li {
 /* line 4, content.scss */
 html body .container #content {
   position: static;
+  width: 100%;
+  float: left;
 }

@@ -13,6 +13,16 @@
 }
 
 
+/* Rotate
+*/
+@mixin rotate($deg, $value) {
+  -moz-transform: rotate($deg);  
+  -webkit-transform: rotate($deg); 
+  -o-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=$value);
+  display: inline-block;
+}
 
 /* underline a text with padding and margin
 */
@@ -32,6 +42,19 @@
   cursor: pointer;
 }
 
+
+/* List, inline 
+*/
+
+@mixin list-inline {
+  display: block;
+  margin: 0;
+  li {
+    display: inline-block;
+    list-style-type: none;
+    margin-left: 0;
+  }
+}
 
 /* make a column 
 */

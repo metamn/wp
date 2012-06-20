@@ -5,12 +5,14 @@ html {
       margin: 0 auto;
       @include respond-to(mobile) { width: 98%; }
       @include respond-to(smartphone) { width: 96%; }
+      @include respond-to(tablet) { width: 96%; }
       
       header {
         position: static;
+        @include block;
         
         hgroup {
-          @include col(30%, 0, 0);
+          @include col(20%, 0, 0);
           
           h1 {
             @include hidden;
@@ -35,10 +37,38 @@ html {
           }
         }        
         nav {
-          @include col(40%, 0, 10%);
+          @include col(40%, 10%, 10%);          
           
           h3 {
             display: none;
+          }
+          
+          #search {
+            margin-bottom: $pad * 2.5;            
+            
+            form {
+              input[type="text"] {
+                width: 21.6em;
+                @include respond-to(tablet) { width: 15.4em; }
+              }
+             
+              ul {
+                @include hidden;
+                margin: 1.25em 0;
+              } 
+            }
+          }
+          ul#categories {
+            @include list-inline;
+            li {
+              margin-right: 5%;
+              span {
+                @include rotate(90deg, 1);                
+              }
+            }
+            li.last {
+              margin-right: none;
+            }
           }
         }
         aside {

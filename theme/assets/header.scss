@@ -9,6 +9,22 @@ html {
       header {
         position: static;
         
+        #logo {
+          height: $pad2 * 7;
+          width: $pad2 * 19 + $pad4 / 2; /* an extra space must be add */
+          .cell {
+            width: $pad2;
+            height: $pad2;
+            float: left;
+          }
+          .small {
+            width: $pad2 / 2;
+          }
+          .set {
+            background: black;
+          }
+        }
+        
         nav {
           h3 {
             display: none;

@@ -54,7 +54,9 @@
           </h1>
           <h2>
             <?php bloginfo( 'description' ); ?>
-          </h2>        
+          </h2> 
+          <div id="logo">
+          </div>       
         </hgroup>
       
         <nav> 

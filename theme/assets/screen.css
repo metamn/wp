@@ -154,27 +154,47 @@ html body .container {
 html body .container header {
   position: static;
 }
-/* line 13, header.scss */
+/* line 12, header.scss */
+html body .container header #logo {
+  height: 4.375em;
+  width: 12.031em;
+  /* an extra space must be add */
+}
+/* line 15, header.scss */
+html body .container header #logo .cell {
+  width: 0.625em;
+  height: 0.625em;
+  float: left;
+}
+/* line 20, header.scss */
+html body .container header #logo .small {
+  width: 0.313em;
+}
+/* line 23, header.scss */
+html body .container header #logo .set {
+  background: black;
+}
+/* line 29, header.scss */
 html body .container header nav h3 {
   display: none;
 }
-/* line 17, header.scss */
+/* line 33, header.scss */
 html body .container header aside {
   position: relative;
   z-index: 1;
   height: 10em;
 }
-/* line 22, header.scss */
+/* line 38, header.scss */
 html body .container header aside ul li .title {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
 }
-/* line 25, header.scss */
+/* line 41, header.scss */
 html body .container header aside ul li ul {
   display: none;
 }
-/* line 27, header.scss */
+/* line 43, header.scss */
 html body .container header aside ul li ul li {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;

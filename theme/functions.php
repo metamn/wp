@@ -5,11 +5,26 @@
 //
 
 // Load post details on an index page
-function load_post_details() {
-  $post_id = intval( $_POST['post_id'] );
+function load_post_details() {  
+  $nonce = $_POST['nonce'];
+  if ( wp_verify_nonce( $nonce, 'load-post-details' ) ) {
+    
+    $post_id = intval( $_POST['post_id'] );  
+    $ret = array(
+      'success' => true
+    );
   
-  echo "ajax call: $post_id";
-  die();
+  
+  } else {
+    $ret = array(
+      'success' => false
+    );
+  }
+    
+  $response = json_encode($ret);
+  header( "Content-Type: application/json" );
+  echo $response;
+  exit;
 }
 add_action('wp_ajax_load_post_details', 'load_post_details');
 

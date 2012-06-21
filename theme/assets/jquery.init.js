@@ -4,21 +4,25 @@ jQuery(document).ready(function() {
   // Products
   //
   
+  // Get the Wordpress ajax url
   var ajaxurl = jQuery("#ajax-url").attr("data-url");
   
   // Click on product image, index pages
   jQuery(".index article .featured-image").click(function() {
-    var id = jQuery(this).attr("data-id");
-    alert(id);
+    
+    var nonce = jQuery(this).attr("data-nonce");    
+    var id = jQuery(this).attr("data-id");    
+    
     jQuery.post(
-       ajaxurl, 
-       {
-          'action':'load_post_details',
-          'post_id':id
-       }, 
-       function(response){
-          alert('The server responded: ' + response);
-       }
+      ajaxurl, 
+      {
+        'action' : 'load_post_details',
+        'nonce' : nonce,
+        'post_id' : id
+      }, 
+      function(response) {
+        alert(response.success);  
+      }
     );
   });
 

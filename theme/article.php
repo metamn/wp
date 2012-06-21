@@ -7,7 +7,7 @@
 		</h1>
 	</header>
 	<div class="entry">	    
-    <div class="featured-image" data-id="<?php echo $post->ID ?>">
+    <div class="featured-image" data-id="<?php echo $post->ID ?>" data-nonce="<?php echo wp_create_nonce('load-post-details') ?>">
       <?php echo responsive_image($post->ID);?>      
     </div>	  
     <div class="thumbs">

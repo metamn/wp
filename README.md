@@ -28,6 +28,7 @@
 
 # Links
 
+* Wordpress jQuery Ajax: http://www.garyc40.com/2010/03/5-tips-for-using-ajax-in-wordpress/
 * Responsive Images: http://blog.cloudfour.com/responsive-imgs-part-2/
 * Responsive Sass: http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
 * HTML5 structure: http://www.456bereastreet.com/archive/201104/html5_document_outline_revisited/

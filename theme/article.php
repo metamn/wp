@@ -11,18 +11,7 @@
       <?php echo responsive_image($post->ID);?>      
     </div>	  
     <div class="thumbs">
-      <?php
-        if (is_single()) {
-          $images = post_attachments($post->ID);
-          foreach ($images as $img) {
-            $thumb = wp_get_attachment_image_src($img->ID, 'thumbnail'); 
-            $large = wp_get_attachment_image_src($img->ID, 'full'); ?>
-            <div class="item">
-              <img src="<?php echo $thumb[0]?>" rev="<?php echo $large[0]?>" title="<?php the_title() ?>" alt="<?php the_title() ?>"/>
-            </div>
-          <?php } 
-        }
-      ?>
+      <?php if (is_single()) { echo post_thumbnails($post->ID, $post->post_title); } ?>
     </div>	  
 	  <div class="shopping">
 	    <?php echo do_shortcode('[eshop_addtocart id="'. $post->ID . '"]'); ?>	    

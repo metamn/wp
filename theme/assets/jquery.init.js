@@ -4,15 +4,24 @@ jQuery(document).ready(function() {
   // Products
   //
   
-  // Get the Wordpress ajax url
+  // Set up Ajax
   var ajaxurl = jQuery("#ajax-url").attr("data-url");
+  var ajaxloading = jQuery("#ajax-url").attr("data-loading");
+  var ajaxspinner = "<img src='" + ajaxloading + "' alt='Incarcare date ...' />";
+  var ajaxerror = "Eroare incarcare date de pe server";
   
   // Click on product image, index pages
-  jQuery(".index article .featured-image").click(function() {
+  jQuery(".home article .featured-image").click(function() {
+  
+    // Display Ajax loading spinner
+    jQuery(".index article .entry .body").html(ajaxspinner);
+    jQuery(".index article .entry .thumbs").html(ajaxspinner);
     
+    // Get query parameters
     var nonce = jQuery(this).attr("data-nonce");    
     var id = jQuery(this).attr("data-id");    
     
+    // Do the ajax
     jQuery.post(
       ajaxurl, 
       {
@@ -21,7 +30,13 @@ jQuery(document).ready(function() {
         'post_id' : id
       }, 
       function(response) {
-        alert(response.success);  
+        if (response.success) {
+          jQuery(".index article .entry .body").html(response.body);
+          jQuery(".index article .entry .thumbs").html(response.thumbs);
+        } else {
+          jQuery(".index article .entry .body").html(ajaxerror);
+          jQuery(".index article .entry .thumbs").html(ajaxerror);        
+        } 
       }
     );
   });

@@ -38,7 +38,7 @@
     <![endif]-->
 
             
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="<?php bloginfo('stylesheet_directory')?>/assets/jquery.init.js"></script>
     
     <?php wp_head(); ?>
@@ -47,7 +47,7 @@
   <body <?php body_class(); ?>>        
     <div class="container">
     
-      <div id="ajax-url" data-url="<?php echo admin_url('admin-ajax.php'); ?>" class="hidden"></div>
+      <div id="ajax-url" data-url="<?php echo admin_url('admin-ajax.php'); ?>" data-loading="<?php bloginfo('stylesheet_directory')?>/assets/ajax-loader.gif" class="hidden"></div>
   
       <header>
         <hgroup>

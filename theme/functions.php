@@ -10,8 +10,13 @@ function load_post_details() {
   if ( wp_verify_nonce( $nonce, 'load-post-details' ) ) {
     
     $post_id = intval( $_POST['post_id'] );  
+    $post = wp_get_single_post($post_id);
+    $thumbs = post_thumbnails($post_id, $post->post_title);
+    
     $ret = array(
-      'success' => true
+      'success' => true,
+      'body' => $post->post_content,
+      'thumbs' => $thumbs
     );
   
   
@@ -29,10 +34,24 @@ function load_post_details() {
 add_action('wp_ajax_load_post_details', 'load_post_details');
 
 
-
+// Display post thumbnails
+function post_thumbnails($post_id, $title) {
+  $ret = "";
+  
+  $images = post_attachments($post_id);
+  foreach ($images as $img) {
+    $thumb = wp_get_attachment_image_src($img->ID, 'thumbnail'); 
+    $large = wp_get_attachment_image_src($img->ID, 'full');
+    
+    $ret .= '<div class="item">';
+    $ret .= "<img src='$thumb[0]' rev='$large[0]' title='$title' alt='$title'/>";
+    $ret .= '</div>';
+  }
+  
+  return $ret;
+}
 
 // Get post attachments / images
-// Get post attachements
 function post_attachments($post_id) {  
   $args = array(
 	  'post_type' => 'attachment',

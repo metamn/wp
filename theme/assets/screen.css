@@ -291,9 +291,13 @@ html body .container header aside ul li ul li {
   border-bottom: 1px solid;
 }
 
-/* line 4, content.scss */
-html body .container #content {
+/* line 4, index.scss */
+html body .container #content.index {
   position: static;
   width: 100%;
   float: left;
+}
+/* line 14, index.scss */
+html body .container #content.index .entry .featured-image {
+  cursor: pointer;
 }

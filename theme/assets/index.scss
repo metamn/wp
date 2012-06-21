@@ -1,12 +1,19 @@
 html {
   body {
     .container {
-      #content {
+      #content.index {
         position: static;
         @include block;
         
         header {
           
+        }
+        
+        .entry {
+        
+          .featured-image {
+            @include pointer;
+          }
         }
       }
     }

@@ -1,4 +1,27 @@
-jQuery(document).ready(function(){
+jQuery(document).ready(function() {
+
+
+  // Products
+  //
+  
+  var ajaxurl = jQuery("#ajax-url").attr("data-url");
+  
+  // Click on product image, index pages
+  jQuery(".index article .featured-image").click(function() {
+    var id = jQuery(this).attr("data-id");
+    alert(id);
+    jQuery.post(
+       ajaxurl, 
+       {
+          'action':'load_post_details',
+          'post_id':id
+       }, 
+       function(response){
+          alert('The server responded: ' + response);
+       }
+    );
+  });
+
 
   // Show price search in header
   jQuery("header #search #s").click(function() {

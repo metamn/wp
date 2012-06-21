@@ -46,6 +46,8 @@
   
   <body <?php body_class(); ?>>        
     <div class="container">
+    
+      <div id="ajax-url" data-url="<?php echo admin_url('admin-ajax.php'); ?>" class="hidden"></div>
   
       <header>
         <hgroup>

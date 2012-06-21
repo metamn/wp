@@ -1,6 +1,37 @@
 <?php
 
 
+// Ajax functions
+//
+
+// Load post details on an index page
+function load_post_details() {
+  $post_id = intval( $_POST['post_id'] );
+  
+  echo "ajax call: $post_id";
+  die();
+}
+add_action('wp_ajax_load_post_details', 'load_post_details');
+
+
+
+
+// Get post attachments / images
+// Get post attachements
+function post_attachments($post_id) {  
+  $args = array(
+	  'post_type' => 'attachment',
+	  'numberposts' => -1,
+	  'post_status' => null,
+	  'post_parent' => $post_id,
+	  'orderby' => 'menu_order',
+	  'order' => 'ASC'
+  ); 
+  $attachments = get_posts($args);
+  return $attachments;
+}
+
+
 // Get the responsive image
 function responsive_image($post_id) {
   $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'large');
@@ -12,6 +43,7 @@ function responsive_image($post_id) {
   
   return $ret;
 }
+
 
 // Determine what kind of content is displayed
 // - like search, archive etc ...
@@ -39,7 +71,7 @@ function get_content_title() {
     $title = "Search for " . get_search_query();
   }
   
-  return "<h3 $hidden>$title</h3";
+  return "<h3 $hidden>$title</h3>";
 }
 
 

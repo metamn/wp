@@ -319,6 +319,10 @@ html body .container #product-info {
   display: none;
 }
 /* line 14, index.scss */
+html body .container #product-info h3 {
+  display: none;
+}
+/* line 17, index.scss */
 html body .container #product-info .close {
   float: right;
   color: white;
@@ -326,13 +330,13 @@ html body .container #product-info .close {
   cursor: pointer;
   padding: 0 0.313em;
 }
-/* line 20, index.scss */
+/* line 23, index.scss */
 html body .container #product-info .thumbs {
   width: 100%;
   float: left;
   margin-bottom: 2.5em;
 }
-/* line 24, index.scss */
+/* line 27, index.scss */
 html body .container #product-info .thumbs .item {
   width: 100px;
   height: 100px;
@@ -351,24 +355,24 @@ html body .container #product-info .body h3 {
 html body .container #product-info .body .pane {
   display: none;
 }
-/* line 34, index.scss */
+/* line 37, index.scss */
 html body .container #sidebar {
   width: 20%;
   margin: 0 0 0 0;
   float: left;
 }
-/* line 37, index.scss */
+/* line 40, index.scss */
 html body .container #sidebar h3 {
   display: none;
 }
-/* line 42, index.scss */
+/* line 45, index.scss */
 html body .container #sidebar #switch-view li {
   display: none;
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
 }
-/* line 46, index.scss */
+/* line 49, index.scss */
 html body .container #sidebar #switch-view li span {
   -moz-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
@@ -378,44 +382,44 @@ html body .container #sidebar #switch-view li span {
   display: inline-block;
   float: right;
 }
-/* line 51, index.scss */
+/* line 54, index.scss */
 html body .container #sidebar #switch-view li.active {
   display: block;
   cursor: pointer;
 }
-/* line 57, index.scss */
+/* line 60, index.scss */
 html body .container #sidebar #categories {
   margin-top: 12.5em;
 }
-/* line 59, index.scss */
+/* line 62, index.scss */
 html body .container #sidebar #categories li {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
 }
-/* line 62, index.scss */
+/* line 65, index.scss */
 html body .container #sidebar #categories li.active {
   color: white;
   background: black;
   padding-top: 0.625em;
 }
-/* line 69, index.scss */
-html body .container #content.index {
+/* line 72, index.scss */
+html body .container #content {
   position: static;
   width: 70%;
   margin: 0 10% 0 0;
   float: left;
 }
-/* line 74, index.scss */
-html body .container #content.index .entry .featured-image {
+/* line 77, index.scss */
+html body .container #content .entry .featured-image {
   cursor: pointer;
 }
-/* line 78, index.scss */
-html body .container #content.index .entry .thumbs {
+/* line 81, index.scss */
+html body .container #content .entry .thumbs {
   display: none;
 }
-/* line 82, index.scss */
-html body .container #content.index .entry .body {
+/* line 85, index.scss */
+html body .container #content .entry .body {
   display: none;
 }
 

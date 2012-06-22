@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section id="content" class="index"> 
+<section id="content"> 
   <header>
     <?php echo get_content_title(); ?>
   </header>
@@ -45,6 +45,7 @@
 </nav>
 
 <aside id="product-info">
+  <h3>Product info</h3>
   <span class="close"> x </span>
   <div class="thumbs"></div>
   <div class="body"></div>  

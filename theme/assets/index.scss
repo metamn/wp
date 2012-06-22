@@ -11,6 +11,9 @@ html {
         z-index: 2;        
         @include hidden;
         
+        h3 {
+          @include hidden;
+        } 
         .close {
           float: right;
           @include color-inverted;
@@ -66,7 +69,7 @@ html {
         }
       }
       
-      #content.index {
+      #content {
         position: static;
         @include col(70%, 0, 10%);
         

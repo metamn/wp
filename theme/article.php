@@ -1,4 +1,11 @@
-<article <?php post_class('scroll'); ?>>
+<?php if (is_single()) {
+  $klass = '';
+} else {
+  $klass = 'scroll';
+} ?>
+
+
+<article <?php post_class($klass); ?>>
 	<header>
 		<h1>
 		  <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>" rel="bookmark">
@@ -24,3 +31,5 @@
 	  </div>
 	</div>
 </article>
+
+

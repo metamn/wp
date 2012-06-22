@@ -1,11 +1,41 @@
+/* Site specific mixins
+*/
+
+
+/* display post thumbnails 
+*/
+@mixin thumbnail {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 0 $pad/4 $pad/2 0;
+  border: 1px solid;  
+}
+
+
+/* display post description
+*/
+@mixin article-body {
+  h3 {
+    @include text-underlined;
+    @include pointer;
+  }
+  .pane {
+    display: none;
+  }
+}
+
+
+/* General mixins
+*/
+
+
 /* invert color with background
 */
 @mixin color-inverted {
   color: $background;
   background: $text;
 }
-
-
 
 /* set z-index
 

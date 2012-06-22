@@ -1,13 +1,42 @@
 html {
   body {
     .container {
+      #shopping-info {
+        @include hidden;
+      }
+      
+      #product-info {
+        @include col(20%, 0, 0);
+        position: relative;
+        z-index: 2;        
+        @include hidden;
+        
+        .close {
+          float: right;
+          @include color-inverted;
+          @include pointer;
+          padding: 0 $pad/4;
+        }
+        .thumbs {
+          @include block;
+          margin-bottom: 2.5em;
+          
+          .item {
+            @include thumbnail;
+          }          
+        }
+        
+        .body {
+          @include article-body;
+        }
+      }
+      
       #sidebar {
         @include col(20%, 0, 0);
         
         h3 {
           @include hidden;
-        }
-        
+        }        
         
         #switch-view {
           li {
@@ -36,21 +65,25 @@ html {
           }
         }
       }
+      
       #content.index {
         position: static;
         @include col(70%, 0, 10%);
         
-        header {
-          
-        }
-        
-        .entry {
-        
+        .entry {        
           .featured-image {
             @include pointer;
           }
+          
+          .thumbs {
+            @include hidden;
+          }
+          
+          .body {
+            @include hidden;
+          }
         }
-      }
+      }      
     }
   }
 }

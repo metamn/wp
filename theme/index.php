@@ -44,7 +44,15 @@
   </ul>
 </nav>
 
+<aside id="product-info">
+  <span class="close"> x </span>
+  <div class="thumbs"></div>
+  <div class="body"></div>  
+</aside>
 
+<aside id="shopping-info">
+  <h3>Informatii shopping</h3>
+</aside>
 
 
 <?php get_footer(); ?>

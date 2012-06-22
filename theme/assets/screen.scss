@@ -18,6 +18,12 @@
 @import "article";
 
 
+/* Generally available settings
+*/
+img {
+  @include image-full-width;
+}
+
 
 
 

@@ -1,65 +1,129 @@
-.index {
-  article.scroll {
-    height: 40em;
-    @include box-shadow;
-    
-    header {
-      position: relative;
-      z-index: 1;
-      top: 33.6em;
-      background: #eee;
-      opacity: .7;
-      
-      h1 {
-        padding-left: $pad/4;
-      }
-    }
-    
-    .entry {
-      position: relative;
-      top: -2em;
-      
-      .featured-image {
-        img {
-          @include image-full-width;
+/* Single article
+*/
+
+html {
+  body.single {
+    .container {
+      #content {        
+        article {      
+          .entry {
+            .featured-image {
+              @include box-shadow;
+            }
+            .thumbs {
+              @include block;
+              display: block;
+              
+              .item {
+                @include thumbnail;
+              }
+            }
+            .shopping {
+              position: relative;
+              top: -35em;
+              left: 15%;
+            }
+            .excerpt {
+              @include hidden;
+            }
+            .body {
+              @include block;
+              display: block;
+              
+              @include article-body;
+            }
+          }    
         }
-      }
-      .thumbs {
+      }  
       
+      #shopping-info {
+        @include col(20%, 0, 0);
+        display: block;
       }
-      .shopping {
-        position: relative;
-        top: -2.85em;
-        float: right;
-        margin-right: $pad/2;
-        z-index: 2;
-        
-        background: #eee;
-        opacity: .7;
-      }
-      .excerpt {
-        position: relative;
-        top: -$pad;
-        padding-left: $pad/2;
-      }
-      .body {
       
+      .product-scroller {
+        @include hidden;
+      }
+      
+      #sidebar {
+        @include hidden;
       }
     }
-  }
-  
-  .product-scroller {
-    font-size: 4em;  
-    position: relative;
-    top: -6em;
-    cursor: pointer;
-    width: 10%;
-    height: 0;
-  }
-  #product-scroll-left {
-    left: 1%;
-  }
-  #product-scroll-right {
-    left: 96%;
   }
 }
+
+
+
+
+
+/* Article on index page
+*/
+
+html {
+  body {
+    .container {
+      #content { 
+        article.scroll {
+          height: 40em;
+          @include box-shadow;
+          
+          header {
+            position: relative;
+            z-index: 1;
+            top: 33.6em;
+            background: #eee;
+            opacity: .7;
+            
+            h1 {
+              padding-left: $pad/4;
+            }
+          }
+          
+          .entry {
+            position: relative;
+            top: -2em;
+            
+            
+            .thumbs {
+            
+            }
+            .shopping {
+              position: relative;
+              top: -2.85em;
+              float: right;
+              margin-right: $pad/2;
+              z-index: 2;
+              
+              background: #eee;
+              opacity: .7;
+            }
+            .excerpt {
+              position: relative;
+              top: -$pad;
+              padding-left: $pad/2;
+            }
+            .body {
+            
+            }
+          }
+        }
+
+        .product-scroller {
+          font-size: 4em;  
+          position: relative;
+          top: -6em;
+          cursor: pointer;
+          width: 10%;
+          height: 0;
+        }
+        #product-scroll-left {
+          left: 1%;
+        }
+        #product-scroll-right {
+          left: 96%;
+        }
+      }
+    }
+  }
+}   
+

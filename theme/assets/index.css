@@ -1,12 +1,12 @@
 /*
-Syntax error: Undefined mixin 'col'.
-        on line 5 of /home/cs/work/wp/theme/assets/index.scss, in `col'
+Syntax error: Undefined mixin 'hidden'.
+        on line 5 of /home/cs/work/wp/theme/assets/index.scss, in `hidden'
         from line 5 of /home/cs/work/wp/theme/assets/index.scss
 
 1: /home/cs/work/wp/theme/assets/index.scss
 
 Backtrace:
-/home/cs/work/wp/theme/assets/index.scss:5:in `col'
+/home/cs/work/wp/theme/assets/index.scss:5:in `hidden'
 /home/cs/work/wp/theme/assets/index.scss:5
 /home/cs/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.0.alpha.247/lib/sass/tree/visitors/perform.rb:170:in `visit_mixin'
 /home/cs/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.0.alpha.247/lib/sass/tree/visitors/base.rb:37:in `visit'
@@ -106,4 +106,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'col'.\A         on line 5 of /home/cs/work/wp/theme/assets/index.scss, in `col'\A         from line 5 of /home/cs/work/wp/theme/assets/index.scss\A \A 1: /home/cs/work/wp/theme/assets/index.scss"; }
+  content: "Syntax error: Undefined mixin 'hidden'.\A         on line 5 of /home/cs/work/wp/theme/assets/index.scss, in `hidden'\A         from line 5 of /home/cs/work/wp/theme/assets/index.scss\A \A 1: /home/cs/work/wp/theme/assets/index.scss"; }

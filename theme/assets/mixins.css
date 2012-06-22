@@ -1,3 +1,11 @@
+/* Site specific mixins
+*/
+/* display post thumbnails 
+*/
+/* display post description
+*/
+/* General mixins
+*/
 /* invert color with background
 */
 /* set z-index
@@ -13,7 +21,7 @@
 */
 /* make cursor to be pointer
 */
-/* line 49, mixins.scss */
+/* line 79, mixins.scss */
 .j-toggle {
   cursor: pointer;
 }
@@ -28,7 +36,7 @@
 */
 /* hide an element 
 */
-/* line 97, mixins.scss */
+/* line 127, mixins.scss */
 .hidden {
   display: none;
 }

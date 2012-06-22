@@ -10,6 +10,7 @@ jQuery(document).ready(function() {
   var ajaxspinner = "<img src='" + ajaxloading + "' alt='Incarcare date ...' />";
   var ajaxerror = "Eroare incarcare date de pe server";
   
+  
   // Click on product image, index pages
   jQuery(".home article .featured-image").click(function() {
   
@@ -31,14 +32,24 @@ jQuery(document).ready(function() {
       }, 
       function(response) {
         if (response.success) {
-          jQuery(".index article .entry .body").html(response.body);
-          jQuery(".index article .entry .thumbs").html(response.thumbs);
+          jQuery("#product-info .body").html(response.body);
+          jQuery("#product-info .thumbs").html(response.thumbs);
+          
+          jQuery("#sidebar").slideUp();
+          jQuery("#product-info").slideDown();
         } else {
-          jQuery(".index article .entry .body").html(ajaxerror);
-          jQuery(".index article .entry .thumbs").html(ajaxerror);        
+          jQuery("#product-info .body").html(ajaxerror);
+          jQuery("#product-info .thumbs").html(ajaxerror);        
         } 
       }
     );
+  });
+  
+  
+  // Close product info on index page
+  jQuery("#product-info .close").click(function() {
+    jQuery("#product-info").slideUp();
+    jQuery("#sidebar").slideDown();    
   });
   
   

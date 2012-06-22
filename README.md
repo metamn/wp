@@ -28,6 +28,7 @@
 
 # Links
 
+* Colors: http://www.joehallock.com/edu/COM498/index.html, http://blog.kissmetrics.com/color-psychology/
 * Wordpress jQuery Ajax: http://www.garyc40.com/2010/03/5-tips-for-using-ajax-in-wordpress/
 * Responsive Images: http://blog.cloudfour.com/responsive-imgs-part-2/
 * Responsive Sass: http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32

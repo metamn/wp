@@ -1,5 +1,13 @@
+/* invert color with background
+*/
+@mixin color-inverted {
+  color: $background;
+  background: $text;
+}
 
-/* Set z-index
+
+
+/* set z-index
 
 - parent must have set 'position'
 - this element must have set weight
@@ -13,7 +21,7 @@
 }
 
 
-/* Rotate
+/* rotate
 */
 @mixin rotate($deg, $value) {
   -moz-transform: rotate($deg);  
@@ -43,9 +51,8 @@
 }
 
 
-/* List, inline 
+/* list, inline 
 */
-
 @mixin list-inline {
   display: block;
   margin: 0;
@@ -75,7 +82,7 @@
 }
 
 
-/* block element -- full size
+/* block element -- expand something to parent div's full size
 */
 @mixin block {
   width: 100%;

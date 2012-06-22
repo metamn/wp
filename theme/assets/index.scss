@@ -1,9 +1,44 @@
 html {
   body {
     .container {
+      #sidebar {
+        @include col(20%, 0, 0);
+        
+        h3 {
+          @include hidden;
+        }
+        
+        
+        #switch-view {
+          li {
+            @include hidden;
+            @include text-underlined;
+            
+            span {
+              @include rotate(90deg, 1);
+              float: right;
+            }
+          }
+          li.active {
+            display: block;
+            @include pointer;
+          }
+        }
+        
+        #categories {
+          margin-top: 2.5em;
+          li {
+            @include text-underlined;
+          }
+          li.active {
+            @include color-inverted;
+            padding-top: $pad/2;
+          }
+        }
+      }
       #content.index {
         position: static;
-        @include block;
+        @include col(70%, 0, 10%);
         
         header {
           

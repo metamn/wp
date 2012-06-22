@@ -1,31 +1,33 @@
-/* Set z-index
+/* invert color with background
+*/
+/* set z-index
 
 - parent must have set 'position'
 - this element must have set weight
 - http://www.tjkdesign.com/articles/z-index/teach_yourself_how_elements_stack.asp
 
 */
-/* Rotate
+/* rotate
 */
 /* underline a text with padding and margin
 */
 /* make cursor to be pointer
 */
-/* line 41, mixins.scss */
+/* line 49, mixins.scss */
 .j-toggle {
   cursor: pointer;
 }
 
-/* List, inline 
+/* list, inline 
 */
 /* make a column 
 */
 /* hide an element 
 */
-/* line 73, mixins.scss */
+/* line 80, mixins.scss */
 .hidden {
   display: none;
 }
 
-/* block element -- full size
+/* block element -- expand something to parent div's full size
 */

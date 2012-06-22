@@ -34,6 +34,10 @@ function load_post_details() {
 add_action('wp_ajax_load_post_details', 'load_post_details');
 
 
+
+// Product functions
+//
+
 // Display post thumbnails
 function post_thumbnails($post_id, $title) {
   $ret = "";
@@ -50,6 +54,9 @@ function post_thumbnails($post_id, $title) {
   
   return $ret;
 }
+// Adding featured image support for post
+add_theme_support( 'post-thumbnails' ); 
+
 
 // Get post attachments / images
 function post_attachments($post_id) {  
@@ -66,17 +73,8 @@ function post_attachments($post_id) {
 }
 
 
-// Get the responsive image
-function responsive_image($post_id) {
-  $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'large');
-  $medium_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'medium');
-  
-  $ret = "<noscript data-large='$large_image_url[0]' data-small='$medium_image_url[0]' data-alt='Koala'>";
-  $ret .= "<img src='Koala.jpg' alt='Koala' />";
-  $ret .= "</noscript>";
-  
-  return $ret;
-}
+// Other functions
+//
 
 
 // Determine what kind of content is displayed
@@ -105,12 +103,26 @@ function get_content_title() {
     $title = "Search for " . get_search_query();
   }
   
+  
   return "<h3 $hidden>$title</h3>";
 }
 
 
-// Adding featured image support for post
-add_theme_support( 'post-thumbnails' ); 
+// General functions
+//
+
+// Get the responsive image
+function responsive_image($post_id) {
+  $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'large');
+  $medium_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'medium');
+  
+  $ret = "<noscript data-large='$large_image_url[0]' data-small='$medium_image_url[0]' data-alt='Koala'>";
+  $ret .= "<img src='Koala.jpg' alt='Koala' />";
+  $ret .= "</noscript>";
+  
+  return $ret;
+}
+
 
 
 ?>

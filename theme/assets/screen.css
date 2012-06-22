@@ -110,36 +110,38 @@ h4 {
   font-variant: small-caps;
 }
 
-/* Set z-index
+/* invert color with background
+*/
+/* set z-index
 
 - parent must have set 'position'
 - this element must have set weight
 - http://www.tjkdesign.com/articles/z-index/teach_yourself_how_elements_stack.asp
 
 */
-/* Rotate
+/* rotate
 */
 /* underline a text with padding and margin
 */
 /* make cursor to be pointer
 */
-/* line 41, mixins.scss */
+/* line 49, mixins.scss */
 .j-toggle {
   cursor: pointer;
 }
 
-/* List, inline 
+/* list, inline 
 */
 /* make a column 
 */
 /* hide an element 
 */
-/* line 73, mixins.scss */
+/* line 80, mixins.scss */
 .hidden {
   display: none;
 }
 
-/* block element -- full size
+/* block element -- expand something to parent div's full size
 */
 /* line 3, header.scss */
 html body .container {
@@ -238,7 +240,7 @@ html body .container header nav ul#categories {
   display: block;
   margin: 0;
 }
-/* line 52, mixins.scss */
+/* line 59, mixins.scss */
 html body .container header nav ul#categories li {
   display: inline-block;
   list-style-type: none;
@@ -292,12 +294,61 @@ html body .container header aside ul li ul li {
 }
 
 /* line 4, index.scss */
-html body .container #content.index {
-  position: static;
-  width: 100%;
+html body .container #sidebar {
+  width: 20%;
+  margin: 0 0 0 0;
   float: left;
 }
-/* line 14, index.scss */
+/* line 7, index.scss */
+html body .container #sidebar h3 {
+  display: none;
+}
+/* line 13, index.scss */
+html body .container #sidebar #switch-view li {
+  display: none;
+  margin-bottom: 0.625em;
+  padding-bottom: 0.625em;
+  border-bottom: 1px solid;
+}
+/* line 17, index.scss */
+html body .container #sidebar #switch-view li span {
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$value);
+  display: inline-block;
+  float: right;
+}
+/* line 22, index.scss */
+html body .container #sidebar #switch-view li.active {
+  display: block;
+  cursor: pointer;
+}
+/* line 28, index.scss */
+html body .container #sidebar #categories {
+  margin-top: 2.5em;
+}
+/* line 30, index.scss */
+html body .container #sidebar #categories li {
+  margin-bottom: 0.625em;
+  padding-bottom: 0.625em;
+  border-bottom: 1px solid;
+}
+/* line 33, index.scss */
+html body .container #sidebar #categories li.active {
+  color: white;
+  background: black;
+  padding-top: 0.625em;
+}
+/* line 39, index.scss */
+html body .container #content.index {
+  position: static;
+  width: 70%;
+  margin: 0 10% 0 0;
+  float: left;
+}
+/* line 49, index.scss */
 html body .container #content.index .entry .featured-image {
   cursor: pointer;
 }

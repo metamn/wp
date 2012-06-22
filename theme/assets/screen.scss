@@ -5,17 +5,19 @@
 
 @import "compass/reset";
 @import "compass/css3";
+
 @import "metrics";
+@import "theme";
+
 @import "typography";
-@import "mixins";
 @import "responsive";
+@import "mixins";
 
 @import "header";
 @import "index";
 @import "article";
 
 
-@import "theme";
 
 
 

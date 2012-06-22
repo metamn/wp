@@ -1,4 +1,4 @@
-<article <?php post_class(); ?>>
+<article <?php post_class('scroll'); ?>>
 	<header>
 		<h1>
 		  <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>" rel="bookmark">

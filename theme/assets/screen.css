@@ -134,14 +134,18 @@ h4 {
 */
 /* make a column 
 */
+/* box-shadow
+*/
+/* make image fit within container
+*/
 /* hide an element 
 */
-/* line 80, mixins.scss */
+/* line 97, mixins.scss */
 .hidden {
   display: none;
 }
 
-/* block element -- expand something to parent div's full size
+/* block element -- expand something full size inside a container
 */
 /* line 3, header.scss */
 html body .container {
@@ -327,7 +331,7 @@ html body .container #sidebar #switch-view li.active {
 }
 /* line 28, index.scss */
 html body .container #sidebar #categories {
-  margin-top: 2.5em;
+  margin-top: 12.5em;
 }
 /* line 30, index.scss */
 html body .container #sidebar #categories li {
@@ -351,4 +355,68 @@ html body .container #content.index {
 /* line 49, index.scss */
 html body .container #content.index .entry .featured-image {
   cursor: pointer;
+}
+
+/* line 2, article.scss */
+.index article.scroll {
+  height: 40em;
+  background: white;
+  box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
+  -webkit-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
+}
+/* line 6, article.scss */
+.index article.scroll header {
+  position: relative;
+  z-index: 1;
+  top: 33.6em;
+  background: #eee;
+  opacity: .7;
+}
+/* line 13, article.scss */
+.index article.scroll header h1 {
+  padding-left: 0.313em;
+}
+/* line 18, article.scss */
+.index article.scroll .entry {
+  position: relative;
+  top: -2em;
+}
+/* line 23, article.scss */
+.index article.scroll .entry .featured-image img {
+  max-width: 100%;
+  height: auto;
+}
+/* line 30, article.scss */
+.index article.scroll .entry .shopping {
+  position: relative;
+  top: -2.85em;
+  float: right;
+  margin-right: 0.625em;
+  z-index: 2;
+  background: #eee;
+  opacity: .7;
+}
+/* line 40, article.scss */
+.index article.scroll .entry .excerpt {
+  position: relative;
+  top: -1.25em;
+  padding-left: 0.625em;
+}
+/* line 51, article.scss */
+.index .product-scroller {
+  font-size: 4em;
+  position: relative;
+  top: -6em;
+  cursor: pointer;
+  width: 10%;
+  height: 0;
+}
+/* line 59, article.scss */
+.index #product-scroll-left {
+  left: 1%;
+}
+/* line 62, article.scss */
+.index #product-scroll-right {
+  left: 96%;
 }

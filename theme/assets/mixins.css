@@ -22,12 +22,16 @@
 */
 /* make a column 
 */
+/* box-shadow
+*/
+/* make image fit within container
+*/
 /* hide an element 
 */
-/* line 80, mixins.scss */
+/* line 97, mixins.scss */
 .hidden {
   display: none;
 }
 
-/* block element -- expand something to parent div's full size
+/* block element -- expand something full size inside a container
 */

@@ -72,6 +72,23 @@
 }
 
 
+/* box-shadow
+*/
+
+@mixin box-shadow {
+  background: $background;
+  box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
+  -webkit-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
+}
+
+/* make image fit within container
+*/
+@mixin image-full-width {
+  max-width: 100%;
+  height: auto;
+}
+
 /* hide an element 
 */
 @mixin hidden {
@@ -82,7 +99,7 @@
 }
 
 
-/* block element -- expand something to parent div's full size
+/* block element -- expand something full size inside a container
 */
 @mixin block {
   width: 100%;

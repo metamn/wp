@@ -310,7 +310,7 @@ html body .container #shopping-info {
   display: none;
 }
 /* line 8, index.scss */
-html body .container #product-info {
+html body .container #product-info.scroll {
   width: 20%;
   margin: 0 0 0 0;
   float: left;
@@ -319,11 +319,11 @@ html body .container #product-info {
   display: none;
 }
 /* line 14, index.scss */
-html body .container #product-info h3 {
+html body .container #product-info.scroll h3 {
   display: none;
 }
 /* line 17, index.scss */
-html body .container #product-info .close {
+html body .container #product-info.scroll .close {
   float: right;
   color: white;
   background: black;
@@ -331,13 +331,13 @@ html body .container #product-info .close {
   padding: 0 0.313em;
 }
 /* line 23, index.scss */
-html body .container #product-info .thumbs {
+html body .container #product-info.scroll .thumbs {
   width: 100%;
   float: left;
   margin-bottom: 2.5em;
 }
 /* line 27, index.scss */
-html body .container #product-info .thumbs .item {
+html body .container #product-info.scroll .thumbs .item {
   width: 100px;
   height: 100px;
   float: left;
@@ -345,7 +345,7 @@ html body .container #product-info .thumbs .item {
   border: 1px solid;
 }
 /* line 19, mixins.scss */
-html body .container #product-info .body h3 {
+html body .container #product-info.scroll .body h3 {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
@@ -353,27 +353,83 @@ html body .container #product-info .body h3 {
   display: block;
 }
 /* line 24, mixins.scss */
-html body .container #product-info .body .pane {
+html body .container #product-info.scroll .body .pane {
   display: none;
 }
-/* line 37, index.scss */
+/* line 38, index.scss */
+html body .container #product-info.with-icons {
+  width: 56.6%;
+  margin: 0 0 0 0;
+  float: left;
+  height: 31em;
+  position: relative;
+  top: -46em;
+  float: right;
+  z-index: 2;
+  background: white;
+  display: none;
+}
+/* line 48, index.scss */
+html body .container #product-info.with-icons h3 {
+  display: none;
+}
+/* line 51, index.scss */
+html body .container #product-info.with-icons .close {
+  float: right;
+  color: white;
+  background: black;
+  cursor: pointer;
+  padding: 0 0.313em;
+}
+/* line 57, index.scss */
+html body .container #product-info.with-icons .thumbs {
+  width: 100%;
+  float: left;
+  margin-bottom: 2.5em;
+  margin: 1.25em;
+}
+/* line 62, index.scss */
+html body .container #product-info.with-icons .thumbs .item {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 0 0.313em 0.625em 0;
+  border: 1px solid;
+}
+/* line 67, index.scss */
+html body .container #product-info.with-icons .body {
+  margin: 1.25em;
+}
+/* line 19, mixins.scss */
+html body .container #product-info.with-icons .body h3 {
+  margin-bottom: 0.625em;
+  padding-bottom: 0.625em;
+  border-bottom: 1px solid;
+  cursor: pointer;
+  display: block;
+}
+/* line 24, mixins.scss */
+html body .container #product-info.with-icons .body .pane {
+  display: none;
+}
+/* line 74, index.scss */
 html body .container #sidebar {
   width: 20%;
   margin: 0 0 0 0;
   float: left;
 }
-/* line 40, index.scss */
+/* line 77, index.scss */
 html body .container #sidebar h3 {
   display: none;
 }
-/* line 45, index.scss */
+/* line 82, index.scss */
 html body .container #sidebar #switch-view li {
   display: none;
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
 }
-/* line 49, index.scss */
+/* line 86, index.scss */
 html body .container #sidebar #switch-view li span {
   -moz-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
@@ -383,43 +439,43 @@ html body .container #sidebar #switch-view li span {
   display: inline-block;
   float: right;
 }
-/* line 54, index.scss */
+/* line 91, index.scss */
 html body .container #sidebar #switch-view li.active {
   display: block;
   cursor: pointer;
 }
-/* line 60, index.scss */
+/* line 97, index.scss */
 html body .container #sidebar #categories {
   margin-top: 12.5em;
 }
-/* line 62, index.scss */
+/* line 99, index.scss */
 html body .container #sidebar #categories li {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
 }
-/* line 65, index.scss */
+/* line 102, index.scss */
 html body .container #sidebar #categories li.active {
   color: white;
   background: black;
   padding-top: 0.625em;
 }
-/* line 72, index.scss */
+/* line 109, index.scss */
 html body .container #content {
   position: static;
   width: 70%;
   margin: 0 10% 0 0;
   float: left;
 }
-/* line 77, index.scss */
+/* line 114, index.scss */
 html body .container #content .entry .featured-image {
   cursor: pointer;
 }
-/* line 81, index.scss */
+/* line 118, index.scss */
 html body .container #content .entry .thumbs {
   display: none;
 }
-/* line 85, index.scss */
+/* line 122, index.scss */
 html body .container #content .entry .body {
   display: none;
 }
@@ -497,34 +553,35 @@ html body.single .container #sidebar {
 /* line 68, article.scss */
 html body .container #content article.with-icons {
   width: 60%;
-  margin-right: 5%;
+  height: 31em;
+  margin-right: 2%;
   float: left;
   background: white;
   box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
   -moz-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
   -webkit-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
 }
-/* line 75, article.scss */
+/* line 76, article.scss */
 html body .container #content article.with-icons header {
   position: relative;
   z-index: 1;
-  top: 23.6em;
+  top: 24.6em;
   background: #eee;
   opacity: .7;
 }
-/* line 82, article.scss */
+/* line 83, article.scss */
 html body .container #content article.with-icons header h1 {
   padding-left: 0.313em;
 }
-/* line 87, article.scss */
+/* line 88, article.scss */
 html body .container #content article.with-icons .entry {
   position: relative;
-  top: -2em;
+  top: -6.4em;
 }
 /* line 95, article.scss */
 html body .container #content article.with-icons .entry .shopping {
   position: relative;
-  top: 0em;
+  top: 6em;
   float: right;
   margin-right: 0.625em;
   z-index: 2;
@@ -534,34 +591,40 @@ html body .container #content article.with-icons .entry .shopping {
 /* line 105, article.scss */
 html body .container #content article.with-icons .entry .excerpt {
   position: relative;
-  top: 0.625em;
+  top: 5em;
   padding-left: 0.625em;
 }
 /* line 115, article.scss */
 html body .container #content article.with-icons.not-first {
-  width: 10%;
+  width: 15%;
   height: auto;
   float: left;
   padding: 1%;
+  margin: 0 2% 5% 0;
 }
-/* line 121, article.scss */
+/* line 122, article.scss */
 html body .container #content article.with-icons.not-first header {
   display: none;
 }
-/* line 124, article.scss */
+/* line 125, article.scss */
 html body .container #content article.with-icons.not-first .entry {
   top: 0;
 }
-/* line 127, article.scss */
+/* line 128, article.scss */
 html body .container #content article.with-icons.not-first .entry .shopping {
   display: none;
 }
-/* line 130, article.scss */
+/* line 131, article.scss */
 html body .container #content article.with-icons.not-first .entry .excerpt {
   display: none;
 }
-/* line 137, article.scss */
+/* line 136, article.scss */
+html body .container #content article.with-icons.odd {
+  margin-right: 0;
+}
+/* line 141, article.scss */
 html body .container #content .product-scroller {
+  display: none;
   font-size: 4em;
   position: relative;
   top: -6em;
@@ -569,17 +632,17 @@ html body .container #content .product-scroller {
   width: 10%;
   height: 0;
 }
-/* line 145, article.scss */
+/* line 150, article.scss */
 html body .container #content #product-scroll-left {
   left: 1%;
 }
-/* line 148, article.scss */
+/* line 153, article.scss */
 html body .container #content #product-scroll-right {
   left: 96%;
 }
 
 /* Scroll */
-/* line 162, article.scss */
+/* line 167, article.scss */
 html body .container #content article.scroll {
   height: 40em;
   background: white;
@@ -587,7 +650,7 @@ html body .container #content article.scroll {
   -moz-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
   -webkit-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
 }
-/* line 166, article.scss */
+/* line 171, article.scss */
 html body .container #content article.scroll header {
   position: relative;
   z-index: 1;
@@ -595,16 +658,16 @@ html body .container #content article.scroll header {
   background: #eee;
   opacity: .7;
 }
-/* line 173, article.scss */
+/* line 178, article.scss */
 html body .container #content article.scroll header h1 {
   padding-left: 0.313em;
 }
-/* line 178, article.scss */
+/* line 183, article.scss */
 html body .container #content article.scroll .entry {
   position: relative;
   top: -2em;
 }
-/* line 186, article.scss */
+/* line 191, article.scss */
 html body .container #content article.scroll .entry .shopping {
   position: relative;
   top: -2.85em;
@@ -614,17 +677,17 @@ html body .container #content article.scroll .entry .shopping {
   background: #eee;
   opacity: .7;
 }
-/* line 196, article.scss */
+/* line 201, article.scss */
 html body .container #content article.scroll .entry .excerpt {
   position: relative;
   top: -1.25em;
   padding-left: 0.625em;
 }
-/* line 206, article.scss */
+/* line 211, article.scss */
 html body .container #content article.scroll.not-first {
   display: none;
 }
-/* line 210, article.scss */
+/* line 215, article.scss */
 html body .container #content .product-scroller {
   font-size: 4em;
   position: relative;
@@ -633,11 +696,11 @@ html body .container #content .product-scroller {
   width: 10%;
   height: 0;
 }
-/* line 218, article.scss */
+/* line 223, article.scss */
 html body .container #content #product-scroll-left {
   left: 1%;
 }
-/* line 221, article.scss */
+/* line 226, article.scss */
 html body .container #content #product-scroll-right {
   left: 96%;
 }

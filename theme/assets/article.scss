@@ -67,7 +67,8 @@ html {
       #content { 
         article.with-icons {
           width: 60%;
-          margin-right: 5%;
+          height: 31em;
+          margin-right: 2%;
           float: left;
           
           @include box-shadow;
@@ -75,7 +76,7 @@ html {
           header {
             position: relative;
             z-index: 1;
-            top: 23.6em;
+            top: 24.6em;
             background: #eee;
             opacity: .7;
             
@@ -86,15 +87,14 @@ html {
           
           .entry {
             position: relative;
-            top: -2em;
-            
+            top: -6.4em;
             
             .thumbs {
             
             }
             .shopping {
               position: relative;
-              top: 0em;
+              top: 6em;
               float: right;
               margin-right: $pad/2;
               z-index: 2;
@@ -104,7 +104,7 @@ html {
             }
             .excerpt {
               position: relative;
-              top: $pad/2;
+              top: $pad*4;
               padding-left: $pad/2;
             }
             .body {
@@ -113,10 +113,11 @@ html {
           }
         }
         article.with-icons.not-first {
-          width: 10%;
+          width: 15%;
           height: auto;
           float: left;
           padding: 1%;
+          margin: 0 2% 5% 0;
           
           header {
             display: none;
@@ -132,9 +133,13 @@ html {
             }
           }
         }
+        article.with-icons.odd {
+          margin-right: 0;
+        }
         
           
         .product-scroller {
+          display: none;
           font-size: 4em;  
           position: relative;
           top: -6em;

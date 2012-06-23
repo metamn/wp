@@ -9,7 +9,10 @@
   // See if this is the first product in a list or not
   if ($count > 1) {
     $klass .= ' not-first';
-  }
+    if ($count % 2 == 1 ) {
+      $klass .= ' odd';
+    }
+  }  
 ?>
 
 

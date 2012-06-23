@@ -43,7 +43,7 @@
   </ul>
 </nav>
 
-<aside id="product-info">
+<aside id="product-info" class="with-icons">
   <h3>Product info</h3>
   <span class="close"> x </span>
   <div class="thumbs"></div>

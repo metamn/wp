@@ -3,7 +3,7 @@
   if (is_single()) {
     $klass = '';
   } else {
-    $klass = 'with-icons';
+    $klass = $view;
   } 
   
   // See if this is the first product in a list or not
@@ -13,6 +13,9 @@
       $klass .= ' odd';
     }
   }  
+  
+  // Identify posts with a number / counter
+  $klass .= " count-$count";
 ?>
 
 

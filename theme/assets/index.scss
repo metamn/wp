@@ -37,9 +37,9 @@ html {
       
       #product-info.with-icons {
         @include col(56.6%, 0, 0);
-        height: 31em;
+        height: 40em;
         position: relative;
-        top: -46em;
+        top: -34em;
         float: right;
         z-index: 2;
         background: white;                
@@ -54,10 +54,10 @@ html {
           @include pointer;
           padding: 0 $pad/4;
         }
-        .thumbs {
-          @include block;
-          margin-bottom: 2.5em;
-          margin: 1.25em;
+        .thumbs {          
+          width: 98%;
+          float: left;
+          margin: 0 1% 2.5em;
           
           .item {
             @include thumbnail;
@@ -65,8 +65,10 @@ html {
         }
         
         .body {
+          width: 98%;
+          margin: 0 1%;
+          float: left;
           @include article-body;
-          margin: 1.25em;
         }
       }
       

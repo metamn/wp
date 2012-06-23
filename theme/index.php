@@ -1,5 +1,9 @@
 <?php get_header(); ?>
 
+<?php 
+  $view = 'scroll';
+?>
+
 <section id="content"> 
   <header>
     <?php echo get_content_title(); ?>
@@ -9,8 +13,8 @@
       <?php include 'article.php'; ?>                
 	  <?php $count++; endwhile; ?>
 	  
-	  <div id="product-scroll-left" class="product-scroller">&lsaquo;</div>
-    <div id="product-scroll-right" class="product-scroller">&rsaquo;</div>
+	  <div id="product-scroll-left" class="<?php echo $view ?> product-scroller">&lsaquo;</div>
+    <div id="product-scroll-right" class="<?php echo $view ?> product-scroller">&rsaquo;</div>
 	  
     <?php } else { ?>
     	<article class="not-found">
@@ -43,7 +47,7 @@
   </ul>
 </nav>
 
-<aside id="product-info" class="with-icons">
+<aside id="product-info" class="<?php echo $view ?>">
   <h3>Product info</h3>
   <span class="close"> x </span>
   <div class="thumbs"></div>

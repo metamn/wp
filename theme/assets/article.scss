@@ -136,22 +136,25 @@ html {
         article.with-icons.odd {
           margin-right: 0;
         }
+        article.with-icons.count-8,
+        article.with-icons.count-9,
+        article.with-icons.count-10 {
+          @include hidden;
+        }
         
           
-        .product-scroller {
-          display: none;
+        .product-scroller.with-icons {
           font-size: 4em;  
           position: relative;
-          top: -6em;
           cursor: pointer;
           width: 10%;
           height: 0;
         }
-        #product-scroll-left {
-          left: 1%;
+        #product-scroll-left.with-icons {
+          left: 68%;
         }
-        #product-scroll-right {
-          left: 96%;
+        #product-scroll-right.with-icons {
+          left: 88%;
         }
       }
     }
@@ -212,7 +215,7 @@ html {
           display: none;
         }
 
-        .product-scroller {
+        .product-scroller.scroll {
           font-size: 4em;  
           position: relative;
           top: -6em;
@@ -220,10 +223,10 @@ html {
           width: 10%;
           height: 0;
         }
-        #product-scroll-left {
+        #product-scroll-left.scroll {
           left: 1%;
         }
-        #product-scroll-right {
+        #product-scroll-right.scroll {
           left: 96%;
         }
       }

@@ -4,11 +4,10 @@
   <header>
     <?php echo get_content_title(); ?>
   </header>
-  <?php if ( have_posts() ) { ?>          
+  <?php if ( have_posts() ) { $count = 1; ?>          
     <?php while ( have_posts() ) : the_post(); ?>		    
-      <?php include 'article.php'; ?> 
-      <?php break; ?>         
-	  <?php endwhile; ?>
+      <?php include 'article.php'; ?>                
+	  <?php $count++; endwhile; ?>
 	  
 	  <div id="product-scroll-left" class="product-scroller">&lsaquo;</div>
     <div id="product-scroll-right" class="product-scroller">&rsaquo;</div>

@@ -53,16 +53,11 @@ jQuery(document).ready(function() {
   });
   
   
-  // Sidebar
-  //
-  
-  
   
   
   
   // Header
   //
-
 
   // Show price search in header
   jQuery("header #search #s").click(function() {

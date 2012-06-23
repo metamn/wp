@@ -133,7 +133,7 @@ h4 {
 */
 /* make cursor to be pointer
 */
-/* line 79, mixins.scss */
+/* line 80, mixins.scss */
 .j-toggle {
   cursor: pointer;
 }
@@ -148,7 +148,7 @@ h4 {
 */
 /* hide an element 
 */
-/* line 127, mixins.scss */
+/* line 128, mixins.scss */
 .hidden {
   display: none;
 }
@@ -252,7 +252,7 @@ html body .container header nav ul#categories {
   display: block;
   margin: 0;
 }
-/* line 89, mixins.scss */
+/* line 90, mixins.scss */
 html body .container header nav ul#categories li {
   display: inline-block;
   list-style-type: none;
@@ -350,8 +350,9 @@ html body .container #product-info .body h3 {
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
   cursor: pointer;
+  display: block;
 }
-/* line 23, mixins.scss */
+/* line 24, mixins.scss */
 html body .container #product-info .body .pane {
   display: none;
 }
@@ -468,8 +469,9 @@ html body.single .container #content article .entry .body h3 {
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
   cursor: pointer;
+  display: block;
 }
-/* line 23, mixins.scss */
+/* line 24, mixins.scss */
 html body.single .container #content article .entry .body .pane {
   display: none;
 }
@@ -491,7 +493,93 @@ html body.single .container #sidebar {
 
 /* Article on index page
 */
-/* line 66, article.scss */
+/* With icons */
+/* line 68, article.scss */
+html body .container #content article.with-icons {
+  width: 60%;
+  margin-right: 5%;
+  float: left;
+  background: white;
+  box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
+  -webkit-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
+}
+/* line 75, article.scss */
+html body .container #content article.with-icons header {
+  position: relative;
+  z-index: 1;
+  top: 23.6em;
+  background: #eee;
+  opacity: .7;
+}
+/* line 82, article.scss */
+html body .container #content article.with-icons header h1 {
+  padding-left: 0.313em;
+}
+/* line 87, article.scss */
+html body .container #content article.with-icons .entry {
+  position: relative;
+  top: -2em;
+}
+/* line 95, article.scss */
+html body .container #content article.with-icons .entry .shopping {
+  position: relative;
+  top: 0em;
+  float: right;
+  margin-right: 0.625em;
+  z-index: 2;
+  background: #eee;
+  opacity: .7;
+}
+/* line 105, article.scss */
+html body .container #content article.with-icons .entry .excerpt {
+  position: relative;
+  top: 0.625em;
+  padding-left: 0.625em;
+}
+/* line 115, article.scss */
+html body .container #content article.with-icons.not-first {
+  width: 10%;
+  height: auto;
+  float: left;
+  padding: 1%;
+}
+/* line 121, article.scss */
+html body .container #content article.with-icons.not-first header {
+  display: none;
+}
+/* line 124, article.scss */
+html body .container #content article.with-icons.not-first .entry {
+  top: 0;
+}
+/* line 127, article.scss */
+html body .container #content article.with-icons.not-first .entry .shopping {
+  display: none;
+}
+/* line 130, article.scss */
+html body .container #content article.with-icons.not-first .entry .excerpt {
+  display: none;
+}
+/* line 137, article.scss */
+html body .container #content .product-scroller {
+  font-size: 4em;
+  position: relative;
+  top: -6em;
+  cursor: pointer;
+  width: 10%;
+  height: 0;
+}
+/* line 145, article.scss */
+html body .container #content #product-scroll-left {
+  left: 1%;
+}
+/* line 148, article.scss */
+html body .container #content #product-scroll-right {
+  left: 96%;
+}
+
+/* Scroll */
+/* line 162, article.scss */
 html body .container #content article.scroll {
   height: 40em;
   background: white;
@@ -499,7 +587,7 @@ html body .container #content article.scroll {
   -moz-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
   -webkit-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
 }
-/* line 70, article.scss */
+/* line 166, article.scss */
 html body .container #content article.scroll header {
   position: relative;
   z-index: 1;
@@ -507,16 +595,16 @@ html body .container #content article.scroll header {
   background: #eee;
   opacity: .7;
 }
-/* line 77, article.scss */
+/* line 173, article.scss */
 html body .container #content article.scroll header h1 {
   padding-left: 0.313em;
 }
-/* line 82, article.scss */
+/* line 178, article.scss */
 html body .container #content article.scroll .entry {
   position: relative;
   top: -2em;
 }
-/* line 90, article.scss */
+/* line 186, article.scss */
 html body .container #content article.scroll .entry .shopping {
   position: relative;
   top: -2.85em;
@@ -526,13 +614,17 @@ html body .container #content article.scroll .entry .shopping {
   background: #eee;
   opacity: .7;
 }
-/* line 100, article.scss */
+/* line 196, article.scss */
 html body .container #content article.scroll .entry .excerpt {
   position: relative;
   top: -1.25em;
   padding-left: 0.625em;
 }
-/* line 111, article.scss */
+/* line 206, article.scss */
+html body .container #content article.scroll.not-first {
+  display: none;
+}
+/* line 210, article.scss */
 html body .container #content .product-scroller {
   font-size: 4em;
   position: relative;
@@ -541,11 +633,11 @@ html body .container #content .product-scroller {
   width: 10%;
   height: 0;
 }
-/* line 119, article.scss */
+/* line 218, article.scss */
 html body .container #content #product-scroll-left {
   left: 1%;
 }
-/* line 122, article.scss */
+/* line 221, article.scss */
 html body .container #content #product-scroll-right {
   left: 96%;
 }

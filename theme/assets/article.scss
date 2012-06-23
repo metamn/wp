@@ -59,6 +59,102 @@ html {
 /* Article on index page
 */
 
+
+/* With icons */
+html {
+  body {
+    .container {
+      #content { 
+        article.with-icons {
+          width: 60%;
+          margin-right: 5%;
+          float: left;
+          
+          @include box-shadow;
+          
+          header {
+            position: relative;
+            z-index: 1;
+            top: 23.6em;
+            background: #eee;
+            opacity: .7;
+            
+            h1 {
+              padding-left: $pad/4;
+            }
+          }
+          
+          .entry {
+            position: relative;
+            top: -2em;
+            
+            
+            .thumbs {
+            
+            }
+            .shopping {
+              position: relative;
+              top: 0em;
+              float: right;
+              margin-right: $pad/2;
+              z-index: 2;
+              
+              background: #eee;
+              opacity: .7;
+            }
+            .excerpt {
+              position: relative;
+              top: $pad/2;
+              padding-left: $pad/2;
+            }
+            .body {
+            
+            }
+          }
+        }
+        article.with-icons.not-first {
+          width: 10%;
+          height: auto;
+          float: left;
+          padding: 1%;
+          
+          header {
+            display: none;
+          }
+          .entry {
+            top: 0;
+            
+            .shopping {
+              display: none;
+            }
+            .excerpt {
+              display: none;
+            }
+          }
+        }
+        
+          
+        .product-scroller {
+          font-size: 4em;  
+          position: relative;
+          top: -6em;
+          cursor: pointer;
+          width: 10%;
+          height: 0;
+        }
+        #product-scroll-left {
+          left: 1%;
+        }
+        #product-scroll-right {
+          left: 96%;
+        }
+      }
+    }
+  }
+}   
+
+
+/* Scroll */
 html {
   body {
     .container {
@@ -106,6 +202,9 @@ html {
             
             }
           }
+        }
+        article.scroll.not-first {
+          display: none;
         }
 
         .product-scroller {

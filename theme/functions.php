@@ -41,7 +41,7 @@ add_action( 'wp_ajax_nopriv_load_post_details', 'load_post_details' );
 //
 
 // Display post thumbnails
-function post_thumbnails($post_id, $title) {
+function post_thumbnails($post_id, $title, $only_first = false) {
   $ret = "";
   
   $images = post_attachments($post_id);
@@ -52,6 +52,7 @@ function post_thumbnails($post_id, $title) {
     $ret .= '<div class="item">';
     $ret .= "<img src='$thumb[0]' rev='$large[0]' title='$title' alt='$title'/>";
     $ret .= '</div>';
+    if ($only_first) { break; }
   }
   
   return $ret;

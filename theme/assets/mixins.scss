@@ -19,6 +19,7 @@
   h3 {
     @include text-underlined;
     @include pointer;
+    display: block;
   }
   .pane {
     display: none;

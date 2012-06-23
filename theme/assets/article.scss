@@ -60,6 +60,71 @@ html {
 */
 
 
+/* Blog */
+html {
+  body {
+    .container {
+      #content { 
+        article.blog {
+          width: 60%;
+          height: 31em;
+          margin: 0 0 5em;
+          float: left;
+          
+          @include box-shadow;
+          
+          header {
+            position: relative;
+            left: 105%;
+            width: 70%;
+            float: left;
+            
+            h1 {
+              padding-left: $pad/4;
+            }
+          }
+          
+          .entry {
+            .featured-image {
+              text-align: center;
+              
+              img {
+                max-height: 20em;
+              }
+            }
+            .thumbs {
+            
+            }
+            .shopping {
+              position: relative;
+              left: 105%;
+              top: -$pad*3;
+              width: 70%;
+              float: left;
+            }
+            .excerpt {
+              position: relative;
+              left: 105%;
+              top: -25em;
+              width: 70%;
+              float: left;
+            }
+            .body {
+            
+            }
+          }
+        }
+          
+        .product-scroller.blog {
+          @include hidden;
+        }        
+      }
+    }
+  }
+}   
+
+
+
 /* With icons */
 html {
   body {
@@ -112,6 +177,7 @@ html {
             }
           }
         }
+        
         article.with-icons.not-first {
           width: 15%;
           height: auto;

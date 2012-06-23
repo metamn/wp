@@ -72,6 +72,43 @@ html {
         }
       }
       
+      #product-info.blog {
+        @include col(56.6%, 0, 0);
+        height: 40em;
+        position: relative;
+        top: -34em;
+        float: right;
+        z-index: 2;
+        background: white;                
+        @include hidden;
+        
+        h3 {
+          @include hidden;
+        }   
+        .close {
+          float: right;
+          @include color-inverted;
+          @include pointer;
+          padding: 0 $pad/4;
+        }
+        .thumbs {          
+          width: 98%;
+          float: left;
+          margin: 0 1% 2.5em;
+          
+          .item {
+            @include thumbnail;
+          }          
+        }
+        
+        .body {
+          width: 98%;
+          margin: 0 1%;
+          float: left;
+          @include article-body;
+        }
+      }
+      
       
       #sidebar {
         @include col(20%, 0, 0);
@@ -84,15 +121,17 @@ html {
           li {
             @include hidden;
             @include text-underlined;
-            
+            @include pointer;
+            span {
+              @include hidden;
+            }
+          }
+          li.active {
+            display: block !important;
             span {
               @include rotate(90deg, 1);
               float: right;
             }
-          }
-          li.active {
-            display: block;
-            @include pointer;
           }
         }
         

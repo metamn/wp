@@ -118,8 +118,9 @@ function get_content_title() {
 function responsive_image($post_id) {
   $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'large');
   $medium_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'medium');
+  $small_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'thumbnail');
   
-  $ret = "<noscript data-large='$large_image_url[0]' data-small='$medium_image_url[0]' data-alt='Koala'>";
+  $ret = "<noscript data-large='$large_image_url[0]' data-medium='$medium_image_url[0]' data-small='$small_image_url[0]' data-alt='Koala'>";
   $ret .= "<img src='Koala.jpg' alt='Koala' />";
   $ret .= "</noscript>";
   

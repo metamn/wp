@@ -413,25 +413,91 @@ html body .container #product-info.with-icons .body h3 {
 html body .container #product-info.with-icons .body .pane {
   display: none;
 }
-/* line 76, index.scss */
+/* line 75, index.scss */
+html body .container #product-info.blog {
+  width: 56.6%;
+  margin: 0 0 0 0;
+  float: left;
+  height: 40em;
+  position: relative;
+  top: -34em;
+  float: right;
+  z-index: 2;
+  background: white;
+  display: none;
+}
+/* line 85, index.scss */
+html body .container #product-info.blog h3 {
+  display: none;
+}
+/* line 88, index.scss */
+html body .container #product-info.blog .close {
+  float: right;
+  color: white;
+  background: black;
+  cursor: pointer;
+  padding: 0 0.313em;
+}
+/* line 94, index.scss */
+html body .container #product-info.blog .thumbs {
+  width: 98%;
+  float: left;
+  margin: 0 1% 2.5em;
+}
+/* line 99, index.scss */
+html body .container #product-info.blog .thumbs .item {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 0 0.313em 0.625em 0;
+  border: 1px solid;
+}
+/* line 104, index.scss */
+html body .container #product-info.blog .body {
+  width: 98%;
+  margin: 0 1%;
+  float: left;
+}
+/* line 19, mixins.scss */
+html body .container #product-info.blog .body h3 {
+  margin-bottom: 0.625em;
+  padding-bottom: 0.625em;
+  border-bottom: 1px solid;
+  cursor: pointer;
+  display: block;
+}
+/* line 24, mixins.scss */
+html body .container #product-info.blog .body .pane {
+  display: none;
+}
+/* line 113, index.scss */
 html body .container #sidebar {
   width: 20%;
   margin: 0 0 0 0;
   float: left;
 }
-/* line 79, index.scss */
+/* line 116, index.scss */
 html body .container #sidebar h3 {
   display: none;
 }
-/* line 84, index.scss */
+/* line 121, index.scss */
 html body .container #sidebar #switch-view li {
   display: none;
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
+  cursor: pointer;
 }
-/* line 88, index.scss */
+/* line 125, index.scss */
 html body .container #sidebar #switch-view li span {
+  display: none;
+}
+/* line 129, index.scss */
+html body .container #sidebar #switch-view li.active {
+  display: block !important;
+}
+/* line 131, index.scss */
+html body .container #sidebar #switch-view li.active span {
   -moz-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   -o-transform: rotate(90deg);
@@ -440,43 +506,38 @@ html body .container #sidebar #switch-view li span {
   display: inline-block;
   float: right;
 }
-/* line 93, index.scss */
-html body .container #sidebar #switch-view li.active {
-  display: block;
-  cursor: pointer;
-}
-/* line 99, index.scss */
+/* line 138, index.scss */
 html body .container #sidebar #categories {
   margin-top: 12.5em;
 }
-/* line 101, index.scss */
+/* line 140, index.scss */
 html body .container #sidebar #categories li {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
 }
-/* line 104, index.scss */
+/* line 143, index.scss */
 html body .container #sidebar #categories li.active {
   color: white;
   background: black;
   padding-top: 0.625em;
 }
-/* line 111, index.scss */
+/* line 150, index.scss */
 html body .container #content {
   position: static;
   width: 70%;
   margin: 0 10% 0 0;
   float: left;
 }
-/* line 116, index.scss */
+/* line 155, index.scss */
 html body .container #content .entry .featured-image {
   cursor: pointer;
 }
-/* line 120, index.scss */
+/* line 159, index.scss */
 html body .container #content .entry .thumbs {
   display: none;
 }
-/* line 124, index.scss */
+/* line 163, index.scss */
 html body .container #content .entry .body {
   display: none;
 }
@@ -550,8 +611,60 @@ html body.single .container #sidebar {
 
 /* Article on index page
 */
-/* With icons */
+/* Blog */
 /* line 68, article.scss */
+html body .container #content article.blog {
+  width: 60%;
+  height: 31em;
+  margin: 0 0 5em;
+  float: left;
+  background: white;
+  box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
+  -webkit-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
+}
+/* line 76, article.scss */
+html body .container #content article.blog header {
+  position: relative;
+  left: 105%;
+  width: 70%;
+  float: left;
+}
+/* line 82, article.scss */
+html body .container #content article.blog header h1 {
+  padding-left: 0.313em;
+}
+/* line 88, article.scss */
+html body .container #content article.blog .entry .featured-image {
+  text-align: center;
+}
+/* line 91, article.scss */
+html body .container #content article.blog .entry .featured-image img {
+  max-height: 20em;
+}
+/* line 98, article.scss */
+html body .container #content article.blog .entry .shopping {
+  position: relative;
+  left: 105%;
+  top: -3.75em;
+  width: 70%;
+  float: left;
+}
+/* line 105, article.scss */
+html body .container #content article.blog .entry .excerpt {
+  position: relative;
+  left: 105%;
+  top: -25em;
+  width: 70%;
+  float: left;
+}
+/* line 118, article.scss */
+html body .container #content .product-scroller.blog {
+  display: none;
+}
+
+/* With icons */
+/* line 133, article.scss */
 html body .container #content article.with-icons {
   width: 60%;
   height: 31em;
@@ -562,7 +675,7 @@ html body .container #content article.with-icons {
   -moz-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
   -webkit-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
 }
-/* line 76, article.scss */
+/* line 141, article.scss */
 html body .container #content article.with-icons header {
   position: relative;
   z-index: 1;
@@ -570,16 +683,16 @@ html body .container #content article.with-icons header {
   background: #eee;
   opacity: .7;
 }
-/* line 83, article.scss */
+/* line 148, article.scss */
 html body .container #content article.with-icons header h1 {
   padding-left: 0.313em;
 }
-/* line 88, article.scss */
+/* line 153, article.scss */
 html body .container #content article.with-icons .entry {
   position: relative;
   top: -6.4em;
 }
-/* line 95, article.scss */
+/* line 160, article.scss */
 html body .container #content article.with-icons .entry .shopping {
   position: relative;
   top: 6em;
@@ -589,13 +702,13 @@ html body .container #content article.with-icons .entry .shopping {
   background: #eee;
   opacity: .7;
 }
-/* line 105, article.scss */
+/* line 170, article.scss */
 html body .container #content article.with-icons .entry .excerpt {
   position: relative;
   top: 5em;
   padding-left: 0.625em;
 }
-/* line 115, article.scss */
+/* line 181, article.scss */
 html body .container #content article.with-icons.not-first {
   width: 15%;
   height: auto;
@@ -603,33 +716,33 @@ html body .container #content article.with-icons.not-first {
   padding: 1%;
   margin: 0 2% 5% 0;
 }
-/* line 122, article.scss */
+/* line 188, article.scss */
 html body .container #content article.with-icons.not-first header {
   display: none;
 }
-/* line 125, article.scss */
+/* line 191, article.scss */
 html body .container #content article.with-icons.not-first .entry {
   top: 0;
 }
-/* line 128, article.scss */
+/* line 194, article.scss */
 html body .container #content article.with-icons.not-first .entry .shopping {
   display: none;
 }
-/* line 131, article.scss */
+/* line 197, article.scss */
 html body .container #content article.with-icons.not-first .entry .excerpt {
   display: none;
 }
-/* line 136, article.scss */
+/* line 202, article.scss */
 html body .container #content article.with-icons.odd {
   margin-right: 0;
 }
-/* line 141, article.scss */
+/* line 207, article.scss */
 html body .container #content article.with-icons.count-8,
 html body .container #content article.with-icons.count-9,
 html body .container #content article.with-icons.count-10 {
   display: none;
 }
-/* line 146, article.scss */
+/* line 212, article.scss */
 html body .container #content .product-scroller.with-icons {
   font-size: 4em;
   position: relative;
@@ -637,17 +750,17 @@ html body .container #content .product-scroller.with-icons {
   width: 10%;
   height: 0;
 }
-/* line 153, article.scss */
+/* line 219, article.scss */
 html body .container #content #product-scroll-left.with-icons {
   left: 68%;
 }
-/* line 156, article.scss */
+/* line 222, article.scss */
 html body .container #content #product-scroll-right.with-icons {
   left: 88%;
 }
 
 /* Scroll */
-/* line 170, article.scss */
+/* line 236, article.scss */
 html body .container #content article.scroll {
   height: 40em;
   background: white;
@@ -655,7 +768,7 @@ html body .container #content article.scroll {
   -moz-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
   -webkit-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
 }
-/* line 174, article.scss */
+/* line 240, article.scss */
 html body .container #content article.scroll header {
   position: relative;
   z-index: 1;
@@ -663,16 +776,16 @@ html body .container #content article.scroll header {
   background: #eee;
   opacity: .7;
 }
-/* line 181, article.scss */
+/* line 247, article.scss */
 html body .container #content article.scroll header h1 {
   padding-left: 0.313em;
 }
-/* line 186, article.scss */
+/* line 252, article.scss */
 html body .container #content article.scroll .entry {
   position: relative;
   top: -2em;
 }
-/* line 194, article.scss */
+/* line 260, article.scss */
 html body .container #content article.scroll .entry .shopping {
   position: relative;
   top: -2.85em;
@@ -682,17 +795,17 @@ html body .container #content article.scroll .entry .shopping {
   background: #eee;
   opacity: .7;
 }
-/* line 204, article.scss */
+/* line 270, article.scss */
 html body .container #content article.scroll .entry .excerpt {
   position: relative;
   top: -1.25em;
   padding-left: 0.625em;
 }
-/* line 214, article.scss */
+/* line 280, article.scss */
 html body .container #content article.scroll.not-first {
   display: none;
 }
-/* line 218, article.scss */
+/* line 284, article.scss */
 html body .container #content .product-scroller.scroll {
   font-size: 4em;
   position: relative;
@@ -701,11 +814,11 @@ html body .container #content .product-scroller.scroll {
   width: 10%;
   height: 0;
 }
-/* line 226, article.scss */
+/* line 292, article.scss */
 html body .container #content #product-scroll-left.scroll {
   left: 1%;
 }
-/* line 229, article.scss */
+/* line 295, article.scss */
 html body .container #content #product-scroll-right.scroll {
   left: 96%;
 }

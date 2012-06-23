@@ -53,6 +53,24 @@ jQuery(document).ready(function() {
   });
   
   
+  // Switch display type
+  jQuery("#switch-view li").click(function() {
+    if (jQuery(this).hasClass('active')) {
+      jQuery("#switch-view li").slideDown();
+    } else {
+      jQuery("#switch-view li").removeClass('active');
+      jQuery("#switch-view li").hide();
+      jQuery(this).addClass('active');
+      
+      var neu = jQuery(this).attr("data-id");
+      if (neu == 'blog') {
+        //jQuery("#content article .entry .featured-image").
+      }
+      jQuery("#content article, #content .product-scroller, #product-info").removeClass('scroll with-icons matrix blog');
+      jQuery("#content article, #content .product-scroller, #product-info").addClass(neu);
+    }   
+  });
+ 
   
   
   

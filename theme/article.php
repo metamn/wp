@@ -29,12 +29,7 @@
 	</header>
 	<div class="entry">	    
     <div class="featured-image" data-id="<?php echo $post->ID ?>" data-nonce="<?php echo wp_create_nonce('load-post-details') ?>">
-      <?php 
-        if ($count > 1) {
-          echo post_thumbnails($post->ID, $post->post_title, true);
-        } else {
-          echo responsive_image($post->ID);   
-        } ?>
+      <?php echo responsive_image($post->ID); ?>
     </div>	  
     <div class="thumbs">
       <?php if (is_single()) { echo post_thumbnails($post->ID, $post->post_title); } ?>

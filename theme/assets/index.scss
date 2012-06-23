@@ -13,7 +13,7 @@ html {
         
         h3 {
           @include hidden;
-        } 
+        }   
         .close {
           float: right;
           @include color-inverted;

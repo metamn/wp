@@ -8,7 +8,7 @@ jQuery(document).ready(function() {
   var ajaxurl = jQuery("#ajax-url").attr("data-url");
   var ajaxloading = jQuery("#ajax-url").attr("data-loading");
   var ajaxspinner = "<img src='" + ajaxloading + "' alt='Incarcare date ...' />";
-  var ajaxerror = "Eroare incarcare date de pe server";
+  var ajaxerror = "Eroare incarcare date de pe server ... ";
   
   
   // Click on product image, index pages
@@ -38,8 +38,8 @@ jQuery(document).ready(function() {
           jQuery("#sidebar").slideUp();
           jQuery("#product-info").slideDown();
         } else {
-          jQuery("#product-info .body").html(ajaxerror);
-          jQuery("#product-info .thumbs").html(ajaxerror);        
+          jQuery("#product-info .body").html(ajaxerror + response.message);
+          jQuery("#product-info .thumbs").html(ajaxerror + response.message);        
         } 
       }
     );

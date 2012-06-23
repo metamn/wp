@@ -22,7 +22,8 @@ function load_post_details() {
   
   } else {
     $ret = array(
-      'success' => false
+      'success' => false,
+      'message' => 'Nonce error'
     );
   }
     
@@ -32,6 +33,7 @@ function load_post_details() {
   exit;
 }
 add_action('wp_ajax_load_post_details', 'load_post_details');
+add_action( 'wp_ajax_nopriv_load_post_details', 'load_post_details' );
 
 
 

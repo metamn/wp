@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php 
-  $view = 'icons';
+  $view = 'large';
 ?>
 
 <section id="content"> 

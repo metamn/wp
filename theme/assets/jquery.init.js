@@ -62,11 +62,8 @@ jQuery(document).ready(function() {
       jQuery("#switch-view li").hide();
       jQuery(this).addClass('active');
       
-      var neu = jQuery(this).attr("data-id");
-      if (neu == 'blog') {
-        //jQuery("#content article .entry .featured-image").
-      }
-      jQuery("#content article, #content .product-scroller, #product-info").removeClass('scroll with-icons matrix blog');
+      var neu = jQuery(this).attr("data-id");      
+      jQuery("#content article, #content .product-scroller, #product-info").removeClass('large mixed thumbs list');
       jQuery("#content article, #content .product-scroller, #product-info").addClass(neu);
     }   
   });

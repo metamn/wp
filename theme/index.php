@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php 
-  $view = 'blog';
+  $view = 'large';
 ?>
 
 <section id="content"> 
@@ -31,10 +31,10 @@
 <nav id="sidebar">
   <h3>Alte categorii</h3>  
   <ul id="switch-view">
-    <li data-id="scroll" class="active">Imagini mari <span>></span></li>
-    <li data-id="with-icons">Imagine mare cu icoane <span>></span></li>
-    <li data-id="matrix">Matrix <span>></span></li>
-    <li data-id="blog">Blog <span>></span></li>
+    <li data-id="large" class="active">Imagini mari <span>></span></li>
+    <li data-id="mixed">Imagine mare cu icoane <span>></span></li>
+    <li data-id="thumbs">Icoane <span>></span></li>
+    <li data-id="list">Lista <span>></span></li>
   </ul>
   <ul id="categories">
     <li class="active">Cadouri noi</li>

@@ -65,7 +65,7 @@ html {
   body {
     .container {
       #content { 
-        article.blog {
+        article.list {
           width: 60%;
           height: 31em;
           margin: 0 0 5em;
@@ -115,7 +115,7 @@ html {
           }
         }
           
-        .product-scroller.blog {
+        .product-scroller.list {
           @include hidden;
         }        
       }
@@ -125,12 +125,12 @@ html {
 
 
 
-/* With icons */
+/* Mixed */
 html {
   body {
     .container {
       #content { 
-        article.with-icons {
+        article.mixed {
           width: 60%;
           height: 31em;
           margin-right: 2%;
@@ -178,7 +178,7 @@ html {
           }
         }
         
-        article.with-icons.not-first {
+        article.mixed.not-first {
           width: 15%;
           height: auto;
           float: left;
@@ -199,27 +199,27 @@ html {
             }
           }
         }
-        article.with-icons.odd {
+        article.mixed.odd {
           margin-right: 0;
         }
-        article.with-icons.count-8,
-        article.with-icons.count-9,
-        article.with-icons.count-10 {
+        article.mixed.count-8,
+        article.mixed.count-9,
+        article.mixed.count-10 {
           @include hidden;
         }
         
           
-        .product-scroller.with-icons {
+        .product-scroller.mixed {
           font-size: 4em;  
           position: relative;
           cursor: pointer;
           width: 10%;
           height: 0;
         }
-        #product-scroll-left.with-icons {
+        #product-scroll-left.mixed {
           left: 68%;
         }
-        #product-scroll-right.with-icons {
+        #product-scroll-right.mixed {
           left: 88%;
         }
       }
@@ -228,12 +228,12 @@ html {
 }   
 
 
-/* Scroll */
+/* Large */
 html {
   body {
     .container {
       #content { 
-        article.scroll {
+        article.large {
           height: 40em;
           @include box-shadow;
           
@@ -277,11 +277,11 @@ html {
             }
           }
         }
-        article.scroll.not-first {
+        article.large.not-first {
           display: none;
         }
 
-        .product-scroller.scroll {
+        .product-scroller.large {
           font-size: 4em;  
           position: relative;
           top: -6em;
@@ -289,10 +289,10 @@ html {
           width: 10%;
           height: 0;
         }
-        #product-scroll-left.scroll {
+        #product-scroll-left.large {
           left: 1%;
         }
-        #product-scroll-right.scroll {
+        #product-scroll-right.large {
           left: 96%;
         }
       }

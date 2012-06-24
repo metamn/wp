@@ -56,11 +56,71 @@ html {
 
 
 
-/* Article on index page
+/* Articles on index page
 */
 
 
-/* Blog */
+/* Icons */
+html {
+  body {
+    .container {
+      #content { 
+        article.icons {
+          width: 20%;
+          height: 13em;
+          margin: 0 5% 20em 0;
+          float: left;
+          
+          @include box-shadow;
+          
+          header {
+            position: relative;
+            top: 13em;
+            h1 {
+              font-size: 100%;
+            }
+          }
+          
+          .entry {
+            position: relative;
+            top: -2em;
+          
+            .featured-image {
+              text-align: center;
+              
+              img {
+                max-height: 7em;
+              }
+            }
+            .thumbs {
+            
+            }
+            .shopping {
+              position: relative;
+              top: 8em;
+            }
+            .excerpt {
+              display: none;
+            }
+            .body {
+            
+            }
+          }
+        }
+          
+        .product-scroller.icons {
+          @include hidden;
+        }        
+      }
+    }
+  }
+}   
+
+
+
+
+
+/* List */
 html {
   body {
     .container {

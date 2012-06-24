@@ -11,7 +11,7 @@ jQuery(document).ready(function() {
   var ajaxerror = "Eroare incarcare date de pe server ... ";
   
   
-  // Click on product image, index pages
+  // Click on product image, index pages, to load product info
   jQuery(".home article .featured-image").click(function() {
   
     // Display Ajax loading spinner
@@ -20,7 +20,16 @@ jQuery(document).ready(function() {
     
     // Get query parameters
     var nonce = jQuery(this).attr("data-nonce");    
-    var id = jQuery(this).attr("data-id");    
+    var id = jQuery(this).attr("data-id"); 
+    
+    // If this is icon view switch to mixed view
+    if (jQuery(this).parent().parent().hasClass('icons')) {
+      jQuery("#content article, #content .product-scroller, #product-info").removeClass('large mixed icons list');
+      jQuery("#content article, #content .product-scroller, #product-info").addClass('mixed');
+      // Remember to switch back on close
+      jQuery("#product-info").attr("data-view", 'icons');
+    } 
+           
     
     // Do the ajax
     jQuery.post(
@@ -31,7 +40,7 @@ jQuery(document).ready(function() {
         'post_id' : id
       }, 
       function(response) {
-        if (response.success) {
+        if (response.success) {          
           jQuery("#product-info .body").html(response.body);
           jQuery("#product-info .thumbs").html(response.thumbs);
           
@@ -48,6 +57,13 @@ jQuery(document).ready(function() {
   
   // Close product info on index page
   jQuery("#product-info .close").click(function() {
+    // Switch back to icon view if necessary
+    var view = jQuery(this).parent().attr("data-view");
+    if (view != '') {
+      jQuery("#content article, #content .product-scroller, #product-info").removeClass('large mixed icons list');
+      jQuery("#content article, #content .product-scroller, #product-info").addClass(view);
+    }
+  
     jQuery("#product-info").slideUp();
     jQuery("#sidebar").slideDown();    
   });
@@ -63,7 +79,7 @@ jQuery(document).ready(function() {
       jQuery(this).addClass('active');
       
       var neu = jQuery(this).attr("data-id");      
-      jQuery("#content article, #content .product-scroller, #product-info").removeClass('large mixed thumbs list');
+      jQuery("#content article, #content .product-scroller, #product-info").removeClass('large mixed icons list');
       jQuery("#content article, #content .product-scroller, #product-info").addClass(neu);
     }   
   });

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php 
-  $view = 'large';
+  $view = 'icons';
 ?>
 
 <section id="content"> 
@@ -33,7 +33,7 @@
   <ul id="switch-view">
     <li data-id="large" class="active">Imagini mari <span>></span></li>
     <li data-id="mixed">Imagine mare cu icoane <span>></span></li>
-    <li data-id="thumbs">Icoane <span>></span></li>
+    <li data-id="icons">Icoane <span>></span></li>
     <li data-id="list">Lista <span>></span></li>
   </ul>
   <ul id="categories">

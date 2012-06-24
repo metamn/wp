@@ -59,7 +59,8 @@ jQuery(document).ready(function() {
   jQuery("#product-info .close").click(function() {
     // Switch back to icon view if necessary
     var view = jQuery(this).parent().attr("data-view");    
-    if (view) {
+    if (view && (view != '')) {
+      jQuery("#product-info").attr("data-view", '');
       jQuery("#content article, #content .product-scroller, #product-info").removeClass('large mixed icons list');
       jQuery("#content article, #content .product-scroller, #product-info").addClass(view);
     }

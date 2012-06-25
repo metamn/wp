@@ -307,6 +307,26 @@ html body .container header aside ul li ul li {
   border-bottom: 1px solid;
 }
 
+/* line 105, header.scss */
+html body .container footer {
+  width: 100%;
+  float: left;
+  margin: 5em 0 2.5em;
+  padding: 1.25em 0;
+  border-top: 1px solid;
+}
+/* line 111, header.scss */
+html body .container footer ul {
+  display: block;
+  margin: 0;
+}
+/* line 90, mixins.scss */
+html body .container footer ul li {
+  display: inline-block;
+  list-style-type: none;
+  margin-left: 0;
+}
+
 /* line 4, index.scss */
 html body .container #shopping-info {
   display: none;
@@ -850,9 +870,41 @@ html body .container #content #product-scroll-right.large {
   border-top: 1px solid;
 }
 
+/* line 1, account.scss */
+#account {
+  width: 100%;
+  float: left;
+}
+/* line 4, account.scss */
+#account ul {
+  display: block;
+  margin: 0;
+}
+/* line 90, mixins.scss */
+#account ul li {
+  display: inline-block;
+  list-style-type: none;
+  margin-left: 0;
+}
+/* line 7, account.scss */
+#account ul li {
+  width: 20%;
+  margin-right: 6%;
+}
+/* line 11, account.scss */
+#account ul li span {
+  font-size: large;
+  font-weight: bold;
+  display: block;
+}
+/* line 17, account.scss */
+#account ul li.last {
+  margin-right: 0;
+}
+
 /* Generally available settings
 */
-/* line 24, screen.scss */
+/* line 25, screen.scss */
 img {
   max-width: 100%;
   height: auto;

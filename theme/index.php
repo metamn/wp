@@ -17,14 +17,7 @@
     <div id="product-scroll-right" class="<?php echo $view ?> product-scroller">&rsaquo;</div>
 	  
     <?php } else { ?>
-    	<article class="not-found">
-				<header>
-					<h1>Not Found</h1>
-				</header>
-				<div class="entry">
-					<p>No posts found.</p>					
-				</div>
-			</article>
+    	<?php include '_not_found.php'?>
 	  <?php } ?>
 </section>
 

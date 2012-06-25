@@ -1,0 +1,21 @@
+#account {
+  @include block;
+  
+  ul {
+    @include list-inline;
+    
+    li {
+      width: 20%;
+      margin-right: 6%;
+      
+      span {
+        font-size: large;
+        font-weight: bold;
+        display: block;
+      }
+    }
+    li.last {
+      margin-right: 0;
+    }
+  }
+}

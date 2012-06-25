@@ -94,6 +94,36 @@
   }
 }
 
+
+/* table, simple
+*/
+@mixin table-simple {
+  width: 100%;
+
+  thead {
+    td {
+      border-bottom: 1px solid;
+    }
+  }
+  
+  tbody {
+    td.first {
+      text-align: left;
+    }    
+  }
+  td {
+    padding: $pad/2;
+    text-align: center;
+  }
+  
+  tfoot {
+    td {
+      border-top: 1px solid;
+    }
+  }
+}
+
+
 /* make a column 
 */
 @mixin col($width, $margin_left, $margin_right) {

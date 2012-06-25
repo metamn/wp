@@ -37,7 +37,7 @@ html {
           }
         }        
         nav {
-          @include col(40%, 10%, 10%);          
+          @include col(50%, 5%, 5%);          
           
           h3 {
             display: none;

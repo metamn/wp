@@ -140,6 +140,8 @@ h4 {
 
 /* list, inline 
 */
+/* table, simple
+*/
 /* make a column 
 */
 /* box-shadow
@@ -148,7 +150,7 @@ h4 {
 */
 /* hide an element 
 */
-/* line 128, mixins.scss */
+/* line 158, mixins.scss */
 .hidden {
   display: none;
 }
@@ -220,8 +222,8 @@ html body .container header hgroup #logo .set {
 }
 /* line 39, header.scss */
 html body .container header nav {
-  width: 40%;
-  margin: 0 10% 0 10%;
+  width: 50%;
+  margin: 0 5% 0 5%;
   float: left;
 }
 /* line 42, header.scss */
@@ -821,9 +823,36 @@ html body .container #content #product-scroll-right.large {
   left: 96%;
 }
 
+/* line 1, services.scss */
+#services {
+  width: 100%;
+  float: left;
+}
+/* line 4, services.scss */
+#services table {
+  width: 100%;
+}
+/* line 104, mixins.scss */
+#services table thead td {
+  border-bottom: 1px solid;
+}
+/* line 110, mixins.scss */
+#services table tbody td.first {
+  text-align: left;
+}
+/* line 114, mixins.scss */
+#services table td {
+  padding: 0.625em;
+  text-align: center;
+}
+/* line 120, mixins.scss */
+#services table tfoot td {
+  border-top: 1px solid;
+}
+
 /* Generally available settings
 */
-/* line 23, screen.scss */
+/* line 24, screen.scss */
 img {
   max-width: 100%;
   height: auto;

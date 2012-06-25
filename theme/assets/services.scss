@@ -1,0 +1,7 @@
+#services {
+  @include block;
+  
+  table {
+    @include table-simple;
+  }
+}

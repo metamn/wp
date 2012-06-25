@@ -56,5 +56,9 @@
   <h3>Informatii shopping</h3>
 </aside>
 
+<?php include 'services.php' ?>
+<?php include 'account.php' ?>
+
+
 
 <?php get_footer(); ?>

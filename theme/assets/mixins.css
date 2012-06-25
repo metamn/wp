@@ -28,6 +28,8 @@
 
 /* list, inline 
 */
+/* table, simple
+*/
 /* make a column 
 */
 /* box-shadow
@@ -36,7 +38,7 @@
 */
 /* hide an element 
 */
-/* line 128, mixins.scss */
+/* line 158, mixins.scss */
 .hidden {
   display: none;
 }

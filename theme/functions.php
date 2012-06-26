@@ -45,10 +45,18 @@ add_action( 'wp_ajax_nopriv_load_post_details', 'load_post_details' );
 // - returns a $post like object
 function product($post_id){
   $ret = new stdClass();
-  $p = get_eshop_product($post->ID);
   
+  $p = get_eshop_product($post->ID);
   $ret->title = $p[sku];
   $ret->excerpt = $p[description];
+  
+  $l = get_post_meta($post_id, 'Livrare', true);
+  if ($l) {
+    $ret->livrare = $l;
+  } else {
+    $ret->livrare = "5-7";
+  }
+  
   return $ret;
 }
 

@@ -39,6 +39,7 @@
     </div>	  
 	  <div class="shopping">
 	    <?php echo do_shortcode('[eshop_addtocart id="'. $post->ID . '"]'); ?>	    
+	    <div class="delivery"><?php echo "Livrare: $product->livrare zile"; ?></div>
 	  </div>
 	  <div class="excerpt">
 	    <?php echo $product->excerpt ?>					

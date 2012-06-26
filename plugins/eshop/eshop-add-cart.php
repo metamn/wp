@@ -4,10 +4,10 @@
 //
 // - @ replaced with -- in product variations
 // - @ replaced with '' when there are no variations
-// - RON replaced with ''
+// - quantity input filed made hidden
 // - decimals removed from price
-// - quantity input made hidden
 // - RON added to the end of price
+// - Display old price when product is on sale. This works only when there ar no variations
 
 
 function eshop_boing($pee,$short='no',$postid='',$isshortcode='n'){
@@ -225,7 +225,7 @@ function eshop_boing($pee,$short='no',$postid='',$isshortcode='n'){
 							}
 							if($option!='' && $currst>0){
 								if($price!='0.00')
-									$mainoptsecho.='<option value="'.$i.'">'.sprintf( __('%1$s -- %2$s %3$s','eshop'),stripslashes(esc_attr($option)), number_format_i18n($price,__('0','eshop')), $currsymbol).'</option>'."\n";
+								  $mainoptsecho.='<option value="'.$i.'">'.sprintf( __('%1$s -- %2$s %3$s','eshop'),stripslashes(esc_attr($option)), number_format_i18n($price,__('0','eshop')), $currsymbol).'</option>'."\n";
 								else
 									$mainoptsecho.='<option value="'.$i.'">'.stripslashes(esc_attr($option)).'</option>'."\n";
 							}
@@ -240,7 +240,7 @@ function eshop_boing($pee,$short='no',$postid='',$isshortcode='n'){
 				&& isset($eshopoptions['sale']) && 'yes' == $eshopoptions['sale'] 
 				&& isset($eshop_product['products']['1']['saleprice']) && $eshop_product['products']['1']['saleprice']!=''
 				&& isset($eshop_product['sale']) && $eshop_product['sale']=='yes'){
-					$price=$eshop_product['products']['1']['saleprice'];
+					$price_sale=$eshop_product['products']['1']['saleprice'];
 				}
 				$currst=1;
 				if(isset($eshopoptions['stock_control']) && 'yes' == $eshopoptions['stock_control']){
@@ -249,9 +249,19 @@ function eshop_boing($pee,$short='no',$postid='',$isshortcode='n'){
 				$mainoptsecho .='<input type="hidden" name="option" value="1" />';
 				if($currst>0){
 					if($price!='0.00'){
-						$mainoptsecho.='
-						<span class="sgloptiondetails"><span class="sgloption">'.stripslashes(esc_attr($option)).'</span> <span class="sglprice">'.sprintf( __('%1$s %2$s','eshop'), number_format_i18n($price,__('0','eshop')), $currsymbol).'</span></span>
-						';
+						// by cs
+						if ($price_sale) {
+						  $mainoptsecho.='
+						  <span class="sgloptiondetails"><span class="sgloption">'.stripslashes(esc_attr($option)).'</span> <span class="sglprice price_sale">'.sprintf( __('%1$s %2$s','eshop'), number_format_i18n($price_sale,__('0','eshop')), $currsymbol).'</span></span>
+						  ';						
+						  $mainoptsecho.='
+						  <span class="sgloptiondetails"><span class="sgloption">'.stripslashes(esc_attr($option)).'</span> <span class="sglprice price_old">'.sprintf( __('%1$s %2$s','eshop'), number_format_i18n($price,__('0','eshop')), '').'</span></span>
+						  ';
+						} else {
+						  $mainoptsecho.='
+						  <span class="sgloptiondetails"><span class="sgloption">'.stripslashes(esc_attr($option)).'</span> <span class="sglprice">'.sprintf( __('%1$s %2$s','eshop'), number_format_i18n($price,__('0','eshop')), $currsymbol).'</span></span>
+						  ';
+						}
 					}else{
 						$mainoptsecho.='
 						<span class="sgloptiondetails"><span class="sgloption">'.stripslashes(esc_attr($option)).'</span></span>

@@ -843,6 +843,16 @@ html body .container #content #product-scroll-right.large {
   left: 96%;
 }
 
+/* line 4, page.scss */
+html body .container article.page {
+  width: 100%;
+  float: left;
+}
+/* line 7, page.scss */
+html body .container article.page header {
+  float: none;
+}
+
 /* line 1, services.scss */
 #services {
   width: 100%;
@@ -912,14 +922,24 @@ form.addtocart fieldset legend {
 form.addtocart fieldset .sgloptiondetails .sgloption {
   display: none;
 }
-/* line 13, cart.scss */
+/* line 11, cart.scss */
+form.addtocart fieldset .sgloptiondetails .price_old {
+  font-size: small;
+  text-decoration: line-through;
+}
+/* line 17, cart.scss */
 form.addtocart fieldset .qty {
+  display: none;
+}
+
+/* line 25, cart.scss */
+form.eshopcart table.cart caption {
   display: none;
 }
 
 /* Generally available settings
 */
-/* line 26, screen.scss */
+/* line 27, screen.scss */
 img {
   max-width: 100%;
   height: auto;

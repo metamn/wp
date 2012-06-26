@@ -8,9 +8,21 @@ form.addtocart {
       .sgloption {
         display: none;
       }
+      .price_old {
+        font-size: small;
+        text-decoration: line-through;
+      }
     }
     
     .qty {
+      display: none;
+    }
+  }
+}
+
+form.eshopcart {
+  table.cart {
+    caption {
       display: none;
     }
   }

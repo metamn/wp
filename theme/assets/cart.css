@@ -6,7 +6,17 @@ form.addtocart fieldset legend {
 form.addtocart fieldset .sgloptiondetails .sgloption {
   display: none;
 }
-/* line 13, cart.scss */
+/* line 11, cart.scss */
+form.addtocart fieldset .sgloptiondetails .price_old {
+  font-size: small;
+  text-decoration: line-through;
+}
+/* line 17, cart.scss */
 form.addtocart fieldset .qty {
+  display: none;
+}
+
+/* line 25, cart.scss */
+form.eshopcart table.cart caption {
   display: none;
 }

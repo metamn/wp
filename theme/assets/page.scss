@@ -1,0 +1,13 @@
+html {
+  body {
+    .container {
+      article.page {
+        @include block;
+        
+        header {
+          float: none;
+        }
+      }
+    }
+  }
+}

@@ -20,10 +20,79 @@ form.addtocart {
   }
 }
 
-form.eshopcart {
-  table.cart {
-    caption {
-      display: none;
+article .entry .shopping .delivery {
+  font-size: small;
+}
+
+
+
+table.cart {
+  @include table-simple;
+  
+  caption, th#cartDelete img {
+    display: none;
+  }
+  
+  td, th {
+    text-align: left;
+  }
+  
+  tbody {
+    td {
+      border-bottom: 1px solid;
     }
   }
+  
 }
+
+.cartopt {
+  margin: 2.5em 0;
+}
+
+ul.continue-proceed {
+  @include list-inline;
+}
+
+
+.custdetails {
+  margin: 2.5em 0;
+  
+  p {
+    display: none;
+  }
+  p.eshop_tandc {
+    display: block;
+  }
+  
+  form {
+    fieldset.fld2 {
+      legend, .company, .address2, .state, .altstate, .zip, .country {
+        display: none;
+      }      
+    }
+    
+    /* Shipping */
+    fieldset.fld4 {
+      position: relative;
+      top: -15em;
+      
+      legend, span {
+        display: none;
+      }
+      span.ship_state {
+        display: block;
+      }
+    }
+    
+    /* Coupon */    
+    fieldset.fld5 {
+      margin: 2.5em 0 5em;
+    }
+    
+    fieldset.fld6, label[for="submitit"] {
+      display: none;
+    }
+    
+  }
+}
+

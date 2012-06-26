@@ -1,9 +1,14 @@
 <?php 
+  // Get product data
+  $product = product($post->ID);
+
   // Decide if it is single page or index page
   if (is_single()) {
     $klass = '';
+    $title = get_the_title();
   } else {
     $klass = $view;
+    $title = $product->title;
   } 
   
   // See if this is the first product in a list or not
@@ -17,8 +22,7 @@
   // Identify posts with a number / counter
   $klass .= " count-$count";
   
-  // Get product data
-  $product = product($post->ID);
+  
 ?>
 
 
@@ -26,7 +30,7 @@
 	<header>
 		<h1>
 		  <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>" rel="bookmark">
-		    <?php echo $product->title; ?>
+		    <?php echo $title; ?>
 		  </a>
 		</h1>
 	</header>

@@ -101,7 +101,7 @@
   width: 100%;
 
   thead {
-    td {
+    td, th {
       border-bottom: 1px solid;
     }
   }
@@ -111,7 +111,7 @@
       text-align: left;
     }    
   }
-  td {
+  td, th {
     padding: $pad/2;
     text-align: center;
   }

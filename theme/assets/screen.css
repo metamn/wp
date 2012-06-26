@@ -888,16 +888,18 @@ html body .container #content #product-scroll-right.large {
 }
 /* line 7, account.scss */
 #account ul li {
-  width: 20%;
-  margin-right: 6%;
+  width: 18%;
+  margin-right: 2%;
+  text-align: center;
+  vertical-align: top;
 }
-/* line 11, account.scss */
+/* line 13, account.scss */
 #account ul li span {
   font-size: large;
   font-weight: bold;
   display: block;
 }
-/* line 17, account.scss */
+/* line 19, account.scss */
 #account ul li.last {
   margin-right: 0;
 }

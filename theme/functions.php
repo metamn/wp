@@ -40,6 +40,18 @@ add_action( 'wp_ajax_nopriv_load_post_details', 'load_post_details' );
 // Product functions
 //
 
+
+// Get product data
+// - returns a $post like object
+function product($post_id){
+  $ret = new stdClass();
+  $p = get_eshop_product($post->ID);
+  
+  $ret->title = $p[sku];
+  $ret->excerpt = $p[description];
+  return $ret;
+}
+
 // Display post thumbnails
 function post_thumbnails($post_id, $title, $only_first = false) {
   $ret = "";

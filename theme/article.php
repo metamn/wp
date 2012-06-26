@@ -16,6 +16,9 @@
   
   // Identify posts with a number / counter
   $klass .= " count-$count";
+  
+  // Get product data
+  $product = product($post->ID);
 ?>
 
 
@@ -23,7 +26,7 @@
 	<header>
 		<h1>
 		  <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>" rel="bookmark">
-		    <?php the_title(); ?>
+		    <?php echo $product->title; ?>
 		  </a>
 		</h1>
 	</header>
@@ -38,7 +41,7 @@
 	    <?php echo do_shortcode('[eshop_addtocart id="'. $post->ID . '"]'); ?>	    
 	  </div>
 	  <div class="excerpt">
-	    <?php the_excerpt(); ?>					
+	    <?php echo $product->excerpt ?>					
 	  </div>
 	  <div class="body">
 	    <?php if (is_single()) { the_content(); } ?>

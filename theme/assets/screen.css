@@ -904,9 +904,22 @@ html body .container #content #product-scroll-right.large {
   margin-right: 0;
 }
 
+/* line 3, cart.scss */
+form.addtocart fieldset legend {
+  display: none;
+}
+/* line 8, cart.scss */
+form.addtocart fieldset .sgloptiondetails .sgloption {
+  display: none;
+}
+/* line 13, cart.scss */
+form.addtocart fieldset .qty {
+  display: none;
+}
+
 /* Generally available settings
 */
-/* line 25, screen.scss */
+/* line 26, screen.scss */
 img {
   max-width: 100%;
   height: auto;

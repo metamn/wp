@@ -6,12 +6,37 @@
       width: 18%;
       margin-right: 2%;
       vertical-align: top;
+      
+      ul {
+        li {
+          display: block;
+          width: auto;
+        }
+      }
     }    
     li.c3, li.c4, li.c5 {
       width: 10%;
     }
     li.last {
       margin-right: 0;
+    }
+  }
+  
+  ul#coupon {
+    li.c3 {
+      width: 30%; 
+    }
+    li.c4, li.c5 {
+      width: .1px;
+    }
+  }
+  
+  ul#delivery {
+    li.c3 {
+      width: 22%; 
+    }
+    li.c5 {
+      width: .1px;
     }
   }
 }

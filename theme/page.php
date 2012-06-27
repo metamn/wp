@@ -17,6 +17,8 @@
 	    </div>
     </article>     
   <?php endwhile; ?>
+  
+  <?php if (is_page($CART)) { include 'cart.php'; } ?>
 	  
 <?php } else { ?>
 	<?php include '_not_found.php'?>

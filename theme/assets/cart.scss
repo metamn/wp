@@ -1,3 +1,40 @@
+#cart {
+  ul {
+    @include list-inline;
+    
+    li {
+      width: 18%;
+      margin-right: 2%;
+      vertical-align: top;
+    }    
+    li.c3, li.c4, li.c5 {
+      width: 10%;
+    }
+    li.last {
+      margin-right: 0;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 form.addtocart {
   fieldset {
     legend {

@@ -1,12 +1,24 @@
 /*
-Syntax error: Undefined mixin 'table-simple'.
-        on line 30 of /home/cs/work/wp/theme/assets/cart.scss, in `table-simple'
-        from line 30 of /home/cs/work/wp/theme/assets/cart.scss
+Syntax error: Undefined mixin 'list-inline'.
+        on line 3 of /home/cs/work/wp/theme/assets/cart.scss, in `list-inline'
+        from line 3 of /home/cs/work/wp/theme/assets/cart.scss
+
+1: /home/cs/work/wp/theme/assets/cart.scss
 
 Backtrace:
-/home/cs/work/wp/theme/assets/cart.scss:30:in `table-simple'
-/home/cs/work/wp/theme/assets/cart.scss:30
+/home/cs/work/wp/theme/assets/cart.scss:3:in `list-inline'
+/home/cs/work/wp/theme/assets/cart.scss:3
 /home/cs/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.0.alpha.247/lib/sass/tree/visitors/perform.rb:170:in `visit_mixin'
+/home/cs/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.0.alpha.247/lib/sass/tree/visitors/base.rb:37:in `visit'
+/home/cs/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.0.alpha.247/lib/sass/tree/visitors/perform.rb:20:in `visit'
+/home/cs/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.0.alpha.247/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/home/cs/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.0.alpha.247/lib/sass/tree/visitors/base.rb:53:in `map'
+/home/cs/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.0.alpha.247/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/home/cs/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.0.alpha.247/lib/sass/tree/visitors/perform.rb:29:in `block in visit_children'
+/home/cs/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.0.alpha.247/lib/sass/tree/visitors/perform.rb:41:in `with_environment'
+/home/cs/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.0.alpha.247/lib/sass/tree/visitors/perform.rb:28:in `visit_children'
+/home/cs/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.0.alpha.247/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/home/cs/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.0.alpha.247/lib/sass/tree/visitors/perform.rb:259:in `visit_rule'
 /home/cs/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.0.alpha.247/lib/sass/tree/visitors/base.rb:37:in `visit'
 /home/cs/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.0.alpha.247/lib/sass/tree/visitors/perform.rb:20:in `visit'
 /home/cs/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.0.alpha.247/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
@@ -74,4 +86,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'table-simple'.\A         on line 30 of /home/cs/work/wp/theme/assets/cart.scss, in `table-simple'\A         from line 30 of /home/cs/work/wp/theme/assets/cart.scss"; }
+  content: "Syntax error: Undefined mixin 'list-inline'.\A         on line 3 of /home/cs/work/wp/theme/assets/cart.scss, in `list-inline'\A         from line 3 of /home/cs/work/wp/theme/assets/cart.scss\A \A 1: /home/cs/work/wp/theme/assets/cart.scss"; }

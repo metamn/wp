@@ -1,6 +1,13 @@
 <?php
 
 
+// Global variables
+//
+
+define($CART, 'cos-cumparaturi');
+
+
+
 // Ajax functions
 //
 
@@ -34,6 +41,51 @@ function load_post_details() {
 }
 add_action('wp_ajax_load_post_details', 'load_post_details');
 add_action( 'wp_ajax_nopriv_load_post_details', 'load_post_details' );
+
+
+// Cart functions
+//
+
+// Get cart items from session
+// - $session : $_SESSION['eshopcart'.$blog_id]
+// - returns an array of objects
+function get_cart_items($session) {
+  $ret = array();
+  
+  if (!(empty($session))) {
+    foreach ($session as $product => $value) {
+      $item = new stdClass();
+      
+      // from session
+      $item->post_id = $value['postid'];
+      $item->qty = $value['qty'];
+      $item->name = $value['pid'];
+      $item->variation_name = $value['item'];
+      $item->variation_id = $value['option'];
+      $item->price = $value['price'];
+      
+      // Add variation to name
+      if ($item->variation_name != 'default') {
+        $item->title = $item->name . " (" . $item->variation_name . ")";
+      } else {
+        $item->title = $item->name;
+      }
+      
+      // from post
+      $item->url = get_permalink($item->post_id);
+      $item->thumb = post_thumbnails($item->post_id, $item->title, true);
+      
+      $ret[] = $item;
+    }
+  }
+  
+  return $ret;
+}
+
+// Get single cart item total (Quantity * Price)
+function get_cart_item_total($qty, $price) {
+  return intval($qty)*intval($price);
+}
 
 
 

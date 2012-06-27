@@ -1,6 +1,16 @@
 <?php
 
 
+// Init sessions
+// - a hack to access $_SESSION in functions.php
+// - needs to rewrite wp-includes/load.php too !!
+// - http://www.myguysolutions.com/2010/04/14/how-to-enable-the-use-of-sessions-on-your-wordpress-blog/
+// - http://www.kanasolution.com/2011/01/session-variable-in-wordpress/
+if ( !session_id() )
+add_action( 'init', 'session_start' );
+
+
+
 // Global variables
 //
 
@@ -49,8 +59,10 @@ add_action( 'wp_ajax_nopriv_load_post_details', 'load_post_details' );
 // Get cart items from session
 // - $session : $_SESSION['eshopcart'.$blog_id]
 // - returns an array of objects
-function get_cart_items($session) {
+function get_cart_items() {
   $ret = array();
+  
+  $session = $_SESSION['eshopcart1'];
   
   if (!(empty($session))) {
     foreach ($session as $product => $value) {
@@ -97,12 +109,14 @@ function remove_cart_item() {
   $nonce = $_POST['nonce'];  
   if ( wp_verify_nonce( $nonce, 'remove-cart-item' ) ) {
     
-    $id = strval( $_POST['id'] );  
+    $id = strval( $_POST['id'] ); 
+    unset($_SESSION['eshopcart1'][$id]); 
+    $items = get_cart_items();
+    $empty = empty($items);
     
     $ret = array(
       'success' => true,
-      'zero_items' => false,
-      'message' => $id
+      'empty' => $empty
     );  
   
   } else {

@@ -1,8 +1,6 @@
 <?php
 
-// functions.php cannot handle $_SESSION
-$cart = get_cart_items($_SESSION['eshopcart'.$blog_id]);
-
+$cart = get_cart_items();
 
 ?>
 

@@ -35,7 +35,7 @@ jQuery(document).ready(function() {
       }, 
       function(response) {        
         if (response.success) {     
-          if (response.zero_items) {
+          if (response.empty) {
             window.location.replace(checkout_url);
           } else {     
             _this.parent().parent().slideUp();

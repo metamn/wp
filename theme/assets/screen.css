@@ -1031,6 +1031,11 @@ ul.continue-proceed li {
   display: none;
 }
 
+/* line 99, cart.scss */
+.eshopcheckoutconf, label.finalize small {
+  display: none;
+}
+
 /* Generally available settings
 */
 /* line 27, screen.scss */

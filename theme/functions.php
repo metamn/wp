@@ -88,6 +88,34 @@ function get_cart_item_total($qty, $price) {
 }
 
 
+// Remove item from cart
+function remove_cart_item() {
+  $nonce = $_POST['nonce'];  
+  if ( wp_verify_nonce( $nonce, 'remove-cart-item' ) ) {
+    
+    $post_id = intval( $_POST['post_id'] );  
+    $variation_id = intval( $_POST['variation_id'] );
+    
+    $ret = array(
+      'success' => true,
+      'body' => "$post_id, $variation_id"
+    );  
+  
+  } else {
+    $ret = array(
+      'success' => false,
+      'message' => 'Nonce error'
+    );
+  }
+    
+  $response = json_encode($ret);
+  header( "Content-Type: application/json" );
+  echo $response;
+  exit;
+}
+add_action('wp_ajax_remove_cart_item', 'remove_cart_item');
+add_action( 'wp_ajax_nopriv_remove_cart_item', 'remove_cart_item' );
+
 
 // Product functions
 //

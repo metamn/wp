@@ -1,15 +1,52 @@
 jQuery(document).ready(function() {
 
-
-  // Products
-  //
-  
   // Set up Ajax
   var ajaxurl = jQuery("#ajax-url").attr("data-url");
   var ajaxloading = jQuery("#ajax-url").attr("data-loading");
   var ajaxspinner = "<img src='" + ajaxloading + "' alt='Incarcare date ...' />";
   var ajaxerror = "Eroare incarcare date de pe server ... ";
+
+
+  // Cart
+  //
   
+  // Remove cart item
+  jQuery("#cart #items .remove-cart-item").click(function() {
+    
+    // Display Ajax loading spinner
+    jQuery(this).html(ajaxspinner);
+    
+    // Save this !!!
+    var _this = jQuery(this);
+    
+    // Get query parameters
+    var nonce = jQuery(this).attr("data-nonce");    
+    var id = jQuery(this).attr("data-id");
+    var variation = jQuery(this).attr("data-variation");
+    
+    // Do the ajax
+    jQuery.post(
+      ajaxurl, 
+      {
+        'action' : 'remove_cart_item',
+        'nonce' : nonce,
+        'post_id' : id,
+        'variation_id' : variation
+      }, 
+      function(response) {        
+        if (response.success) {          
+          _this.parent().parent().slideUp();
+        } else {
+          _this.html(ajaxerror + response.message);
+        } 
+      }
+    );
+    
+  });
+
+
+  // Products
+  //
   
   // Click on product image, index pages, to load product info
   jQuery(".home article .featured-image").click(function() {

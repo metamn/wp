@@ -5,6 +5,8 @@ jQuery(document).ready(function() {
   var ajaxloading = jQuery("#ajax-url").attr("data-loading");
   var ajaxspinner = "<img src='" + ajaxloading + "' alt='Incarcare date ...' />";
   var ajaxerror = "Eroare incarcare date de pe server ... ";
+  // When cart empty redirect to checkout page
+  var checkout_url = jQuery("#checkout-url").attr("data-url");
 
 
   // Cart
@@ -22,7 +24,6 @@ jQuery(document).ready(function() {
     // Get query parameters
     var nonce = jQuery(this).attr("data-nonce");    
     var id = jQuery(this).attr("data-id");
-    var variation = jQuery(this).attr("data-variation");
     
     // Do the ajax
     jQuery.post(
@@ -30,12 +31,15 @@ jQuery(document).ready(function() {
       {
         'action' : 'remove_cart_item',
         'nonce' : nonce,
-        'post_id' : id,
-        'variation_id' : variation
+        'id' : id
       }, 
       function(response) {        
-        if (response.success) {          
-          _this.parent().parent().slideUp();
+        if (response.success) {     
+          if (response.zero_items) {
+            window.location.replace(checkout_url);
+          } else {     
+            _this.parent().parent().slideUp();
+          }
         } else {
           _this.html(ajaxerror + response.message);
         } 

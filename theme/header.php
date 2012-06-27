@@ -48,7 +48,8 @@
     <div class="container">
     
       <div id="ajax-url" data-url="<?php echo admin_url('admin-ajax.php'); ?>" data-loading="<?php bloginfo('stylesheet_directory')?>/assets/ajax-loader.gif" class="hidden"></div>
-  
+      <div id="checkout-url" data-url="<?php echo get_page_link($CART); ?>" class="hidden"></div>
+      
       <header>
         <hgroup>
           <h1>

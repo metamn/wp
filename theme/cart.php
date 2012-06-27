@@ -1,6 +1,8 @@
 <?php
 
+// functions.php cannot handle $_SESSION
 $cart = get_cart_items($_SESSION['eshopcart'.$blog_id]);
+
 
 ?>
 
@@ -23,7 +25,7 @@ $cart = get_cart_items($_SESSION['eshopcart'.$blog_id]);
         <li class="c4"><?php echo $item->price ?></li>
         <li class="c5"><?php echo get_cart_item_total($item->qty, $item->price) ?></li>
         <li class="last c6">
-          <div class="remove-cart-item" data-id="<?php echo $item->post_id ?>" data-variation="<?php echo $item->variation_id ?>" data-nonce="<?php echo wp_create_nonce('remove-cart-item') ?>" >
+          <div class="remove-cart-item" data-id="<?php echo $item->id ?>" data-nonce="<?php echo wp_create_nonce('remove-cart-item') ?>" >
             <span>[x]</span> renunta
           </div>
         </li>

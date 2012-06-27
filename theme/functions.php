@@ -57,6 +57,7 @@ function get_cart_items($session) {
       $item = new stdClass();
       
       // from session
+      $item->id = $product;
       $item->post_id = $value['postid'];
       $item->qty = $value['qty'];
       $item->name = $value['pid'];
@@ -88,17 +89,20 @@ function get_cart_item_total($qty, $price) {
 }
 
 
-// Remove item from cart
+// Remove item from cart (AJAX)
+// - functions.php cannot handle $_SESSION
+// - therefore removed items are marked only to be removed
+// - they will be really removed on the final checkout action
 function remove_cart_item() {
   $nonce = $_POST['nonce'];  
   if ( wp_verify_nonce( $nonce, 'remove-cart-item' ) ) {
     
-    $post_id = intval( $_POST['post_id'] );  
-    $variation_id = intval( $_POST['variation_id'] );
+    $id = strval( $_POST['id'] );  
     
     $ret = array(
       'success' => true,
-      'body' => "$post_id, $variation_id"
+      'zero_items' => false,
+      'message' => $id
     );  
   
   } else {

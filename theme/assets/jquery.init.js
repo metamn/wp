@@ -9,6 +9,27 @@ jQuery(document).ready(function() {
   var checkout_url = jQuery("#checkout-url").attr("data-url");
 
 
+  // Session
+  //
+  
+  // Register every click into the session database
+  jQuery("a").click(function() {
+    var id = jQuery(this).attr('href');
+    
+    // Do the ajax
+    jQuery.post(
+      ajaxurl, 
+      {
+        'action' : 'session_click',
+        'id' : id
+      }, 
+      function(response) {        
+        alert(response.message); 
+      }
+    );
+  });
+
+
   // Cart
   //
   

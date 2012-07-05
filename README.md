@@ -1,9 +1,25 @@
 # Design
 
-* 'See more products' clicks are under 1% 
-=> pagination/infinite scrolling is obsolete
+* 'See more products' clicks are under 1% => pagination/infinite scrolling is obsolete
 * Responsive design is done via Sass
 * Responsive images are done via noscript
+
+
+# Conversion Rate
+
+* CR halves with every step until the final purchase => Make purchase in 1 step !!!
+
+
+
+# Content
+
+* we are the content server, we distribute to all other channels
+(Twitter, FB) through our blog: http://radar.oreilly.com/m/2012/07/federated-social-web-own-website.html
+
+
+# Security
+
+* Scan My Site: http://www.scanmysite.net/
 
 
 

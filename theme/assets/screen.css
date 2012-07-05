@@ -185,71 +185,73 @@ html body .container header {
   position: static;
   width: 100%;
   float: left;
+  margin-top: 1.25em;
 }
-/* line 14, header.scss */
+/* line 15, header.scss */
 html body .container header hgroup {
   width: 20%;
   margin: 0 0 0 0;
   float: left;
 }
-/* line 17, header.scss */
+/* line 18, header.scss */
 html body .container header hgroup h1 {
   display: none;
 }
-/* line 20, header.scss */
+/* line 21, header.scss */
 html body .container header hgroup h2 {
   display: none;
 }
-/* line 23, header.scss */
+/* line 24, header.scss */
 html body .container header hgroup #logo {
   height: 4.375em;
   width: 14.688em;
   /* an extra space must be add */
 }
-/* line 26, header.scss */
+/* line 27, header.scss */
 html body .container header hgroup #logo .cell {
   width: 0.625em;
   height: 0.625em;
   float: left;
 }
-/* line 31, header.scss */
+/* line 32, header.scss */
 html body .container header hgroup #logo .small {
   width: 0.313em;
 }
-/* line 34, header.scss */
+/* line 35, header.scss */
 html body .container header hgroup #logo .set {
   background: black;
 }
-/* line 39, header.scss */
+/* line 41, header.scss */
 html body .container header nav {
   width: 50%;
   margin: 0 5% 0 5%;
   float: left;
 }
-/* line 42, header.scss */
+/* line 44, header.scss */
 html body .container header nav h3 {
   display: none;
 }
-/* line 46, header.scss */
+/* line 48, header.scss */
 html body .container header nav #search {
   margin-bottom: 3.125em;
 }
-/* line 50, header.scss */
+/* line 52, header.scss */
 html body .container header nav #search form input[type="text"] {
-  width: 21.6em;
+  width: 22.5em;
+  margin-right: 5%;
 }
 @media only screen and (min-width: 641px) and (max-width: 1024px) {
-  /* line 50, header.scss */
+  /* line 52, header.scss */
   html body .container header nav #search form input[type="text"] {
     width: 15.4em;
   }
 }
-/* line 55, header.scss */
+/* line 58, header.scss */
 html body .container header nav #search form ul {
   display: none;
   margin: 1.25em 0;
 }
-/* line 61, header.scss */
+/* line 64, header.scss */
 html body .container header nav ul#categories {
   display: block;
   margin: 0;
@@ -260,11 +262,11 @@ html body .container header nav ul#categories li {
   list-style-type: none;
   margin-left: 0;
 }
-/* line 63, header.scss */
+/* line 66, header.scss */
 html body .container header nav ul#categories li {
   margin-right: 5%;
 }
-/* line 65, header.scss */
+/* line 68, header.scss */
 html body .container header nav ul#categories li span {
   -moz-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
@@ -273,11 +275,11 @@ html body .container header nav ul#categories li span {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$value);
   display: inline-block;
 }
-/* line 69, header.scss */
+/* line 72, header.scss */
 html body .container header nav ul#categories li.last {
   margin-right: none;
 }
-/* line 74, header.scss */
+/* line 77, header.scss */
 html body .container header aside {
   width: 20%;
   margin: 0 0 0 0;
@@ -286,28 +288,28 @@ html body .container header aside {
   z-index: 1;
   height: 10em;
 }
-/* line 78, header.scss */
+/* line 81, header.scss */
 html body .container header aside h3 {
   display: none;
 }
-/* line 84, header.scss */
+/* line 87, header.scss */
 html body .container header aside ul li .title {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
 }
-/* line 87, header.scss */
+/* line 90, header.scss */
 html body .container header aside ul li ul {
   display: none;
 }
-/* line 89, header.scss */
+/* line 92, header.scss */
 html body .container header aside ul li ul li {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
 }
 
-/* line 105, header.scss */
+/* line 108, header.scss */
 html body .container footer {
   width: 100%;
   float: left;
@@ -315,7 +317,7 @@ html body .container footer {
   padding: 1.25em 0;
   border-top: 1px solid;
 }
-/* line 111, header.scss */
+/* line 114, header.scss */
 html body .container footer ul {
   display: block;
   margin: 0;

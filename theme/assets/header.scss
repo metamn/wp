@@ -10,6 +10,7 @@ html {
       header {
         position: static;
         @include block;
+        margin-top: $pad;
         
         hgroup {
           @include col(20%, 0, 0);
@@ -36,6 +37,7 @@ html {
             }
           }
         }        
+        
         nav {
           @include col(50%, 5%, 5%);          
           
@@ -48,7 +50,8 @@ html {
             
             form {
               input[type="text"] {
-                width: 21.6em;
+                width: 22.5em;
+                margin-right: 5%;
                 @include respond-to(tablet) { width: 15.4em; }
               }
              

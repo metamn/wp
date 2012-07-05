@@ -18,46 +18,73 @@ define($CART, 'cos-cumparaturi');
 
 
 
-// Ajax functions
+
+// Session functions
 //
 
-// Load post details on an index page
-function load_post_details() {  
-  $nonce = $_POST['nonce'];
-  if ( wp_verify_nonce( $nonce, 'load-post-details' ) ) {
-    
-    $post_id = intval( $_POST['post_id'] );  
-    $post = wp_get_single_post($post_id);
-    $thumbs = post_thumbnails($post_id, $post->post_title);
-    
+// Register every click into the session db (AJAX)
+function session_click() {
+  $url = strval( $_POST['id'] ); 
+  $post = get_page_by_path($url);  
+  
+  /*
+  if ($post) {
+    $_SESSION['ujs_clicks'][] = $post->ID;    
     $ret = array(
       'success' => true,
-      'body' => $post->post_content,
-      'thumbs' => $thumbs
-    );
-  
-  
+      'message' => "$post->ID"
+    );      
   } else {
     $ret = array(
       'success' => false,
-      'message' => 'Nonce error'
+      'message' => 'Cannot get page id'
     );
   }
+  */
+  
+  $ret = array(
+    'success' => true,
+    'message' => "$post->ID"
+  );
     
   $response = json_encode($ret);
   header( "Content-Type: application/json" );
   echo $response;
   exit;
 }
-add_action('wp_ajax_load_post_details', 'load_post_details');
-add_action( 'wp_ajax_nopriv_load_post_details', 'load_post_details' );
+add_action('wp_ajax_session_click', 'session_click');
+add_action( 'wp_ajax_nopriv_session_click', 'session_click' );
+
+
+// Initialize session
+function init_session() {  
+  print_r($_SESSION);
+  
+  $post = get_post_id();  
+  echo "PID: $post";
+  
+  
+  // create new session id if necessary
+  if (!($_SESSION['ujs_user'])) {
+    $_SESSION['ujs_user'] = generateRandomString();
+  }
+  // create new array to store browsing history
+  if (empty($_SESSION['ujs_clicks'])) {
+    $_SESSION['ujs_clicks'] = array();
+  }
+  
+  return $_SESSION;
+}
+
+
+
+
 
 
 // Cart functions
 //
 
 // Get cart items from session
-// - $session : $_SESSION['eshopcart'.$blog_id]
 // - returns an array of objects
 function get_cart_items() {
   $ret = array();
@@ -135,8 +162,42 @@ add_action('wp_ajax_remove_cart_item', 'remove_cart_item');
 add_action( 'wp_ajax_nopriv_remove_cart_item', 'remove_cart_item' );
 
 
+
 // Product functions
 //
+
+
+// Load post details on an index page (AJAX)
+function load_post_details() {  
+  $nonce = $_POST['nonce'];
+  if ( wp_verify_nonce( $nonce, 'load-post-details' ) ) {
+    
+    $post_id = intval( $_POST['post_id'] );  
+    $post = wp_get_single_post($post_id);
+    $thumbs = post_thumbnails($post_id, $post->post_title);
+    
+    $ret = array(
+      'success' => true,
+      'body' => $post->post_content,
+      'thumbs' => $thumbs
+    );
+  
+  
+  } else {
+    $ret = array(
+      'success' => false,
+      'message' => 'Nonce error'
+    );
+  }
+    
+  $response = json_encode($ret);
+  header( "Content-Type: application/json" );
+  echo $response;
+  exit;
+}
+add_action('wp_ajax_load_post_details', 'load_post_details');
+add_action( 'wp_ajax_nopriv_load_post_details', 'load_post_details' );
+
 
 
 // Get product data
@@ -194,6 +255,7 @@ function post_attachments($post_id) {
 }
 
 
+
 // Other functions
 //
 
@@ -245,6 +307,102 @@ function responsive_image($post_id) {
   return $ret;
 }
 
+// Generate unique ID
+function generateRandomString($length = 10) {
+  $characters = ’0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ’;
+  $randomString = '';
+  for ($i = 0; $i < $length; $i++) {
+      $randomString .= $characters[rand(0, strlen($characters) - 1)];
+  }
+  return $randomString;
+}
 
+// Get the current page, post or category ID
+// - $url is the full url of the post/cat/page as is in the browser
+function get_post_id($url = '') {
+  if ($url == '') {
+    $url = 'http://' . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+  }
+  
+  $url = remove_hostname($url);
+  
+  // homepage
+  if ($url == "/") {
+    $ret = 0;
+  } else {  
+    // page
+    $page = get_page_by_path($url);
+    if ($page) {
+      $ret = "p-$page->ID";
+    } else {
+      // category
+      $cat = remove_taxonomy($url, 'category');    
+      $term = get_term_by('slug', $cat, 'category');
+      if ($term) {
+        $ret = "c-$term->term_id";
+      } else {
+        // tag
+        $tag = remove_taxonomy($url, 'tag'); 
+        $term = get_term_by('slug', $tag, 'post_tag');
+        if ($term) {
+          $ret = "t-$term->ID";
+        } else {
+          // post
+          $slug = get_post_naked_slug($url);        
+          $post = get_post_by_slug($slug);
+          if ($post) {
+            $ret = "p-$post->ID";
+          } else {
+            $ret = "-1";
+          }
+        }      
+      }
+    } 
+  }
+  
+  return $ret;
+}
+
+
+// Remove hostname from url
+// - $url is the full Wordpress url (http://smuff.ro/article-111-11)
+function remove_hostname($url) {
+  $u = explode(get_bloginfo('home'), $url);
+  return $u[1];
+}
+
+// Remove taxonomy from slug
+// - $slug is the trimmed Wordpress url (/category/uncategorized)
+// - $type is either 'category' or 'tag'
+// - only one taxonomy must be returned: 'produse' or 'gadget'; 'produse/gadget' won't work
+function remove_taxonomy($slug, $type) {
+  $u = explode($type, $slug);
+  $r = explode("/", $u[1]);
+  // return the last category name
+  $c = count($r);
+  return $r[$c-2];
+}
+
+// Remove date from post slug
+function get_post_naked_slug($url) {
+  // remove date
+  $r = explode("/", $url);
+  return $r[4];
+}
+
+// Get post by name
+// - $slug is the naked slug: 'ali-baba'
+function get_post_by_slug($slug) {
+  $args = array(
+    'name' => $slug,
+    'post_type' => 'post',
+    'post_status' => 'publish',
+    'numberposts' => 1
+  );
+  $post = get_posts($args);
+  if ($post) {
+    return $post[0];
+  };
+}
 
 ?>

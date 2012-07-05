@@ -46,10 +46,13 @@
   
   <body <?php body_class(); ?>>   
   
+    <?php $session = manage_session(); ?>
     <?php 
-      
-      init_session(); 
-      
+      echo "Returning: $session->returning";
+      echo "<br/>";
+      echo "Timestamp: $session->timestamp";
+      echo "<br/>";
+      print_r($session->cliks);
     ?>
          
     <div class="container">

@@ -14,7 +14,12 @@ add_action( 'init', 'session_start' );
 // Global variables
 //
 
-define($CART, 'cos-cumparaturi');
+define("CART", 'cos-cumparaturi');
+
+// in how many hours a session expires
+define("NEW_SESSION_HRS", 3);
+// what text to insert into $_SESSION click db to mark every new session
+define("NEW_SESSION_TEXT", 'new');
 
 
 
@@ -22,61 +27,57 @@ define($CART, 'cos-cumparaturi');
 // Session functions
 //
 
-// Register every click into the session db (AJAX)
-function session_click() {
-  $url = strval( $_POST['id'] ); 
-  $post = get_page_by_path($url);  
-  
-  /*
-  if ($post) {
-    $_SESSION['ujs_clicks'][] = $post->ID;    
-    $ret = array(
-      'success' => true,
-      'message' => "$post->ID"
-    );      
-  } else {
-    $ret = array(
-      'success' => false,
-      'message' => 'Cannot get page id'
-    );
-  }
-  */
-  
-  $ret = array(
-    'success' => true,
-    'message' => "$post->ID"
-  );
+
+// Manage session
+//
+// - called in header at every page load
+// - returns a standard class:
+//  - returning: boolean, if a visitor is returning or not
+//  - clicks: array, all the clicks of the visitor
+//  - timestamp: a timestamp since the last click
+function manage_session() {  
+  $session = new stdClass();
     
-  $response = json_encode($ret);
-  header( "Content-Type: application/json" );
-  echo $response;
-  exit;
-}
-add_action('wp_ajax_session_click', 'session_click');
-add_action( 'wp_ajax_nopriv_session_click', 'session_click' );
-
-
-// Initialize session
-function init_session() {  
-  print_r($_SESSION);
-  
-  $post = get_post_id();  
-  echo "PID: $post";
-  
-  
-  // create new session id if necessary
+  // create new session id, if necessary
   if (!($_SESSION['ujs_user'])) {
+    $session->returning = false;
     $_SESSION['ujs_user'] = generateRandomString();
+  } else {
+    $session->returning = true;
   }
-  // create new array to store browsing history
+  
+  // create new array to store browsing history, if necessary
   if (empty($_SESSION['ujs_clicks'])) {
     $_SESSION['ujs_clicks'] = array();
-  }
+  }  
+    
+  // timestamp
+  manage_timestamp();
+  $session->timestamp = $_SESSION['timestamp'];  
   
-  return $_SESSION;
+  // register click
+  $_SESSION['ujs_clicks'][] = get_post_id();  
+  $session->cliks = $_SESSION['ujs_clicks'];
+    
+  
+  return $session;
 }
 
 
+// Check if this is a new browsing session or not
+// - if yes, inserts a mark into the click db
+function manage_timestamp() {
+  $old = $_SESSION['timestamp'];
+  $now = current_time('timestamp');
+  
+  if ($old) {
+    if ($now - $old > 60*60*NEW_SESSION_HRS) {
+      $_SESSION['ujs_clicks'][] = NEW_SESSION_TEXT;
+    }    
+  }
+  
+  $_SESSION['timestamp'] = $now;
+}
 
 
 
@@ -319,45 +320,56 @@ function generateRandomString($length = 10) {
 
 // Get the current page, post or category ID
 // - $url is the full url of the post/cat/page as is in the browser
-function get_post_id($url = '') {
-  if ($url == '') {
-    $url = 'http://' . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-  }
-  
+// - returns an integer:
+//  - homepage: 0
+//  - search: 1
+//  - page: p-XXX
+//  - category: c-XXX
+//  - tag: c-XXX
+//  - post: x-XXX
+//  - not found: -1
+function get_post_id() {
+  // This is necessary as is, unless not working
+  $url = 'http://' . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
   $url = remove_hostname($url);
-  
-  // homepage
-  if ($url == "/") {
-    $ret = 0;
-  } else {  
-    // page
-    $page = get_page_by_path($url);
-    if ($page) {
-      $ret = "p-$page->ID";
-    } else {
-      // category
-      $cat = remove_taxonomy($url, 'category');    
-      $term = get_term_by('slug', $cat, 'category');
-      if ($term) {
-        $ret = "c-$term->term_id";
+    
+  // search
+  if (strpos($url,'?s=') !== false) {
+    $ret = 1;
+  } else {
+    // homepage
+    if ($url == "/") {
+      $ret = 0;
+    } else {  
+      // page
+      $page = get_page_by_path($url);
+      if ($page) {
+        $ret = "p-$page->ID";
       } else {
-        // tag
-        $tag = remove_taxonomy($url, 'tag'); 
-        $term = get_term_by('slug', $tag, 'post_tag');
+        // category
+        $cat = remove_taxonomy($url, 'category');    
+        $term = get_term_by('slug', $cat, 'category');
         if ($term) {
-          $ret = "t-$term->ID";
+          $ret = "c-$term->term_id";
         } else {
-          // post
-          $slug = get_post_naked_slug($url);        
-          $post = get_post_by_slug($slug);
-          if ($post) {
-            $ret = "p-$post->ID";
+          // tag
+          $tag = remove_taxonomy($url, 'tag'); 
+          $term = get_term_by('slug', $tag, 'post_tag');
+          if ($term) {
+            $ret = "t-$term->ID";
           } else {
-            $ret = "-1";
-          }
-        }      
-      }
-    } 
+            // post
+            $slug = get_post_naked_slug($url);        
+            $post = get_post_by_slug($slug);
+            if ($post) {
+              $ret = "x-$post->ID";
+            } else {
+              $ret = "-1";
+            }
+          }      
+        }
+      } 
+    }
   }
   
   return $ret;

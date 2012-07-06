@@ -63,7 +63,7 @@ function manage_session() {
   if (!($id)) {
     $session->returning = false;
            
-    setcookie('ujs_user', generateRandomString());
+    setcookie('ujs_user', generateRandomString(), time()+60*60*24*500, '/');
     $id = $_COOKIE['ujs_user'];        
   } else {
     $session->returning = true;
@@ -88,30 +88,34 @@ function db_save_session($id, $post_id, $timestamp) {
   global $wpdb;
   $wpdb->show_errors();
   
-  $existing = db_get_session($id);
-  if ($existing) {
-    $clicks = $existing->clicks . $post_id . ',';
-    
-    // check if this is a new visit
-    $visits = $existing->visits;
-    if (is_new_visit($visits, $timestamp)) {
-      $visits = $timestamp . ',';  
+  if ($id) {
+    $existing = db_get_session($id);
+    if ($existing) {
+      $clicks = $existing->clicks . $post_id . ',';
+      
+      // check if this is a new visit
+      $visits = $existing->visits;
+      if (is_new_visit($visits, $timestamp)) {
+        $visits .= $timestamp . ',';  
+      }
+    } else {
+      $clicks = $post_id . ',';
+      $visits = $timestamp . ',';
     }
+    
+    return $wpdb->query( 
+      $wpdb->prepare( 
+      "
+	      INSERT INTO wp_recommendation_engine
+	      (cookie, visits, clicks)
+	      VALUES (%s, %s, %s) ON DUPLICATE KEY UPDATE visits=VALUES(visits), clicks=VALUES(clicks)
+      ", 
+      array($id, $visits, $clicks)
+      )
+    );  
   } else {
-    $clicks = $post_id . ',';
-    $visits = $timestamp . ',';
+    return false;
   }
-  
-  return $wpdb->query( 
-    $wpdb->prepare( 
-    "
-	    INSERT INTO wp_recommendation_engine
-	    (cookie, visits, clicks)
-	    VALUES (%s, %s, %s) ON DUPLICATE KEY UPDATE visits=VALUES(visits), clicks=VALUES(clicks)
-    ", 
-    array($id, $visits, $clicks)
-    )
-  );  
 }
 
 

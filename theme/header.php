@@ -1,4 +1,13 @@
+<?php 
+  // Cookies must be set here otherwise a warning will be throw
+  // http://stackoverflow.com/questions/2658083/setcookie-cannot-modify-header-information-headers-already-sent
+  
+  $session = manage_session(); 
+  
+?>  
+
 <!DOCTYPE html>
+
 <html <?php language_attributes(); ?>>
   <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -44,15 +53,12 @@
     <?php wp_head(); ?>
   </head>
   
-  <body <?php body_class(); ?>>   
-  
-    <?php $session = manage_session(); ?>
+  <body <?php body_class(); ?>>     
+    
     <?php 
       echo "Returning: $session->returning";
       echo "<br/>";
-      echo "Timestamp: $session->timestamp";
-      echo "<br/>";
-      print_r($session->cliks);
+      print_r($session->clicks);
     ?>
          
     <div class="container">

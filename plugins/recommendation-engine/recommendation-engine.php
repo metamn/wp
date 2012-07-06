@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Smuff Session Manager
+Plugin Name: Smuff Recommendation Engine
 Plugin URI: http://www.smuff.ro
 Description: For non logged in users
 Version: 0.1
@@ -11,19 +11,19 @@ License: none
 
 
 // Admin menu
-function session_manager_admin_menu() {  
-  add_menu_page('Session Manager', 'Session Manager', 'delete_others_posts', 'session-manager-menu', 'session_manager_main_page' );
-  add_action( 'admin_init', 'session_manager_tables' );
+function recommendation_engine_admin_menu() {  
+  add_menu_page('Recommendation Engine', 'Recommendation Engine', 'delete_others_posts', 'session-manager-menu', 'recommendation_engine_main_page' );
+  add_action( 'admin_init', 'recommendation_engine_tables' );
 } 
-add_action('admin_menu', 'session_manager_admin_menu');
+add_action('admin_menu', 'recommendation_engine_admin_menu');
 
 
 // Create database tables
-function session_manager_tables() {
+function recommendation_engine_tables() {
   global $wpdb;
   
   // Main table
-  $table = $wpdb->prefix . "session_manager";
+  $table = $wpdb->prefix . "recommendation_engine";
   $sql = "CREATE TABLE $table (
       id INT(9) NOT NULL AUTO_INCREMENT,
       cookie VARCHAR(80) NOT NULL,      
@@ -39,19 +39,18 @@ function session_manager_tables() {
 
 
 // Dashboard
-function session_manager_main_page() {
+function recommendation_engine_main_page() {
   if (!current_user_can('delete_others_posts'))  {
     wp_die( 'Nu aveti drepturi suficiente de acces.' );
   } 
   ?>
   
-  <div id="session_manager">
-    <h2>session_manager</h2>    
+  <div id="recommendation_engine">
+    <h2>recommendation_engine</h2>    
   </div>
   
   <?php
 }
-
 
 ?>
 

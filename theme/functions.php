@@ -1,13 +1,13 @@
 <?php
-
-
 // Init sessions
+// - it is used to access shopping cart data in functions.php
+//
 // - a hack to access $_SESSION in functions.php
 // - needs to rewrite wp-includes/load.php too !!
 // - http://www.myguysolutions.com/2010/04/14/how-to-enable-the-use-of-sessions-on-your-wordpress-blog/
 // - http://www.kanasolution.com/2011/01/session-variable-in-wordpress/
-if ( !session_id() )
-add_action( 'init', 'session_start' );
+if ( !session_id() ) 
+  add_action( 'init', 'session_start' );
 
 
 
@@ -31,6 +31,7 @@ define("NEW_SESSION_TEXT", 'new');
 //
 // - $_SESSION is stored in the DB/MySQL until the browser is closed
 // - the session must be saved into a cookie / db for persistence
+// - therefore instead of $_SESSION we use cookies/db
 //
 // - cookies are sent with every HTTP request => size must be minimal
 // - recommended: max 20 cookies, 4KB each
@@ -48,50 +49,98 @@ define("NEW_SESSION_TEXT", 'new');
 // - called in header at every page load
 // - returns a standard class:
 //  - returning: boolean, if a visitor is returning or not
+//  - visits: array, all the visits of the visitor
 //  - clicks: array, all the clicks of the visitor
-//  - timestamp: a timestamp since the last click
+//  - new_visit: this is a new visit
 function manage_session() {  
   $session = new stdClass();
+  
+  $id = $_COOKIE['ujs_user'];
+  $post_id = get_post_id();
+  $now = current_time('timestamp');
     
   // create new session id, if necessary
-  if (!($_SESSION['ujs_user'])) {
+  if (!($id)) {
     $session->returning = false;
-    $_SESSION['ujs_user'] = generateRandomString();
+           
+    setcookie('ujs_user', generateRandomString());
+    $id = $_COOKIE['ujs_user'];        
   } else {
     $session->returning = true;
-  }
-  
-  // create new array to store browsing history, if necessary
-  if (empty($_SESSION['ujs_clicks'])) {
-    $_SESSION['ujs_clicks'] = array();
-  }  
+  }    
+      
+  // save to db
+  db_save_session($id, $post_id, $now); 
     
-  // timestamp
-  manage_timestamp();
-  $session->timestamp = $_SESSION['timestamp'];  
-  
-  // register click
-  $_SESSION['ujs_clicks'][] = get_post_id();  
-  $session->cliks = $_SESSION['ujs_clicks'];
-    
+  // load info from DB
+  $s = db_get_session($id);
+  if ($s) {
+    $session->visits = $s->visits;
+    $session->clicks = $s->clicks;
+  }    
   
   return $session;
 }
 
 
+// Save / create session to DB
+function db_save_session($id, $post_id, $timestamp) {  
+  global $wpdb;
+  $wpdb->show_errors();
+  
+  $existing = db_get_session($id);
+  if ($existing) {
+    $clicks = $existing->clicks . $post_id . ',';
+  } else {
+    $clicks = $post_id . ',';
+  }
+  
+  return $wpdb->query( 
+    $wpdb->prepare( 
+    "
+	    INSERT INTO wp_recommendation_engine
+	    (cookie, visits, clicks)
+	    VALUES (%s, %s, %s) ON DUPLICATE KEY UPDATE visits=VALUES(visits), clicks=VALUES(clicks)
+    ", 
+    array($id, '', $clicks)
+    )
+  );  
+}
+
+
+// Load an entry from the session DB
+function db_get_session($id) {
+  if (($id) && ($id != '')) {
+    global $wpdb;
+    $wpdb->show_errors();
+    
+    $ret = $wpdb->get_results( 
+	    "SELECT * FROM `wp_recommendation_engine` WHERE `cookie`='" . $id ."'"
+    );
+    
+    return $ret[0];
+  } else {
+    return false;
+  }
+}
+
+
+
 // Check if this is a new browsing session or not
 // - if yes, inserts a mark into the click db
 function manage_timestamp() {
-  $old = $_SESSION['timestamp'];
+  $old = $_SESSION['ujs_timestamp'];
   $now = current_time('timestamp');
   
   if ($old) {
     if ($now - $old > 60*60*NEW_SESSION_HRS) {
-      $_SESSION['ujs_clicks'][] = NEW_SESSION_TEXT;
-    }    
+      $_SESSION['ujs_new_visit'] = NEW_SESSION_TEXT;
+    } else {
+      $_SESSION['ujs_new_visit'] = '';
+    }   
   }
   
-  $_SESSION['timestamp'] = $now;
+  $_SESSION['ujs_timestamp'] = $now;
 }
 
 
@@ -325,7 +374,7 @@ function responsive_image($post_id) {
 
 // Generate unique ID
 function generateRandomString($length = 10) {
-  $characters = ’0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ’;
+  $characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   $randomString = '';
   for ($i = 0; $i < $length; $i++) {
       $randomString .= $characters[rand(0, strlen($characters) - 1)];

@@ -27,6 +27,14 @@ define("NEW_SESSION_TEXT", 'new');
 // Session functions
 //
 
+// How it works
+//
+// - $_SESSION is stored in the DB/MySQL until the browser is closed
+// - the session must be saved into a Cookie for persistence
+// - cookies are sent with every HTTP request, size must be minimal
+// - recommended: max 20 cookies, 4KB each
+
+
 
 // Manage session
 //

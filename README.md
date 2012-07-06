@@ -7,7 +7,23 @@
 
 # Conversion Rate
 
-* CR halves with every step until the final purchase => Make purchase in 1 step !!!
+* CR halves with every step until the final purchase 
+
+  * Amazon like 1-step make purchase is a must: http://www.lukew.com/ff/entry.asp?1579
+  * Session stores checkout data and changes Add to cart to Make Purchase
+  * Checkout fields are: name, e-mail, address, tel, message
+  * Since they gave us the e-mail ask for create account 
+   
+* Validate email address in real-time: http://blog.kicksend.com/how-we-decreased-sign-up-confirmation-email-bounces-by-50/
+* Offer free shipping as a service for returning customers, 
+or above a limit, like Amazon Prime
+* Psychological motivators: 
+
+  * See how many others already purchased this product
+  
+* For offline campaigns: buy with a QR code (adds to cart & goes to checkout)
+
+
 
 
 
@@ -44,6 +60,8 @@
 
 # Links
 
+* Email validation & verification: http://blog.kicksend.com/how-we-decreased-sign-up-confirmation-email-bounces-by-50/
+* Checkout: http://www.lukew.com/ff/entry.asp?1579
 * Colors: http://www.joehallock.com/edu/COM498/index.html, http://blog.kissmetrics.com/color-psychology/
 * Wordpress jQuery Ajax: http://www.garyc40.com/2010/03/5-tips-for-using-ajax-in-wordpress/
 * Responsive Images: http://blog.cloudfour.com/responsive-imgs-part-2/

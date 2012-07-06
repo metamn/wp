@@ -91,8 +91,15 @@ function db_save_session($id, $post_id, $timestamp) {
   $existing = db_get_session($id);
   if ($existing) {
     $clicks = $existing->clicks . $post_id . ',';
+    
+    // check if this is a new visit
+    $visits = $existing->visits;
+    if (is_new_visit($visits, $timestamp)) {
+      $visits = $timestamp . ',';  
+    }
   } else {
     $clicks = $post_id . ',';
+    $visits = $timestamp . ',';
   }
   
   return $wpdb->query( 
@@ -102,7 +109,7 @@ function db_save_session($id, $post_id, $timestamp) {
 	    (cookie, visits, clicks)
 	    VALUES (%s, %s, %s) ON DUPLICATE KEY UPDATE visits=VALUES(visits), clicks=VALUES(clicks)
     ", 
-    array($id, '', $clicks)
+    array($id, $visits, $clicks)
     )
   );  
 }
@@ -127,20 +134,14 @@ function db_get_session($id) {
 
 
 // Check if this is a new browsing session or not
-// - if yes, inserts a mark into the click db
-function manage_timestamp() {
-  $old = $_SESSION['ujs_timestamp'];
-  $now = current_time('timestamp');
+function is_new_visit($visits, $now) {
+  $old = get_last_explode(explode(',', $visits));
   
-  if ($old) {
-    if ($now - $old > 60*60*NEW_SESSION_HRS) {
-      $_SESSION['ujs_new_visit'] = NEW_SESSION_TEXT;
-    } else {
-      $_SESSION['ujs_new_visit'] = '';
-    }   
+  if ($old) {  
+    return ($now - $old > 60*60*NEW_SESSION_HRS); 
+  } else {
+    return true;
   }
-  
-  $_SESSION['ujs_timestamp'] = $now;
 }
 
 
@@ -454,9 +455,7 @@ function remove_hostname($url) {
 function remove_taxonomy($slug, $type) {
   $u = explode($type, $slug);
   $r = explode("/", $u[1]);
-  // return the last category name
-  $c = count($r);
-  return $r[$c-2];
+  return get_last_explode($r);
 }
 
 // Remove date from post slug
@@ -479,6 +478,13 @@ function get_post_by_slug($slug) {
   if ($post) {
     return $post[0];
   };
+}
+
+
+// Return the last item of an exploded string
+function get_last_explode($explode) {
+  $c = count($explode);
+  return $explode[$c-2];  
 }
 
 ?>

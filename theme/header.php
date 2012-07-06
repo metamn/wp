@@ -57,8 +57,10 @@
     
     <?php 
       echo "Returning: $session->returning";
-      echo "<br/>";
+      echo "<br/>Clicks: ";
       print_r($session->clicks);
+      echo "<br/>Visits: ";
+      print_r($session->visits);
     ?>
          
     <div class="container">

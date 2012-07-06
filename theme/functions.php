@@ -24,15 +24,22 @@ define("NEW_SESSION_TEXT", 'new');
 
 
 
-// Session functions
+// Session & Cookie functions
 //
 
 // How it works
 //
 // - $_SESSION is stored in the DB/MySQL until the browser is closed
-// - the session must be saved into a Cookie for persistence
-// - cookies are sent with every HTTP request, size must be minimal
+// - the session must be saved into a cookie / db for persistence
+//
+// - cookies are sent with every HTTP request => size must be minimal
 // - recommended: max 20 cookies, 4KB each
+//
+// - our approach:
+//
+//  1. Identify visitor with a single simple cookie: ujs_id
+//  2. Save all stuff into DB under this id
+//  3. Connect cart, wishlist etc with this cookie
 
 
 

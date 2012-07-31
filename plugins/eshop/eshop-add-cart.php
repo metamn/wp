@@ -4,7 +4,7 @@
 //
 // - @ replaced with -- in product variations
 // - @ replaced with '' when there are no variations
-// - quantity input filed made hidden
+// - quantity input field made hidden
 // - decimals removed from price
 // - RON added to the end of price
 // - Display old price when product is on sale. This works only when there ar no variations

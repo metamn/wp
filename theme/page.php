@@ -18,7 +18,7 @@
     </article>     
   <?php endwhile; ?>
   
-  <?php if (is_page($CART)) { include 'cart.php'; } ?>
+  <?php if (is_page($CART)) { include '_cart.php'; } ?>
 	  
 <?php } else { ?>
 	<?php include '_not_found.php'?>

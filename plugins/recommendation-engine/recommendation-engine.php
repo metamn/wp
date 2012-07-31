@@ -19,6 +19,12 @@ add_action('admin_menu', 'recommendation_engine_admin_menu');
 
 
 // Create database tables
+// Table structure:
+//  - id: unique id
+//  - cookie: cookie id
+//  - visits: a date array of visits
+//  - clicks: an array of user clicks
+//  - type: the current profile summary of the user [passive, interactive, contactable, ...]
 function recommendation_engine_tables() {
   global $wpdb;
   
@@ -28,7 +34,8 @@ function recommendation_engine_tables() {
       id INT(9) NOT NULL AUTO_INCREMENT,
       cookie VARCHAR(80) NOT NULL,      
       visits VARCHAR(1200),
-      clicks VARCHAR(1200) NOT NULL,
+      clicks VARCHAR(1200),
+      type VARCHAR(80),
       PRIMARY KEY(id),
       UNIQUE KEY cookie (cookie)
   );";

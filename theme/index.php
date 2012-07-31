@@ -49,8 +49,8 @@
   <h3>Informatii shopping</h3>
 </aside>
 
-<?php include 'services.php' ?>
-<?php include 'account.php' ?>
+<?php include '_services.php' ?>
+<?php include '_account.php' ?>
 
 
 

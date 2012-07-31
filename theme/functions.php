@@ -14,12 +14,16 @@ if ( !session_id() )
 // Global variables
 //
 
+// the slug of the shopping cart page
 define("CART", 'cos-cumparaturi');
 
 // in how many hours a session expires
 define("NEW_SESSION_HRS", 3);
-// what text to insert into $_SESSION click db to mark every new session
-define("NEW_SESSION_TEXT", 'new');
+
+// visitor types
+define("PASSIVE", 1);
+define("INTERACTIVE", 2);
+define("CONTACTABLE", 3);
 
 
 
@@ -52,6 +56,7 @@ define("NEW_SESSION_TEXT", 'new');
 //  - visits: array, all the visits of the visitor
 //  - clicks: array, all the clicks of the visitor
 //  - new_visit: this is a new visit
+//  - type: [contactable, shopper, ...] 
 function manage_session() {  
   $session = new stdClass();
   
@@ -77,13 +82,30 @@ function manage_session() {
   if ($s) {
     $session->visits = $s->visits;
     $session->clicks = $s->clicks;
+    $session->type = 'aaa';
+  }    
+  
+  return $session;
+}
+
+// Load session
+function load_session() {
+  $session = new stdClass();
+  
+  $id = $_COOKIE['ujs_user'];
+  
+  $s = db_get_session($id);
+  if ($s) {
+    $session->visits = $s->visits;
+    $session->clicks = $s->clicks;
+    $session->type = CONTACTABLE;
   }    
   
   return $session;
 }
 
 
-// Save / create session to DB
+// Save or create session to DB
 function db_save_session($id, $post_id, $timestamp) {  
   global $wpdb;
   $wpdb->show_errors();

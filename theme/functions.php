@@ -158,7 +158,6 @@ function db_get_session($id) {
 }
 
 
-
 // Check if this is a new browsing session or not
 function is_new_visit($visits, $now) {
   $old = get_last_explode(explode(',', $visits));
@@ -175,6 +174,33 @@ function is_new_visit($visits, $now) {
 
 // Cart functions
 //
+
+
+// Add to cart (AJAX)
+function add_to_cart() {
+  $nonce = $_POST['nonce'];  
+  if ( wp_verify_nonce( $nonce, 'add-to-cart' ) ) {
+    
+    $ret = array(
+      'success' => true,
+      'message' => 'Ok'
+    );  
+  
+  } else {
+    $ret = array(
+      'success' => false,
+      'message' => 'Nonce error'
+    );
+  }
+    
+  $response = json_encode($ret);
+  header( "Content-Type: application/json" );
+  echo $response;
+  exit;
+}
+add_action('wp_ajax_add_to_cart', 'add_to_cart');
+add_action( 'wp_ajax_nopriv_add_to_cart', 'add_to_cart' );
+
 
 // Get cart items from session
 // - returns an array of objects
@@ -298,8 +324,20 @@ function product($post_id){
   $ret = new stdClass();
   
   $p = get_eshop_product($post->ID);
+  
+  //print_r($p[products]);
   $ret->title = $p[sku];
   $ret->excerpt = $p[description];
+  
+  foreach ($p[products] as $key => $v) {
+    $variation = new stdClass();
+    
+    $variation->name = $v[option];
+    $variation->price = $v[price];
+    $variation->sale = $v[saleprice];
+    
+    $ret->variations[] = $variation;
+  }
   
   $l = get_post_meta($post_id, 'Livrare', true);
   if ($l) {

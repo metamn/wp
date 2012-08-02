@@ -12,6 +12,36 @@ jQuery(document).ready(function() {
   // Cart
   //
   
+  // Add to cart
+  jQuery("#add-to-cart #submit").click(function(event) {
+    // Do not submit the form the classic way, only with AJAX
+    event.preventDefault();
+  
+    // Display Ajax loading spinner
+    jQuery(this).html(ajaxspinner);
+    
+    // Save this !!!
+    var _this = jQuery(this);
+    
+    // Get query parameters
+    var nonce = jQuery(this).parent().attr("data-nonce"); 
+    
+    // Do the ajax
+    jQuery.post(
+      ajaxurl, 
+      {
+        'action' : 'add_to_cart',
+        'nonce' : nonce
+      }, 
+      function(response) {        
+        //alert(response.message);
+        _this.parent().next().html(response.message);       
+      }
+    );
+    
+  });
+  
+  
   // Remove cart item
   jQuery("#cart #items .remove-cart-item").click(function() {
     

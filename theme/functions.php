@@ -196,20 +196,28 @@ function add_to_cart() {
     $item['price'] = strval( $_POST['price'] );
     
     // Save item
+    
+    // - check if this item is already added, then increase qty
+    $item_exists = false;
+    
     $items = $_SESSION['eshopcart1'];
     if ($items) {
-      $counter = 1;
+      $counter = 0;
       foreach ($items as $product => $value) {
         if ( ($item['postid'] == $value['postid']) && 
              ($item['option'] == $value['option']) &&
              ($item['price'] == $value['price']) ) {
              
              $_SESSION['eshopcart1'][$counter]['qty'] += 1;
-             $counter += 1;             
+             $counter += 1; 
+             
+             $item_exists = true;            
              }       
         
       }    
-    } else {
+    }
+    
+    if (!$item_exists) {
       $_SESSION['eshopcart1'][] = $item;      
     }
     

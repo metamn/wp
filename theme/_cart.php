@@ -1,6 +1,8 @@
 <?php
 
 $cart = get_cart_items();
+print_r($_SESSION['eshopcart1']);
+
 
 ?>
 

@@ -181,6 +181,19 @@ function add_to_cart() {
   $nonce = $_POST['nonce'];  
   if ( wp_verify_nonce( $nonce, 'add-to-cart' ) ) {
     
+    // Create new cart item
+    $item = array();
+    $id = strval( $_POST['id'] );
+    $item['postid'] = $id;
+    $item['qty'] = 1;
+    $item['item'] = 'default';
+    $item['option'] = 1;
+    $item['price'] = 123;
+    
+    // Save item
+    $_SESSION['eshopcart1'][] = $item;
+    
+    
     $ret = array(
       'success' => true,
       'message' => 'Ok'

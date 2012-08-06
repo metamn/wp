@@ -25,13 +25,15 @@ jQuery(document).ready(function() {
     
     // Get query parameters
     var nonce = jQuery(this).parent().attr("data-nonce"); 
+    var id = jQuery(this).parent().attr("data-id"); 
     
     // Do the ajax
     jQuery.post(
       ajaxurl, 
       {
         'action' : 'add_to_cart',
-        'nonce' : nonce
+        'nonce' : nonce,
+        'id' : id
       }, 
       function(response) {        
         //alert(response.message);

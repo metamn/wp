@@ -26,6 +26,17 @@ jQuery(document).ready(function() {
     // Get query parameters
     var nonce = jQuery(this).parent().attr("data-nonce"); 
     var id = jQuery(this).parent().attr("data-id"); 
+    var variationId = jQuery(this).parent().children('#product-variations').val();
+    var variationName = '';
+    var price = 0;
+    jQuery(this).parent().children("#variation").each(function() {
+      if (jQuery(this).attr('data-id') == variationId) {
+        variationName = jQuery(this).attr('data-name');
+        price = jQuery(this).attr('data-price');
+      }
+    });
+    
+    var qty = 1;
     
     // Do the ajax
     jQuery.post(
@@ -33,7 +44,11 @@ jQuery(document).ready(function() {
       {
         'action' : 'add_to_cart',
         'nonce' : nonce,
-        'id' : id
+        'id' : id,
+        'variation-name' : variationName,
+        'variation-id' : variationId,
+        'qty' : qty,
+        'price' : price
       }, 
       function(response) {        
         //alert(response.message);

@@ -7,11 +7,15 @@
     echo wp_create_nonce('add-to-cart');
     echo "' data-id='". $post->ID . "'>";
     
-    echo "<select id='product-variations'>";      
+    echo "<select id='product-variations' name='option' >";      
     foreach ($product->variations as $key => $v) {
       echo "<option value=" . $key . ">" . $v->name . " &mdash; " . $v->price . " RON</option>";
     }      
-    echo "</select>";    
+    echo "</select>";
+    // cannot get these variables in the <option>, so this is a workaround   
+    foreach ($product->variations as $key => $v) {
+      echo "<input type='hidden' id='variation' name='variation' data-id='" . $key . "' data-name='" . $v->name . "' data-price='" . $v->price . "'>";
+    }   
         
     if ($session->type == CONTACTABLE) {
       echo "<input id='submit' type='submit' value='Cumpara printr-un click'>";

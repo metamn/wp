@@ -188,15 +188,30 @@ function add_to_cart() {
     
     // Create new cart item
     $item = array();
-    $id = strval( $_POST['id'] );
-    $item['postid'] = $id;
-    $item['qty'] = 1;
-    $item['item'] = 'default';
-    $item['option'] = 1;
-    $item['price'] = 123;
+    
+    $item['postid'] = strval( $_POST['id'] );
+    $item['qty'] = strval( $_POST['qty'] );
+    $item['item'] = strval( $_POST['variation-name'] );
+    $item['option'] = strval( $_POST['variation-id'] ) + 1;
+    $item['price'] = strval( $_POST['price'] );
     
     // Save item
-    $_SESSION['eshopcart1'][] = $item;
+    $items = $_SESSION['eshopcart1'];
+    if ($items) {
+      $counter = 1;
+      foreach ($items as $product => $value) {
+        if ( ($item['postid'] == $value['postid']) && 
+             ($item['option'] == $value['option']) &&
+             ($item['price'] == $value['price']) ) {
+             
+             $_SESSION['eshopcart1'][$counter]['qty'] += 1;
+             $counter += 1;             
+             }       
+        
+      }    
+    } else {
+      $_SESSION['eshopcart1'][] = $item;      
+    }
     
     // Register action
     manage_session('cart-a-' . $id);

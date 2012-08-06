@@ -8,4 +8,7 @@
   2. cookie: cookie id
   3. visits: a date array of visits
   4. clicks: an array of user clicks, including cart ajax clicks
-   
+  
+4. Eshop is only used to create products. Cart, checkout, history etc are done by custom code
+
+ 

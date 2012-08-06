@@ -1,0 +1,11 @@
+# How it works?
+
+1. Every user is identified with a cookie (ujs_user)
+2. Every click is saved into database (wp_recommendation_engine)
+3. The database has the following structure:
+
+  1. id: unique id
+  2. cookie: cookie id
+  3. visits: a date array of visits
+  4. clicks: an array of user clicks, including cart ajax clicks
+   

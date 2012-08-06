@@ -57,11 +57,16 @@ define("CONTACTABLE", 3);
 //  - clicks: array, all the clicks of the visitor
 //  - new_visit: this is a new visit
 //  - type: [contactable, shopper, ...] 
-function manage_session() {  
+
+// Arguments
+// - $post_id = the id of an AJAX action
+function manage_session($post_id = '') {  
   $session = new stdClass();
   
   $id = $_COOKIE['ujs_user'];
-  $post_id = get_post_id();
+  if ($post_id == '') {
+    $post_id = get_post_id();
+  }
   $now = current_time('timestamp');
     
   // create new session id, if necessary
@@ -193,6 +198,9 @@ function add_to_cart() {
     // Save item
     $_SESSION['eshopcart1'][] = $item;
     
+    // Register action
+    manage_session('cart-a-' . $id);
+    
     
     $ret = array(
       'success' => true,
@@ -260,9 +268,6 @@ function get_cart_item_total($qty, $price) {
 
 
 // Remove item from cart (AJAX)
-// - functions.php cannot handle $_SESSION
-// - therefore removed items are marked only to be removed
-// - they will be really removed on the final checkout action
 function remove_cart_item() {
   $nonce = $_POST['nonce'];  
   if ( wp_verify_nonce( $nonce, 'remove-cart-item' ) ) {
@@ -271,6 +276,9 @@ function remove_cart_item() {
     unset($_SESSION['eshopcart1'][$id]); 
     $items = get_cart_items();
     $empty = empty($items);
+    
+    // Register action
+    manage_session('cart-r-' . $id);
     
     $ret = array(
       'success' => true,

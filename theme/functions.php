@@ -181,6 +181,24 @@ function is_new_visit($visits, $now) {
 //
 
 
+// Display shopping cart contents
+function show_cart() {
+  $items = get_cart_items();
+  
+  if ($items) {
+    $total = 0;
+    foreach ($items as $item) {
+      $total += $item->qty * $item->price;    
+    }
+    $msg = count($items) . " cadouri, " . $total . " RON";
+  } else {
+    $msg = "Cosul Dvs. este gol";  
+  }
+  
+  return $msg;
+}
+
+
 // Add to cart (AJAX)
 function add_to_cart() {
   $nonce = $_POST['nonce'];  
@@ -190,9 +208,10 @@ function add_to_cart() {
     $item = array();
     
     $item['postid'] = strval( $_POST['id'] );
+    $item['title'] = strval( $_POST['title'] );
     $item['qty'] = strval( $_POST['qty'] );
-    $item['item'] = strval( $_POST['variation-name'] );
-    $item['option'] = strval( $_POST['variation-id'] ) + 1;
+    $item['variation_name'] = strval( $_POST['variation-name'] );
+    $item['variation_id'] = strval( $_POST['variation-id'] ) + 1;
     $item['price'] = strval( $_POST['price'] );
     
     // Save item
@@ -205,7 +224,7 @@ function add_to_cart() {
       $counter = 0;
       foreach ($items as $product => $value) {
         if ( ($item['postid'] == $value['postid']) && 
-             ($item['option'] == $value['option']) &&
+             ($item['variation_id'] == $value['variation_id']) &&
              ($item['price'] == $value['price']) ) {
              
              $_SESSION['eshopcart1'][$counter]['qty'] += 1;
@@ -261,16 +280,14 @@ function get_cart_items() {
       $item->id = $product;
       $item->post_id = $value['postid'];
       $item->qty = $value['qty'];
-      $item->name = $value['pid'];
-      $item->variation_name = $value['item'];
-      $item->variation_id = $value['option'];
+      $item->title = $value['title'];
+      $item->variation_name = $value['variation_name'];
+      $item->variation_id = $value['variation_id'];
       $item->price = $value['price'];
       
       // Add variation to name
       if ($item->variation_name != 'default') {
-        $item->title = $item->name . " (" . $item->variation_name . ")";
-      } else {
-        $item->title = $item->name;
+        $item->title .= " (" . $item->variation_name . ")";
       }
       
       // from post
@@ -369,7 +386,7 @@ function product($post_id){
   
   $p = get_eshop_product($post->ID);
   
-  //print_r($p[products]);
+  //print_r($p);
   $ret->title = $p[sku];
   $ret->excerpt = $p[description];
   

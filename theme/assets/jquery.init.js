@@ -26,6 +26,7 @@ jQuery(document).ready(function() {
     // Get query parameters
     var nonce = jQuery(this).parent().attr("data-nonce"); 
     var id = jQuery(this).parent().attr("data-id"); 
+    var title = jQuery(this).parent().attr("data-title");
     var variationId = jQuery(this).parent().children('#product-variations').val();
     var variationName = '';
     var price = 0;
@@ -45,6 +46,7 @@ jQuery(document).ready(function() {
         'action' : 'add_to_cart',
         'nonce' : nonce,
         'id' : id,
+        'title' : title,
         'variation-name' : variationName,
         'variation-id' : variationId,
         'qty' : qty,

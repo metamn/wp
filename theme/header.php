@@ -102,7 +102,11 @@
             <li>
               <div class="title j-toggle">Cos cumparaturi</div>
               <ul>
-                <li><?php echo do_shortcode ('[eshop_cart_items showwhat="items"]');?></li>
+                <li id="shopping-cart-widget">
+                  <a href="<?php bloginfo('home')?>/comenzi/<?php echo CART ?>" title="Finalizare comanda">
+                    <?php echo show_cart(); ?>
+                  </a>
+                </li>
                 <li>Wishlist</li>
               </ul>
             </li>

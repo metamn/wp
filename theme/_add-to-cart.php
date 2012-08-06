@@ -5,7 +5,7 @@
     
     echo "<form id='add-to-cart' method='post' data-nonce='";
     echo wp_create_nonce('add-to-cart');
-    echo "' data-id='". $post->ID . "'>";
+    echo "' data-id='". $post->ID . "' data-title='" . $product->title . "'>";
     
     echo "<select id='product-variations' name='option' >";      
     foreach ($product->variations as $key => $v) {

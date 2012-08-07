@@ -20,12 +20,13 @@
   <?php endwhile; ?>
   
   <?php if (is_page(CART)) { include 'cart.php'; } ?>
+  <?php if (is_page(CHECKOUT)) { include 'checkout.php'; } ?>
 	  
 <?php } else { ?>
 	<?php include 'not_found.php'?>
 <?php } ?>
 </section>
 
-<?php if (is_page(CART)) { include 'checkout.php'; } ?>
+<?php if (is_page(CART)) { include 'checkout-form.php'; } ?>
 
 <?php get_footer(); ?>

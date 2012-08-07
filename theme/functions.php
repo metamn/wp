@@ -182,6 +182,49 @@ function is_new_visit($visits, $now) {
 //
 
 
+// Checkout
+function checkout($email, $phone) {  
+  global $wpdb;
+  $wpdb->show_errors();
+  
+  // Saving the order
+  $order = $wpdb->query( 
+    $wpdb->prepare( 
+    "
+      INSERT INTO wp_eshop_orders
+      (email, phone)
+      VALUES (%s, %s)", 
+      array($email, $phone)
+    )
+  );
+  $order_id = $wpdb->insert_id;
+  
+  // Checkid == order id
+  $checkid = $wpdb->query( 
+    $wpdb->prepare( 
+    "
+      UPDATE wp_eshop_orders SET checkid = %s WHERE id = %s LIMIT 1",
+      $order_id, $order_id
+    )
+  );
+  
+  // Saving the order items
+  $items = get_cart_items();
+  foreach ($items as $item) {
+    $order_item = $wpdb->query( 
+      $wpdb->prepare( 
+      "
+        INSERT INTO wp_eshop_order_items
+        (checkid, item_id, item_qty, optname, post_id, option_id)
+        VALUES (%s, %s, %s, %s, %s, %s)", 
+        array($order_id, $item->id, $item->qty, $item->title, $item->post_id, $item->variation_id)
+      )
+    );  
+  }
+  
+  return $order_item;
+}
+
 // Display shopping cart contents
 function show_cart() {
   $items = get_cart_items();

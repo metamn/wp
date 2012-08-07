@@ -1,13 +1,15 @@
 <?php
 
 $cart = get_cart_items();
+//print_r($_SESSION['eshopcart1']);
+
 
 ?>
 
 <section id="cart">
   <?php if ($cart) { ?>   
     <ul id="header">
-      <li class="c1"></li>      
+      <li class="c1">Produs</li>      
       <li class="c2"></li>
       <li class="c3">Cantitate</li>
       <li class="c4">Pret</li>
@@ -82,3 +84,5 @@ $cart = get_cart_items();
     Cosul Dvs. este gol.
   <?php } ?>
 </section>
+
+

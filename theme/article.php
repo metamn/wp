@@ -42,7 +42,7 @@
       <?php if (is_single()) { echo post_thumbnails($post->ID, $post->post_title); } ?>
     </div>	  
 	  <div class="shopping">
-	    <?php include '_add-to-cart.php' ?>	    
+	    <?php include 'add-to-cart.php' ?>	    
 	    <div class="delivery"><?php echo "Livrare: $product->livrare zile"; ?></div>
 	  </div>
 	  <div class="excerpt">

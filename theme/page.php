@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+<section id="content">
 <?php if ( have_posts() ) { ?>          
   <?php while ( have_posts() ) : the_post(); ?>		    
     <article <?php post_class($klass); ?>>
@@ -18,10 +19,13 @@
     </article>     
   <?php endwhile; ?>
   
-  <?php if (is_page($CART)) { include '_cart.php'; } ?>
+  <?php if (is_page(CART)) { include 'cart.php'; } ?>
 	  
 <?php } else { ?>
-	<?php include '_not_found.php'?>
+	<?php include 'not_found.php'?>
 <?php } ?>
+</section>
+
+<?php if (is_page(CART)) { include 'checkout.php'; } ?>
 
 <?php get_footer(); ?>

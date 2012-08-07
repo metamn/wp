@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../.rvm/gems/ruby-1.9.3-p0/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, /var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -19,50 +19,50 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
+  font-size: 100%;
   vertical-align: baseline;
 }
 
-/* line 20, ../../../../.rvm/gems/ruby-1.9.3-p0/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-body {
+/* line 22, /var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
   line-height: 1;
 }
 
-/* line 22, ../../../../.rvm/gems/ruby-1.9.3-p0/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, /var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 24, ../../../../.rvm/gems/ruby-1.9.3-p0/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, /var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 26, ../../../../.rvm/gems/ruby-1.9.3-p0/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, /var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 28, ../../../../.rvm/gems/ruby-1.9.3-p0/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, /var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 101, ../../../../.rvm/gems/ruby-1.9.3-p0/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, /var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 30, ../../../../.rvm/gems/ruby-1.9.3-p0/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, /var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 114, ../../../../.rvm/gems/ruby-1.9.3-p0/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, /var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -70,42 +70,42 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* Typography
 */
 /* Traditional, em from http://lamb.cc/typograph/ */
-/* line 5, typography.scss */
+/* line 5, /home/cs/work/wp/theme/assets/typography.scss */
 body {
   font-size: 100%;
   line-height: 1.25;
 }
 
-/* line 6, typography.scss */
+/* line 6, /home/cs/work/wp/theme/assets/typography.scss */
 h1, h2, h3 {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-/* line 7, typography.scss */
+/* line 7, /home/cs/work/wp/theme/assets/typography.scss */
 h1 {
   font-size: 1.5em;
   padding: 1.45833em 0;
 }
 
-/* line 8, typography.scss */
+/* line 8, /home/cs/work/wp/theme/assets/typography.scss */
 h2 {
   font-size: 1.33333em;
   padding: 1.25em 0;
 }
 
-/* line 9, typography.scss */
+/* line 9, /home/cs/work/wp/theme/assets/typography.scss */
 h3 {
   font-size: 1.16667em;
   padding: 1.51785em 0;
 }
 
-/* line 11, typography.scss */
+/* line 11, /home/cs/work/wp/theme/assets/typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-/* line 14, typography.scss */
+/* line 14, /home/cs/work/wp/theme/assets/typography.scss */
 h4 {
   font-variant: small-caps;
 }
@@ -133,7 +133,7 @@ h4 {
 */
 /* make cursor to be pointer
 */
-/* line 80, mixins.scss */
+/* line 80, /home/cs/work/wp/theme/assets/mixins.scss */
 .j-toggle {
   cursor: pointer;
 }
@@ -150,123 +150,99 @@ h4 {
 */
 /* hide an element 
 */
-/* line 158, mixins.scss */
+/* line 158, /home/cs/work/wp/theme/assets/mixins.scss */
 .hidden {
   display: none;
 }
 
 /* block element -- expand something full size inside a container
 */
-/* line 3, header.scss */
+/* line 3, /home/cs/work/wp/theme/assets/header.scss */
 html body .container {
   width: 90%;
   margin: 0 auto;
 }
-@media only screen and (max-width: 319px) {
-  /* line 3, header.scss */
-  html body .container {
-    width: 98%;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 640px) {
-  /* line 3, header.scss */
-  html body .container {
-    width: 96%;
-  }
-}
-@media only screen and (min-width: 641px) and (max-width: 1024px) {
-  /* line 3, header.scss */
-  html body .container {
-    width: 96%;
-  }
-}
-/* line 10, header.scss */
+/* line 10, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header {
   position: static;
   width: 100%;
   float: left;
   margin-top: 1.25em;
 }
-/* line 15, header.scss */
+/* line 15, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header hgroup {
   width: 20%;
   margin: 0 0 0 0;
   float: left;
 }
-/* line 18, header.scss */
+/* line 18, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header hgroup h1 {
   display: none;
 }
-/* line 21, header.scss */
+/* line 21, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header hgroup h2 {
   display: none;
 }
-/* line 24, header.scss */
+/* line 24, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header hgroup #logo {
   height: 4.375em;
   width: 14.688em;
   /* an extra space must be add */
 }
-/* line 27, header.scss */
+/* line 27, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header hgroup #logo .cell {
   width: 0.625em;
   height: 0.625em;
   float: left;
 }
-/* line 32, header.scss */
+/* line 32, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header hgroup #logo .small {
   width: 0.313em;
 }
-/* line 35, header.scss */
+/* line 35, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header hgroup #logo .set {
   background: black;
 }
-/* line 41, header.scss */
+/* line 41, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header nav {
   width: 50%;
   margin: 0 5% 0 5%;
   float: left;
 }
-/* line 44, header.scss */
+/* line 44, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header nav h3 {
   display: none;
 }
-/* line 48, header.scss */
+/* line 48, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header nav #search {
   margin-bottom: 3.125em;
 }
-/* line 52, header.scss */
+/* line 52, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header nav #search form input[type="text"] {
   width: 22.5em;
   margin-right: 5%;
 }
-@media only screen and (min-width: 641px) and (max-width: 1024px) {
-  /* line 52, header.scss */
-  html body .container header nav #search form input[type="text"] {
-    width: 15.4em;
-  }
-}
-/* line 58, header.scss */
+/* line 58, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header nav #search form ul {
   display: none;
   margin: 1.25em 0;
 }
-/* line 64, header.scss */
+/* line 64, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header nav ul#categories {
   display: block;
   margin: 0;
 }
-/* line 90, mixins.scss */
+/* line 90, /home/cs/work/wp/theme/assets/mixins.scss */
 html body .container header nav ul#categories li {
   display: inline-block;
   list-style-type: none;
   margin-left: 0;
 }
-/* line 66, header.scss */
+/* line 66, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header nav ul#categories li {
   margin-right: 5%;
 }
-/* line 68, header.scss */
+/* line 68, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header nav ul#categories li span {
   -moz-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
@@ -275,11 +251,11 @@ html body .container header nav ul#categories li span {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$value);
   display: inline-block;
 }
-/* line 72, header.scss */
+/* line 72, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header nav ul#categories li.last {
   margin-right: none;
 }
-/* line 77, header.scss */
+/* line 77, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header aside {
   width: 20%;
   margin: 0 0 0 0;
@@ -288,28 +264,28 @@ html body .container header aside {
   z-index: 1;
   height: 10em;
 }
-/* line 81, header.scss */
+/* line 81, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header aside h3 {
   display: none;
 }
-/* line 87, header.scss */
+/* line 87, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header aside ul li .title {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
 }
-/* line 90, header.scss */
+/* line 90, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header aside ul li ul {
   display: none;
 }
-/* line 92, header.scss */
+/* line 92, /home/cs/work/wp/theme/assets/header.scss */
 html body .container header aside ul li ul li {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
 }
 
-/* line 108, header.scss */
+/* line 108, /home/cs/work/wp/theme/assets/header.scss */
 html body .container footer {
   width: 100%;
   float: left;
@@ -317,23 +293,23 @@ html body .container footer {
   padding: 1.25em 0;
   border-top: 1px solid;
 }
-/* line 114, header.scss */
+/* line 114, /home/cs/work/wp/theme/assets/header.scss */
 html body .container footer ul {
   display: block;
   margin: 0;
 }
-/* line 90, mixins.scss */
+/* line 90, /home/cs/work/wp/theme/assets/mixins.scss */
 html body .container footer ul li {
   display: inline-block;
   list-style-type: none;
   margin-left: 0;
 }
 
-/* line 4, index.scss */
+/* line 4, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #shopping-info {
   display: none;
 }
-/* line 9, index.scss */
+/* line 9, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #product-info.large,
 html body .container #product-info.list {
   width: 20%;
@@ -343,12 +319,12 @@ html body .container #product-info.list {
   z-index: 2;
   display: none;
 }
-/* line 15, index.scss */
+/* line 15, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #product-info.large h3,
 html body .container #product-info.list h3 {
   display: none;
 }
-/* line 18, index.scss */
+/* line 18, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #product-info.large .close,
 html body .container #product-info.list .close {
   float: right;
@@ -357,14 +333,14 @@ html body .container #product-info.list .close {
   cursor: pointer;
   padding: 0 0.313em;
 }
-/* line 24, index.scss */
+/* line 24, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #product-info.large .thumbs,
 html body .container #product-info.list .thumbs {
   width: 100%;
   float: left;
   margin-bottom: 2.5em;
 }
-/* line 28, index.scss */
+/* line 28, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #product-info.large .thumbs .item,
 html body .container #product-info.list .thumbs .item {
   width: 100px;
@@ -373,7 +349,7 @@ html body .container #product-info.list .thumbs .item {
   margin: 0 0.313em 0.625em 0;
   border: 1px solid;
 }
-/* line 19, mixins.scss */
+/* line 19, /home/cs/work/wp/theme/assets/mixins.scss */
 html body .container #product-info.large .body h3,
 html body .container #product-info.list .body h3 {
   margin-bottom: 0.625em;
@@ -382,12 +358,12 @@ html body .container #product-info.list .body h3 {
   cursor: pointer;
   display: block;
 }
-/* line 24, mixins.scss */
+/* line 24, /home/cs/work/wp/theme/assets/mixins.scss */
 html body .container #product-info.large .body .pane,
 html body .container #product-info.list .body .pane {
   display: none;
 }
-/* line 39, index.scss */
+/* line 39, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #product-info.mixed {
   width: 56.6%;
   margin: 0 0 0 0;
@@ -400,11 +376,11 @@ html body .container #product-info.mixed {
   background: white;
   display: none;
 }
-/* line 49, index.scss */
+/* line 49, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #product-info.mixed h3 {
   display: none;
 }
-/* line 52, index.scss */
+/* line 52, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #product-info.mixed .close {
   float: right;
   color: white;
@@ -412,13 +388,13 @@ html body .container #product-info.mixed .close {
   cursor: pointer;
   padding: 0 0.313em;
 }
-/* line 58, index.scss */
+/* line 58, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #product-info.mixed .thumbs {
   width: 98%;
   float: left;
   margin: 0 1% 2.5em;
 }
-/* line 63, index.scss */
+/* line 63, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #product-info.mixed .thumbs .item {
   width: 100px;
   height: 100px;
@@ -426,13 +402,13 @@ html body .container #product-info.mixed .thumbs .item {
   margin: 0 0.313em 0.625em 0;
   border: 1px solid;
 }
-/* line 68, index.scss */
+/* line 68, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #product-info.mixed .body {
   width: 98%;
   margin: 0 1%;
   float: left;
 }
-/* line 19, mixins.scss */
+/* line 19, /home/cs/work/wp/theme/assets/mixins.scss */
 html body .container #product-info.mixed .body h3 {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
@@ -440,21 +416,21 @@ html body .container #product-info.mixed .body h3 {
   cursor: pointer;
   display: block;
 }
-/* line 24, mixins.scss */
+/* line 24, /home/cs/work/wp/theme/assets/mixins.scss */
 html body .container #product-info.mixed .body .pane {
   display: none;
 }
-/* line 76, index.scss */
+/* line 76, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #sidebar {
   width: 20%;
   margin: 0 0 0 0;
   float: left;
 }
-/* line 79, index.scss */
+/* line 79, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #sidebar h3 {
   display: none;
 }
-/* line 84, index.scss */
+/* line 84, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #sidebar #switch-view li {
   display: none;
   margin-bottom: 0.625em;
@@ -462,15 +438,15 @@ html body .container #sidebar #switch-view li {
   border-bottom: 1px solid;
   cursor: pointer;
 }
-/* line 88, index.scss */
+/* line 88, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #sidebar #switch-view li span {
   display: none;
 }
-/* line 92, index.scss */
+/* line 92, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #sidebar #switch-view li.active {
   display: block !important;
 }
-/* line 94, index.scss */
+/* line 94, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #sidebar #switch-view li.active span {
   -moz-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
@@ -480,58 +456,58 @@ html body .container #sidebar #switch-view li.active span {
   display: inline-block;
   float: right;
 }
-/* line 101, index.scss */
+/* line 101, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #sidebar #categories {
   margin-top: 12.5em;
 }
-/* line 103, index.scss */
+/* line 103, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #sidebar #categories li {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
   border-bottom: 1px solid;
 }
-/* line 106, index.scss */
+/* line 106, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #sidebar #categories li.active {
   color: white;
   background: black;
   padding-top: 0.625em;
 }
-/* line 113, index.scss */
+/* line 113, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #content {
   position: static;
   width: 70%;
   margin: 0 10% 0 0;
   float: left;
 }
-/* line 118, index.scss */
+/* line 118, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #content .entry .featured-image {
   cursor: pointer;
 }
-/* line 122, index.scss */
+/* line 122, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #content .entry .thumbs {
   display: none;
 }
-/* line 126, index.scss */
+/* line 126, /home/cs/work/wp/theme/assets/index.scss */
 html body .container #content .entry .body {
   display: none;
 }
 
 /* Single article
 */
-/* line 10, article.scss */
+/* line 10, /home/cs/work/wp/theme/assets/article.scss */
 html body.single .container #content article .entry .featured-image {
   background: white;
   box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
   -moz-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
   -webkit-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
 }
-/* line 13, article.scss */
+/* line 13, /home/cs/work/wp/theme/assets/article.scss */
 html body.single .container #content article .entry .thumbs {
   width: 100%;
   float: left;
   display: block;
 }
-/* line 17, article.scss */
+/* line 17, /home/cs/work/wp/theme/assets/article.scss */
 html body.single .container #content article .entry .thumbs .item {
   width: 100px;
   height: 100px;
@@ -539,23 +515,23 @@ html body.single .container #content article .entry .thumbs .item {
   margin: 0 0.313em 0.625em 0;
   border: 1px solid;
 }
-/* line 21, article.scss */
+/* line 21, /home/cs/work/wp/theme/assets/article.scss */
 html body.single .container #content article .entry .shopping {
   position: relative;
   top: -35em;
   left: 15%;
 }
-/* line 26, article.scss */
+/* line 26, /home/cs/work/wp/theme/assets/article.scss */
 html body.single .container #content article .entry .excerpt {
   display: none;
 }
-/* line 29, article.scss */
+/* line 29, /home/cs/work/wp/theme/assets/article.scss */
 html body.single .container #content article .entry .body {
   width: 100%;
   float: left;
   display: block;
 }
-/* line 19, mixins.scss */
+/* line 19, /home/cs/work/wp/theme/assets/mixins.scss */
 html body.single .container #content article .entry .body h3 {
   margin-bottom: 0.625em;
   padding-bottom: 0.625em;
@@ -563,22 +539,22 @@ html body.single .container #content article .entry .body h3 {
   cursor: pointer;
   display: block;
 }
-/* line 24, mixins.scss */
+/* line 24, /home/cs/work/wp/theme/assets/mixins.scss */
 html body.single .container #content article .entry .body .pane {
   display: none;
 }
-/* line 39, article.scss */
+/* line 39, /home/cs/work/wp/theme/assets/article.scss */
 html body.single .container #shopping-info {
   width: 20%;
   margin: 0 0 0 0;
   float: left;
   display: block;
 }
-/* line 44, article.scss */
+/* line 44, /home/cs/work/wp/theme/assets/article.scss */
 html body.single .container .product-scroller {
   display: none;
 }
-/* line 48, article.scss */
+/* line 48, /home/cs/work/wp/theme/assets/article.scss */
 html body.single .container #sidebar {
   display: none;
 }
@@ -586,7 +562,7 @@ html body.single .container #sidebar {
 /* Articles on index page
 */
 /* Icons */
-/* line 68, article.scss */
+/* line 68, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.icons {
   width: 20%;
   height: 13em;
@@ -597,44 +573,44 @@ html body .container #content article.icons {
   -moz-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
   -webkit-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
 }
-/* line 76, article.scss */
+/* line 76, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.icons header {
   position: relative;
   top: 13em;
 }
-/* line 79, article.scss */
+/* line 79, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.icons header h1 {
   font-size: 100%;
 }
-/* line 84, article.scss */
+/* line 84, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.icons .entry {
   position: relative;
   top: -2em;
 }
-/* line 88, article.scss */
+/* line 88, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.icons .entry .featured-image {
   text-align: center;
 }
-/* line 91, article.scss */
+/* line 91, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.icons .entry .featured-image img {
   max-height: 7em;
 }
-/* line 98, article.scss */
+/* line 98, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.icons .entry .shopping {
   position: relative;
   top: 8em;
 }
-/* line 102, article.scss */
+/* line 102, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.icons .entry .excerpt {
   display: none;
 }
-/* line 111, article.scss */
+/* line 111, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content .product-scroller.icons {
   display: none;
 }
 
 /* List */
-/* line 128, article.scss */
+/* line 128, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.list {
   width: 60%;
   height: 31em;
@@ -645,26 +621,26 @@ html body .container #content article.list {
   -moz-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
   -webkit-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
 }
-/* line 136, article.scss */
+/* line 136, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.list header {
   position: relative;
   left: 105%;
   width: 70%;
   float: left;
 }
-/* line 142, article.scss */
+/* line 142, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.list header h1 {
   padding-left: 0.313em;
 }
-/* line 148, article.scss */
+/* line 148, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.list .entry .featured-image {
   text-align: center;
 }
-/* line 151, article.scss */
+/* line 151, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.list .entry .featured-image img {
   max-height: 20em;
 }
-/* line 158, article.scss */
+/* line 158, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.list .entry .shopping {
   position: relative;
   left: 105%;
@@ -672,7 +648,7 @@ html body .container #content article.list .entry .shopping {
   width: 70%;
   float: left;
 }
-/* line 165, article.scss */
+/* line 165, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.list .entry .excerpt {
   position: relative;
   left: 105%;
@@ -680,13 +656,13 @@ html body .container #content article.list .entry .excerpt {
   width: 70%;
   float: left;
 }
-/* line 178, article.scss */
+/* line 178, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content .product-scroller.list {
   display: none;
 }
 
 /* Mixed */
-/* line 193, article.scss */
+/* line 193, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.mixed {
   width: 60%;
   height: 31em;
@@ -697,7 +673,7 @@ html body .container #content article.mixed {
   -moz-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
   -webkit-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
 }
-/* line 201, article.scss */
+/* line 201, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.mixed header {
   position: relative;
   z-index: 1;
@@ -705,16 +681,16 @@ html body .container #content article.mixed header {
   background: #eee;
   opacity: .7;
 }
-/* line 208, article.scss */
+/* line 208, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.mixed header h1 {
   padding-left: 0.313em;
 }
-/* line 213, article.scss */
+/* line 213, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.mixed .entry {
   position: relative;
   top: -6.4em;
 }
-/* line 220, article.scss */
+/* line 220, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.mixed .entry .shopping {
   position: relative;
   top: 6em;
@@ -724,13 +700,13 @@ html body .container #content article.mixed .entry .shopping {
   background: #eee;
   opacity: .7;
 }
-/* line 230, article.scss */
+/* line 230, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.mixed .entry .excerpt {
   position: relative;
   top: 5em;
   padding-left: 0.625em;
 }
-/* line 241, article.scss */
+/* line 241, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.mixed.not-first {
   width: 15%;
   height: auto;
@@ -738,33 +714,33 @@ html body .container #content article.mixed.not-first {
   padding: 1%;
   margin: 0 2% 5% 0;
 }
-/* line 248, article.scss */
+/* line 248, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.mixed.not-first header {
   display: none;
 }
-/* line 251, article.scss */
+/* line 251, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.mixed.not-first .entry {
   top: 0;
 }
-/* line 254, article.scss */
+/* line 254, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.mixed.not-first .entry .shopping {
   display: none;
 }
-/* line 257, article.scss */
+/* line 257, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.mixed.not-first .entry .excerpt {
   display: none;
 }
-/* line 262, article.scss */
+/* line 262, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.mixed.odd {
   margin-right: 0;
 }
-/* line 267, article.scss */
+/* line 267, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.mixed.count-8,
 html body .container #content article.mixed.count-9,
 html body .container #content article.mixed.count-10 {
   display: none;
 }
-/* line 272, article.scss */
+/* line 272, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content .product-scroller.mixed {
   font-size: 4em;
   position: relative;
@@ -772,17 +748,17 @@ html body .container #content .product-scroller.mixed {
   width: 10%;
   height: 0;
 }
-/* line 279, article.scss */
+/* line 279, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content #product-scroll-left.mixed {
   left: 68%;
 }
-/* line 282, article.scss */
+/* line 282, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content #product-scroll-right.mixed {
   left: 88%;
 }
 
 /* Large */
-/* line 296, article.scss */
+/* line 296, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.large {
   height: 40em;
   background: white;
@@ -790,7 +766,7 @@ html body .container #content article.large {
   -moz-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
   -webkit-box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.698), 0 1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1) inset;
 }
-/* line 300, article.scss */
+/* line 300, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.large header {
   position: relative;
   z-index: 1;
@@ -798,16 +774,16 @@ html body .container #content article.large header {
   background: #eee;
   opacity: .7;
 }
-/* line 307, article.scss */
+/* line 307, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.large header h1 {
   padding-left: 0.313em;
 }
-/* line 312, article.scss */
+/* line 312, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.large .entry {
   position: relative;
   top: -2em;
 }
-/* line 320, article.scss */
+/* line 320, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.large .entry .shopping {
   position: relative;
   top: -2.85em;
@@ -817,17 +793,17 @@ html body .container #content article.large .entry .shopping {
   background: #eee;
   opacity: .7;
 }
-/* line 330, article.scss */
+/* line 330, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.large .entry .excerpt {
   position: relative;
   top: -1.25em;
   padding-left: 0.625em;
 }
-/* line 340, article.scss */
+/* line 340, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content article.large.not-first {
   display: none;
 }
-/* line 344, article.scss */
+/* line 344, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content .product-scroller.large {
   font-size: 4em;
   position: relative;
@@ -836,251 +812,258 @@ html body .container #content .product-scroller.large {
   width: 10%;
   height: 0;
 }
-/* line 352, article.scss */
+/* line 352, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content #product-scroll-left.large {
   left: 1%;
 }
-/* line 355, article.scss */
+/* line 355, /home/cs/work/wp/theme/assets/article.scss */
 html body .container #content #product-scroll-right.large {
   left: 96%;
 }
 
-/* line 4, page.scss */
-html body .container article.page {
+/* line 5, /home/cs/work/wp/theme/assets/page.scss */
+html body .container #content article.page {
   width: 100%;
   float: left;
 }
-/* line 7, page.scss */
-html body .container article.page header {
+/* line 8, /home/cs/work/wp/theme/assets/page.scss */
+html body .container #content article.page header {
   float: none;
 }
+/* line 14, /home/cs/work/wp/theme/assets/page.scss */
+html body .container #checkout {
+  width: 20%;
+  margin: 0 0 0 0;
+  float: left;
+  display: block;
+}
 
-/* line 1, services.scss */
+/* line 1, /home/cs/work/wp/theme/assets/services.scss */
 #services {
   width: 100%;
   float: left;
 }
-/* line 4, services.scss */
+/* line 4, /home/cs/work/wp/theme/assets/services.scss */
 #services table {
   width: 100%;
 }
-/* line 104, mixins.scss */
+/* line 104, /home/cs/work/wp/theme/assets/mixins.scss */
 #services table thead td, #services table thead th {
   border-bottom: 1px solid;
 }
-/* line 110, mixins.scss */
+/* line 110, /home/cs/work/wp/theme/assets/mixins.scss */
 #services table tbody td.first {
   text-align: left;
 }
-/* line 114, mixins.scss */
+/* line 114, /home/cs/work/wp/theme/assets/mixins.scss */
 #services table td, #services table th {
   padding: 0.625em;
   text-align: center;
 }
-/* line 120, mixins.scss */
+/* line 120, /home/cs/work/wp/theme/assets/mixins.scss */
 #services table tfoot td {
   border-top: 1px solid;
 }
 
-/* line 1, account.scss */
+/* line 1, /home/cs/work/wp/theme/assets/account.scss */
 #account {
   width: 100%;
   float: left;
 }
-/* line 4, account.scss */
+/* line 4, /home/cs/work/wp/theme/assets/account.scss */
 #account ul {
   display: block;
   margin: 0;
 }
-/* line 90, mixins.scss */
+/* line 90, /home/cs/work/wp/theme/assets/mixins.scss */
 #account ul li {
   display: inline-block;
   list-style-type: none;
   margin-left: 0;
 }
-/* line 7, account.scss */
+/* line 7, /home/cs/work/wp/theme/assets/account.scss */
 #account ul li {
   width: 18%;
   margin-right: 2%;
   text-align: center;
   vertical-align: top;
 }
-/* line 13, account.scss */
+/* line 13, /home/cs/work/wp/theme/assets/account.scss */
 #account ul li span {
   font-size: large;
   font-weight: bold;
   display: block;
 }
-/* line 19, account.scss */
+/* line 19, /home/cs/work/wp/theme/assets/account.scss */
 #account ul li.last {
   margin-right: 0;
 }
 
-/* line 2, cart.scss */
+/* line 2, /home/cs/work/wp/theme/assets/cart.scss */
 #cart ul {
   display: block;
   margin: 0;
 }
-/* line 90, mixins.scss */
+/* line 90, /home/cs/work/wp/theme/assets/mixins.scss */
 #cart ul li {
   display: inline-block;
   list-style-type: none;
   margin-left: 0;
 }
-/* line 5, cart.scss */
+/* line 5, /home/cs/work/wp/theme/assets/cart.scss */
 #cart ul li {
   width: 18%;
   margin-right: 2%;
   vertical-align: top;
 }
-/* line 11, cart.scss */
+/* line 11, /home/cs/work/wp/theme/assets/cart.scss */
 #cart ul li ul li {
   display: block;
   width: auto;
 }
-/* line 17, cart.scss */
+/* line 17, /home/cs/work/wp/theme/assets/cart.scss */
 #cart ul li.c3, #cart ul li.c4, #cart ul li.c5 {
   width: 10%;
 }
-/* line 20, cart.scss */
+/* line 20, /home/cs/work/wp/theme/assets/cart.scss */
 #cart ul li.last {
   margin-right: 0;
 }
-/* line 26, cart.scss */
+/* line 26, /home/cs/work/wp/theme/assets/cart.scss */
 #cart ul#coupon li.c3 {
   width: 30%;
 }
-/* line 29, cart.scss */
+/* line 29, /home/cs/work/wp/theme/assets/cart.scss */
 #cart ul#coupon li.c4, #cart ul#coupon li.c5 {
   width: .1px;
 }
-/* line 35, cart.scss */
+/* line 35, /home/cs/work/wp/theme/assets/cart.scss */
 #cart ul#delivery li.c3 {
   width: 22%;
 }
-/* line 38, cart.scss */
+/* line 38, /home/cs/work/wp/theme/assets/cart.scss */
 #cart ul#delivery li.c5 {
   width: .1px;
 }
 
-/* line 65, cart.scss */
+/* line 65, /home/cs/work/wp/theme/assets/cart.scss */
 form.addtocart fieldset legend {
   display: none;
 }
-/* line 70, cart.scss */
+/* line 70, /home/cs/work/wp/theme/assets/cart.scss */
 form.addtocart fieldset .sgloptiondetails .sgloption {
   display: none;
 }
-/* line 73, cart.scss */
+/* line 73, /home/cs/work/wp/theme/assets/cart.scss */
 form.addtocart fieldset .sgloptiondetails .price_old {
   font-size: small;
   text-decoration: line-through;
 }
-/* line 79, cart.scss */
+/* line 79, /home/cs/work/wp/theme/assets/cart.scss */
 form.addtocart fieldset .qty {
   display: none;
 }
 
-/* line 85, cart.scss */
+/* line 85, /home/cs/work/wp/theme/assets/cart.scss */
 article .entry .shopping .delivery {
   font-size: small;
 }
 
-/* line 91, cart.scss */
+/* line 91, /home/cs/work/wp/theme/assets/cart.scss */
 table.cart {
   width: 100%;
 }
-/* line 104, mixins.scss */
+/* line 104, /home/cs/work/wp/theme/assets/mixins.scss */
 table.cart thead td, table.cart thead th {
   border-bottom: 1px solid;
 }
-/* line 110, mixins.scss */
+/* line 110, /home/cs/work/wp/theme/assets/mixins.scss */
 table.cart tbody td.first {
   text-align: left;
 }
-/* line 114, mixins.scss */
+/* line 114, /home/cs/work/wp/theme/assets/mixins.scss */
 table.cart td, table.cart th {
   padding: 0.625em;
   text-align: center;
 }
-/* line 120, mixins.scss */
+/* line 120, /home/cs/work/wp/theme/assets/mixins.scss */
 table.cart tfoot td {
   border-top: 1px solid;
 }
-/* line 94, cart.scss */
+/* line 94, /home/cs/work/wp/theme/assets/cart.scss */
 table.cart caption, table.cart th#cartDelete img {
   display: none;
 }
-/* line 98, cart.scss */
+/* line 98, /home/cs/work/wp/theme/assets/cart.scss */
 table.cart td, table.cart th {
   text-align: left;
 }
-/* line 103, cart.scss */
+/* line 103, /home/cs/work/wp/theme/assets/cart.scss */
 table.cart tbody td {
   border-bottom: 1px solid;
 }
 
-/* line 110, cart.scss */
+/* line 110, /home/cs/work/wp/theme/assets/cart.scss */
 .cartopt {
   margin: 2.5em 0;
 }
 
-/* line 114, cart.scss */
+/* line 114, /home/cs/work/wp/theme/assets/cart.scss */
 ul.continue-proceed {
   display: block;
   margin: 0;
 }
-/* line 90, mixins.scss */
+/* line 90, /home/cs/work/wp/theme/assets/mixins.scss */
 ul.continue-proceed li {
   display: inline-block;
   list-style-type: none;
   margin-left: 0;
 }
 
-/* line 119, cart.scss */
+/* line 119, /home/cs/work/wp/theme/assets/cart.scss */
 .custdetails {
   margin: 2.5em 0;
 }
-/* line 122, cart.scss */
+/* line 122, /home/cs/work/wp/theme/assets/cart.scss */
 .custdetails p {
   display: none;
 }
-/* line 125, cart.scss */
+/* line 125, /home/cs/work/wp/theme/assets/cart.scss */
 .custdetails p.eshop_tandc {
   display: block;
 }
-/* line 129, cart.scss */
+/* line 129, /home/cs/work/wp/theme/assets/cart.scss */
 .custdetails form {
   /* Shipping */
   /* Coupon */
 }
-/* line 131, cart.scss */
+/* line 131, /home/cs/work/wp/theme/assets/cart.scss */
 .custdetails form fieldset.fld2 legend, .custdetails form fieldset.fld2 .company, .custdetails form fieldset.fld2 .address2, .custdetails form fieldset.fld2 .state, .custdetails form fieldset.fld2 .altstate, .custdetails form fieldset.fld2 .zip, .custdetails form fieldset.fld2 .country {
   display: none;
 }
-/* line 137, cart.scss */
+/* line 137, /home/cs/work/wp/theme/assets/cart.scss */
 .custdetails form fieldset.fld4 {
   position: relative;
   top: -15em;
 }
-/* line 141, cart.scss */
+/* line 141, /home/cs/work/wp/theme/assets/cart.scss */
 .custdetails form fieldset.fld4 legend, .custdetails form fieldset.fld4 span {
   display: none;
 }
-/* line 144, cart.scss */
+/* line 144, /home/cs/work/wp/theme/assets/cart.scss */
 .custdetails form fieldset.fld4 span.ship_state {
   display: block;
 }
-/* line 150, cart.scss */
+/* line 150, /home/cs/work/wp/theme/assets/cart.scss */
 .custdetails form fieldset.fld5 {
   margin: 2.5em 0 5em;
 }
-/* line 154, cart.scss */
+/* line 154, /home/cs/work/wp/theme/assets/cart.scss */
 .custdetails form fieldset.fld6, .custdetails form label[for="submitit"] {
   display: none;
 }
 
-/* line 161, cart.scss */
+/* line 161, /home/cs/work/wp/theme/assets/cart.scss */
 .eshopcheckoutconf, label.finalize small {
   display: none;
 }

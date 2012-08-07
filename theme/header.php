@@ -86,7 +86,7 @@
         <nav> 
           <h3>Navigare principala si cautare</h3>    
           <div id="search">
-            <?php include '_search-form.php' ?>            
+            <?php include 'search-form.php' ?>            
           </div>
           <ul id="categories">
             <li><h4>Cadouri <span>></span></h4></li>

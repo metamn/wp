@@ -3,9 +3,9 @@ html {
     .container {
       width: 90%;
       margin: 0 auto;
-      @include respond-to(mobile) { width: 98%; }
-      @include respond-to(smartphone) { width: 96%; }
-      @include respond-to(tablet) { width: 96%; }
+      //@include respond-to(mobile) { width: 98%; }
+      //@include respond-to(smartphone) { width: 96%; }
+      //@include respond-to(tablet) { width: 96%; }
       
       header {
         position: static;
@@ -52,7 +52,7 @@ html {
               input[type="text"] {
                 width: 22.5em;
                 margin-right: 5%;
-                @include respond-to(tablet) { width: 15.4em; }
+                //@include respond-to(tablet) { width: 15.4em; }
               }
              
               ul {

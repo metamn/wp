@@ -16,6 +16,7 @@ if ( !session_id() )
 
 // the slug of the shopping cart page
 define("CART", 'cos-cumparaturi');
+define("CHECKOUT", 'confirmare-comanda');
 
 // in how many hours a session expires
 define("NEW_SESSION_HRS", 3);
